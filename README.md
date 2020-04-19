@@ -1,2 +1,2 @@
-# swaprojectdocs.github.io
-SWA Project Documentation Pages
+# SWA Project Documentation Pages
+Benedict Cumberbatch Team Documentation
