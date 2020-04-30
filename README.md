@@ -6,6 +6,8 @@
 
 * ## [Data Storage](https://schstp.github.io/OnlineDoctor/datastorage/table_of_contents)
 
+* ## [Sketches](https://schstp.github.io/OnlineDoctor/sketches/table_of_contents)
+
 * ## [API Documentation](https://schstp.github.io/OnlineDoctor/api/table_of_contents)
 
 * ## [Meeting Summaries](https://schstp.github.io/OnlineDoctor/meeting_summaries/table_of_contents)
