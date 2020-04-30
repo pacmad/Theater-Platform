@@ -8,6 +8,6 @@
 
 * ## [API Documentation](https://schstp.github.io/swaprojectdocs/api/apidocs)
 
-* ## [Meeting Summaries](https://schstp.github.io/swaprojectdocs/api/apidocs)
+* ## [Meeting Summaries](https://schstp.github.io/swaprojectdocs/meeting_summaries/table_of_contents)
 
 
