@@ -147,4 +147,4 @@ BASE_URL  http://host1813162.hostland.pro/api
 
 ## Password Reset
 
-## and so on...
+## Email Verification
