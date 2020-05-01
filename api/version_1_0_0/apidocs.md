@@ -135,6 +135,14 @@ BASE_URL  http://host1813162.hostland.pro/api
 
 ## Logout
 
+|        	        |                    	|
+|----------------	|-------------------	|
+| request method 	| POST              	|
+| route          	| BASE_URL/logout    	|
+| required headers  | Authorization         |
+
+>*Note*: Формально логаут это удаление токена, т.е. никакие дополнительные данные не нужны. Токен будет в приведенном хэдере запроса. 
+
 ## Password Reset Request
 
 ## Password Reset
