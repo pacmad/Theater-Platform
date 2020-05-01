@@ -1,7 +1,7 @@
 # API v1.0.0
 ## Registration
 
-| parameter       	| value          	|
+|        	        |                    	|
 |----------------	|-------------------	|
 | request method 	| POST              	|
 | route          	| BASE_URL/register 	|
