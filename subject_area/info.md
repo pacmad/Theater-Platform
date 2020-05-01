@@ -1,4 +1,3 @@
-# Information about subject area here
 ### **О телемедицине**
 [Что такое телемедицина?](https://www.youtube.com/watch?v=xDnGvaCtSvY)
 
