@@ -84,6 +84,55 @@ BASE_URL  http://host1813162.hostland.pro/api
 
 ## Authorization
 
+|        	        |                    	|
+|----------------	|-------------------	|
+| request method 	| POST              	|
+| route          	| BASE_URL/login    	|
+| error types    	| EmailError, PasswordError|
+
+#### REQUEST DATA
+
+```json
+{
+    "email": "example@mail.com",
+    "password": "userpassword"
+}
+```
+#### RESPONSE DATA [SUCCESS]
+
+```json
+{
+    "has_errors": false,
+    "errors": [],
+    "token": "access_token_here",
+    "user": {
+        "id": 67,
+        "email": "example@mail.com",
+    }
+}
+```
+#### RESPONSE DATA [FAIL]
+
+>*Note*: 1) Возвращаются только найденные ошибки; 2) Приведены все возможные ошибки 
+
+```json
+{
+    "has_errors": true,
+    "errors": [
+        {
+            "type": "EmailError",
+            "message": "Пользователь с таким e-mail не зарегистрирован."
+        },
+        {
+            "type": "PasswordError",
+            "message": "Неверный пароль"
+        }
+    ],
+    "token": null,
+    "user": null
+}
+```
+
 ## Logout
 
 ## Password Reset Request
