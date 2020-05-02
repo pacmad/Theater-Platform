@@ -1,1 +1,7 @@
 theme: jekyll-theme-leap-day
+
+@-moz-document domain("github.com") {
+  .markdown-body table th, .markdown-body table td {
+    word-break: break-all;
+  }
+}
