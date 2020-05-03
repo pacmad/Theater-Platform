@@ -4,7 +4,7 @@ BASE_URL  http://host1813162.hostland.pro/api
 
 ## Registration
 
-|        	        |                    	|
+|attribute          |value         	        |
 |----------------	|-------------------	|
 | request method 	| POST              	|
 | route          	| BASE_URL/register 	|
@@ -84,7 +84,7 @@ BASE_URL  http://host1813162.hostland.pro/api
 
 ## Authorization
 
-|        	        |                    	|
+|attribute          |value         	        |
 |----------------	|-------------------	|
 | request method 	| POST              	|
 | route          	| BASE_URL/login    	|
@@ -135,7 +135,7 @@ BASE_URL  http://host1813162.hostland.pro/api
 
 ## Logout
 
-|        	        |                    	|
+|attribute          |value         	        |
 |----------------	|-------------------	|
 | request method 	| POST              	|
 | route          	| BASE_URL/logout    	|
