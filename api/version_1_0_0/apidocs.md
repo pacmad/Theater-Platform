@@ -274,16 +274,9 @@ BASE_URL  http://host1813162.hostland.pro/api
 |attribute          |value         	        |
 |----------------	|-------------------	|
 | request method 	| GET              	    |
-| route          	| BASE_URL/verify/{token}|
+| route          	| BASE_URL/verify/{verification_token}|
 | error types    	| InvalidTokenError, EmailError|
 
-#### REQUEST DATA
-
-```json
-{
-    "token": "verification_token_from_email_sent_to_user"
-}
-```
 #### RESPONSE DATA [SUCCESS]
 
 ```json
