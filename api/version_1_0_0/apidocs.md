@@ -224,7 +224,7 @@ BASE_URL  http://host1813162.hostland.pro/api
     "errors": [
         {
             "type": "InvalidTokenError",
-            message: "Ссылка, которой вы воспользовались для сброса пароля, устарела."
+            "message": "Ссылка, которой вы воспользовались для сброса пароля, устарела."
         },
         {
             "type": "PasswordValidationError",
