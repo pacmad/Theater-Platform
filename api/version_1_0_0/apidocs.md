@@ -270,3 +270,47 @@ BASE_URL  http://host1813162.hostland.pro/api
 ```
 
 ## Email Verification
+
+|attribute          |value         	        |
+|----------------	|-------------------	|
+| request method 	| GET              	    |
+| route          	| BASE_URL/verify/{token}|
+| error types    	| InvalidTokenError, EmailError|
+
+#### REQUEST DATA
+
+```json
+{
+    "token": "verification_token_from_email_sent_to_user"
+}
+```
+#### RESPONSE DATA [SUCCESS]
+
+```json
+{
+    "has_errors": false,
+    "errors": [],
+    "message": "Почта успешно подтверждена."
+
+}
+```
+#### RESPONSE DATA [FAIL]
+
+>*Note*: 1) Возвращаются только найденные ошибки; 2) Приведены все возможные ошибки 
+
+```json
+{
+    "has_errors": true,
+    "errors": [
+        {
+            "type": "InvalidTokenError",
+            "message": "Ссылка, которой вы воспользовались для подтверждения email, устарела. Пройдите регистрацию заново."
+        },
+        {
+            "type": "EmailError",
+            "message": "Ваша почта уже подтверждена."
+        }
+    ],
+    "message": null
+}
+```
