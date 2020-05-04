@@ -220,7 +220,6 @@ BASE_URL  http://host1813162.hostland.pro/api
 
 ```json
 {
-{
     "has_errors": true,
     "errors": [
         {
