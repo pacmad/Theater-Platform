@@ -1,4 +1,4 @@
-# API v1.0.0
+# API v1.0.1
 
 BASE_URL  http://host1813162.hostland.pro/api
 
@@ -30,6 +30,7 @@ BASE_URL  http://host1813162.hostland.pro/api
         "id": 67,
         "email": "example@mail.com",
     }
+    "message": "Письмо для активации почты отправлено на ваш email адрес",
 }
 ```
 #### RESPONSE DATA [FAIL]
