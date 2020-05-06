@@ -123,6 +123,10 @@ BASE_URL  http://host1813162.hostland.pro/api
         {
             "type": "EmailError",
             "message": "Пользователь с таким e-mail не зарегистрирован."
+        },       
+        {
+            "type": "EmailError",
+            "message": "Чтобы авторизоваться необходимо подтвердить email адрес."
         },
         {
             "type": "PasswordError",
