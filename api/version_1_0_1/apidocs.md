@@ -25,11 +25,6 @@ BASE_URL  http://host1813162.hostland.pro/api
 {
     "has_errors": false,
     "errors": [],
-    "token": "access_token_here",
-    "user": {
-        "id": 67,
-        "email": "example@mail.com",
-    }
     "message": "Письмо для активации почты отправлено на ваш email адрес",
 }
 ```
@@ -77,9 +72,7 @@ BASE_URL  http://host1813162.hostland.pro/api
             "type": "EmailValidationError",
             "message": "E-mail адрес должен содержать символ @"
         }
-    ],
-    "token": null,
-    "user": null
+    ]
 }
 ```
 
@@ -187,7 +180,6 @@ BASE_URL  http://host1813162.hostland.pro/api
         }
     ],
     "message": null
-
 }
 ```
 
@@ -269,8 +261,6 @@ BASE_URL  http://host1813162.hostland.pro/api
         }
     ],
     "message": null
-}
-
 }
 ```
 
