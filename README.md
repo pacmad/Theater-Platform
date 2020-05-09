@@ -12,5 +12,5 @@
 
 * ## [Meeting Summaries](https://schstp.github.io/OnlineDoctor/meeting_summaries/table_of_contents)
 
-* ## [Roadmap](https://schstp.github.io/OnlineDoctor/roadmap/roadmap.md)
+* ## [Roadmap](https://schstp.github.io/OnlineDoctor/roadmap/roadmap)
 
