@@ -4,8 +4,8 @@
 Предметной областью проекта является театральная сфера: информирование зрителей, покупка билетов онлайн, через специальное ПО
 
 ## **Что есть сейчас**
-![scheme_1](https://schstp.github.io/OnlineDoctor/passport/before.png "Что есть сейчас...")
-![scheme_2](https://schstp.github.io/OnlineDoctor/passport/after.png "Как должно быть...")
+![scheme_1](https://schstp.github.io/Theater-Platform/passport/before.png "Что есть сейчас...")
+![scheme_2](https://schstp.github.io/Theater-Platform/passport/after.png "Как должно быть...")
 + Человек хочет пойти на спектакль в театр;
 + Выбирает в какой театр пойти (Театр Драмы, ТЮЗ, Версия и т.д);
 + Узнает время работы кассы и направляется за билетом;
@@ -46,7 +46,7 @@
 + Реализовать личный кабинет пользователя.
 
 ## **Как должно быть**
-![scheme_3](https://schstp.github.io/OnlineDoctor/passport/final.png "Как должно быть...")
+![scheme_3](https://schstp.github.io/Theater-Platform/passport/final.png "Как должно быть...")
 + Зритель хочет приобрести билет в театр;
 + Заходит в систему "ТомскиеТеатры";
 + Выбирает театр, знакомится с премьерами недели/месяца, выбирает спектакль;
