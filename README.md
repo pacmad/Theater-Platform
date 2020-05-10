@@ -1,16 +1,16 @@
-* ## [Subject Area](https://schstp.github.io/OnlineDoctor/subject_area/info)
+* ## [Subject Area](https://schstp.github.io/Theater-Platform/subject_area/info)
 
-* ## [Project Passport](https://schstp.github.io/OnlineDoctor/passport/projectpassport)
+* ## [Project Passport](https://schstp.github.io/Theater-Platform/passport/projectpassport)
 
-* ## [Scenarios](https://schstp.github.io/OnlineDoctor/scenarios/table_of_contents)
+* ## [Scenarios](https://schstp.github.io/Theater-Platform/scenarios/table_of_contents)
 
-* ## [Data Storage](https://schstp.github.io/OnlineDoctor/datastorage/table_of_contents)
+* ## [Data Storage](https://schstp.github.io/Theater-Platform/datastorage/table_of_contents)
 
-* ## [Sketches](https://schstp.github.io/OnlineDoctor/sketches/table_of_contents)
+* ## [Sketches](https://schstp.github.io/Theater-Platform/sketches/table_of_contents)
 
-* ## [API Documentation](https://schstp.github.io/OnlineDoctor/api/table_of_contents)
+* ## [API Documentation](https://schstp.github.io/Theater-Platform/api/table_of_contents)
 
-* ## [Meeting Summaries](https://schstp.github.io/OnlineDoctor/meeting_summaries/table_of_contents)
+* ## [Meeting Summaries](https://schstp.github.io/Theater-Platform/meeting_summaries/table_of_contents)
 
-* ## [Roadmap](https://schstp.github.io/OnlineDoctor/roadmap/roadmap)
+* ## [Roadmap](https://schstp.github.io/Theater-Platform/roadmap/roadmap)
 
