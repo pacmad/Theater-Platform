@@ -1,6 +1,3 @@
-### Ссылки на схемы для паспорта:
+### Прототипы:
 
-[1 версия](https://www.figma.com/file/Dj42nUfjbgP0FAT5cMn8Xa/%D0%A1%D1%85%D0%B5%D0%BC%D1%8B-Ver.2?node-id=118%3A2)
-
-## Ссылка на мобильную версию сайта
-[Мобильная версия 1](https://www.figma.com/file/11SMLcQcpwIqqGjNukqpbF/%D0%92%D1%80%D0%B0%D1%87-%D0%BF%D0%BE-%D1%81%D0%BA%D0%B0%D0%B9%D0%BF%D1%83-Mobile?node-id=0%3A1)
+[1 версия](https://www.figma.com/proto/tNHQ48rOfK9Y0xCMHQbZad/%D0%9F%D1%80%D0%BE%D1%82%D0%BE%D1%82%D0%B8%D0%BF-%D0%A2%D0%B5%D0%B0%D1%82%D1%80%D1%8B-%D0%A2%D0%BE%D0%BC%D1%81%D0%BA%D0%B0?node-id=164%3A521&scaling=scale-down-width)
