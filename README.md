@@ -14,5 +14,5 @@
 
 * ## [Meeting Summaries](https://schstp.github.io/Theater-Platform/meeting_summaries/table_of_contents)
 
-* ## [Reference](https://schstp.github.io/Theater-Platform/reference/table_of_contents)
+* ## [Reference](https://schstp.github.io/Theater-Platform/reference/content)
 
