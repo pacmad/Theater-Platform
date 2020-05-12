@@ -51,9 +51,9 @@
 |атрибут          |тип данных, ограничения|
 |----------------	|-------------------	|
 | *id зала*	|PRIMARY KEY|
-| название | string (path to the image) 	|
-| схема | string (path to the image) 	|
-| количество посадочных мест| number 	|
+| название | string |
+| схема | string (path to the image) |
+| количество посадочных мест| number |
 | *id театра*	| FOREIGN KEY	|
 
 #### Место в зале театра
