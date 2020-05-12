@@ -173,6 +173,5 @@
 | *id актера* 	| PART OF COMPOSED PRIMARY KEY |
 | *id спектакля* | PART OF COMPOSED PRIMARY KEY |
 | роль | string |
-| *id театра* | FOREIGN KEY|
 
 
