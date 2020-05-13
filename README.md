@@ -1,8 +1,7 @@
-* ## [Subject Area](https://schstp.github.io/Theater-Platform/subject_area/info)
-
-* ## [Roadmap](https://schstp.github.io/Theater-Platform/roadmap/roadmap)
 
 * ## [Project Passport, MVP](https://schstp.github.io/Theater-Platform/passport/table_of_contents)
+
+* ## [Roadmap](https://schstp.github.io/Theater-Platform/roadmap/roadmap)
 
 * ## [Scenarios](https://schstp.github.io/Theater-Platform/scenarios/table_of_contents)
 
