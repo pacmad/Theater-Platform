@@ -44,7 +44,7 @@
 + Реализовать личный кабинет пользователя.
 
 ## **Как должно быть**
-![scheme_3](https://schstp.github.io/Theater-Platform/passport/passport/%D0%9A%D0%B0%D0%BA%20%D0%B4%D0%BE%D0%BB%D0%B6%D0%BD%D0%BE%20%D0%B1%D1%8B%D1%82%D1%8C.png "Как должно быть...")
+![scheme_3](https://schstp.github.io/Theater-Platform/passport/passport/Как%20должно%20быть.png "Как должно быть...")
 + Зритель хочет приобрести билет в театр;
 + Заходит в систему "ТомскиеТеатры";
 + Выбирает театр, знакомится с премьерами недели/месяца, выбирает спектакль;
@@ -60,7 +60,7 @@
 + Модель оплаты спектакля.
 
 ## **Дизайн-макет**
-![Примерный дизайн-макет](https://schstp.github.io/Theater-Platform/passport/passport/%D0%9F%D1%80%D0%B8%D0%BC%D0%B5%D1%80%D0%BD%D1%8B%D0%B9.JPG "Примерный дизайн-макет")  
+![Примерный дизайн-макет](https://schstp.github.io/Theater-Platform/passport/passport/Примерный.jpeg "Примерный дизайн-макет")  
 
 ## **Глоссарий**
 *Система* - реализуемая цифровая платформа.
