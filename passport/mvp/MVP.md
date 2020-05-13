@@ -29,7 +29,7 @@
 
 ###### Скетч страницы афиш:
 
-![Скетч 2](https://github.com/schstp/Theater-Platform/blob/master/passport/%D0%90%D1%84%D0%B8%D1%88%D0%B0.png)
+![Скетч 2](https://github.com/schstp/Theater-Platform/blob/master/passport/Афиша.png)
 
 ### Билеты
 
