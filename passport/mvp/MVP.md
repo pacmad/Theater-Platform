@@ -32,18 +32,18 @@
 + При покупке пользователь может сам выбирать места
 + Функция поиска с фильтрацией (цена, дата, театр)
 ###### Скетч страницы билетов:
-![Скетч 3](https://github.com/schstp/Theater-Platform/blob/master/passport/%D0%91%D0%B8%D0%BB%D0%B5%D1%82%D1%8B.png)
+![Скетч 3](https://schstp.github.io/Theater-Platform/passport/mvp/%D0%91%D0%B8%D0%BB%D0%B5%D1%82%D1%8B.png)
 ###### Скетч страницы оплаты билетов:
-![Скетч 4](https://github.com/schstp/Theater-Platform/blob/master/passport/%D0%9F%D0%BE%D0%BA%D1%83%D0%BF%D0%BA%D0%B0%20%D0%B1%D0%B8%D0%BB%D0%B5%D1%82%D0%B0.png)
+![Скетч 4](https://schstp.github.io/Theater-Platform/passport/mvp/%D0%9F%D0%BE%D0%BA%D1%83%D0%BF%D0%BA%D0%B0%20%D0%B1%D0%B8%D0%BB%D0%B5%D1%82%D0%B0.png)
 
 ### Театры Томска
 Страница с информацией о Томских театрах. 
 + Список театров с краткой информацией о них (рейтинг, адрес, телефон, краткое описание)
 + По клику на название театра - просмотр полной информации о каждом театре (о театре, премьеры, афиша, труппа, контакты)
 ###### Скетч страницы театров Томска:
-![Скетч 5](https://github.com/schstp/Theater-Platform/blob/master/passport/%D0%A2%D0%B5%D0%B0%D1%82%D1%80%D1%8B%20%D0%A2%D0%BE%D0%BC%D1%81%D0%BA%D0%B0.png)
+![Скетч 5](https://schstp.github.io/Theater-Platform/passport/mvp/%D0%A2%D0%B5%D0%B0%D1%82%D1%80%D1%8B%20%D0%A2%D0%BE%D0%BC%D1%81%D0%BA%D0%B0.png)
 ###### Скетч страницы одного театра:
-![Скетч 6](https://github.com/schstp/Theater-Platform/blob/master/passport/%D0%A1%D1%82%D1%80%D0%B0%D0%BD%D0%B8%D1%86%D0%B0%20%D1%82%D0%B5%D0%B0%D1%82%D1%80%D0%B0.png)
+![Скетч 6](https://schstp.github.io/Theater-Platform/passport/mvp/%D0%A1%D1%82%D1%80%D0%B0%D0%BD%D0%B8%D1%86%D0%B0%20%D1%82%D0%B5%D0%B0%D1%82%D1%80%D0%B0.png)
 ### Личный кабинет
 Личное пространство пользователя с его данными:
 + Данные о пользователе (фио, фото, e-mail)
@@ -52,5 +52,5 @@
 + Мои покупки (История посещений спектаклей) 
 + функция отзывы после спектакля (приходит уведомление в личный кабинет для отзыва по спектаклю)
 ###### Скетч личного кабинета:
-![Скетч 7](https://github.com/schstp/Theater-Platform/blob/master/passport/%D0%9B%D0%B8%D1%87%D0%BD%D1%8B%D0%B9%20%D0%BA%D0%B0%D0%B1%D0%B8%D0%BD%D0%B5%D1%82.png)
+![Скетч 7](https://schstp.github.io/Theater-Platform/passport/mvp/%D0%9B%D0%B8%D1%87%D0%BD%D1%8B%D0%B9%20%D0%BA%D0%B0%D0%B1%D0%B8%D0%BD%D0%B5%D1%82.png)
 
