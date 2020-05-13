@@ -52,5 +52,5 @@
 + Мои покупки (История посещений спектаклей) 
 + функция отзывы после спектакля (приходит уведомление в личный кабинет для отзыва по спектаклю)
 ###### Скетч личного кабинета:
-![Скетч 7](https://schstp.github.io/Theater-Platform/passport/mvp/%D0%9B%D0%B8%D1%87%D0%BD%D1%8B%D0%B9%20%D0%BA%D0%B0%D0%B1%D0%B8%D0%BD%D0%B5%D1%82.png)
+![Скетч 7](https://schstp.github.io/Theater-Platform/passport/mvp/Личный%20кабинет.png)
 
