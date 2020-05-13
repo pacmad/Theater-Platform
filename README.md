@@ -2,7 +2,7 @@
 
 * ## [Roadmap](https://schstp.github.io/Theater-Platform/roadmap/roadmap)
 
-* ## [Project Passport](https://schstp.github.io/Theater-Platform/passport/projectpassport)
+* ## [Project Passport, MVP](https://schstp.github.io/Theater-Platform/passport/projectpassport)
 
 * ## [Scenarios](https://schstp.github.io/Theater-Platform/scenarios/table_of_contents)
 
