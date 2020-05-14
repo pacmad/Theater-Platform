@@ -12,15 +12,21 @@
 >9. добавлено API для изменения спектакля
 >10. добавлено API для получения спектакля
 >11. добавлено API для получения спектаклей
->12. добавлено API для получения событий
->13. добавлено API для получения премьер
->14. добавлено API для получения прьмьер для слайдера
->15. добавлено API для добавления театра
->16. добавлено API для изменения театра
->17. добавлено API для получения театров
->18. добавлено API для получения театра
->19. добавлено API для получения превью театра
->20. добавлено API для получения тизера спектакля
+>12. добавлено API для удаления спектакля
+>13. добавлено API для добавления события
+>14. добавлено API для изменения события
+>15. добавлено API для получения события
+>16. добавлено API для получения событий
+>17. добавлено API для удаления события
+>18. добавлено API для получения премьер
+>19. добавлено API для получения прьмьер для слайдера
+>20. добавлено API для добавления театра
+>21. добавлено API для изменения театра
+>22. добавлено API для получения театров
+>23. добавлено API для получения театра
+>24. добавлено API для удаления театра
+>25. добавлено API для получения превью театра
+>26. добавлено API для получения тизера спектакля
 
 BASE_URL  http://host1813162.hostland.pro/api
 
@@ -266,7 +272,10 @@ BASE_URL  http://host1813162.hostland.pro/api
 |----------------	|-------------------	|
 | request method 	| PATCH|
 | route          	| BASE_URL/user/{{user_id}}|
-| error types    	| UserNotFound|
+| error types    	| UserNotFound, PermissionDenied|
+| required headers  | Authorization         |
+
+>*Note*: PermissionDenied - ошибка проверки токена доступа, который лежит в хэдере Authorization (для неавторизованных пользователей выполнение операции невозможно).
 
 #### REQUEST DATA
 
@@ -299,6 +308,10 @@ BASE_URL  http://host1813162.hostland.pro/api
         {
             "type": "UserNotFound",
             "message": "Пользователь с таким id не найден."
+        },
+        {
+            "type": "PermissionDenied",
+            "message": "Отказано в доступе."
         }
     ],
     "message": "В процессе обновления возникли ошибки. Новая информация о Вашем профиле не сохранена."
@@ -310,7 +323,10 @@ BASE_URL  http://host1813162.hostland.pro/api
 |----------------	|-------------------	|
 | request method 	| GET|
 | route          	| BASE_URL/user?id={{user_id}}|
-| error types    	| UserNotFound|
+| error types    	| UserNotFound, PermissionDenied|
+| required headers  | Authorization         |
+
+>*Note*: PermissionDenied - ошибка проверки токена доступа, который лежит в хэдере Authorization (для неавторизованных пользователей выполнение операции невозможно).
 
 #### RESPONSE DATA [SUCCESS]
 
@@ -339,8 +355,13 @@ BASE_URL  http://host1813162.hostland.pro/api
         {
             "type": "UserNotFound",
             "message": "Пользователь с таким id не найден."
+        },
+        {
+            "type": "PermissionDenied",
+            "message": "Отказано в доступе."
         }
-    ]
+    ],
+    "message": "В процессе получения информации о пользователе возникли ошибки."
 }
 ```
 ## Add User Bookmark
@@ -349,7 +370,10 @@ BASE_URL  http://host1813162.hostland.pro/api
 |----------------	|-------------------	|
 | request method 	| POST |
 | route          	| BASE_URL/user/{{user_id}}/bookmarks|
-| error types    	| UserNotFound, SpectacleNotFound |
+| error types    	| UserNotFound, SpectacleNotFound, PermissionDenied |
+| required headers  | Authorization         |
+
+>*Note*: PermissionDenied - ошибка проверки токена доступа, который лежит в хэдере Authorization (для неавторизованных пользователей выполнение операции невозможно).
 
 #### REQUEST DATA
 
@@ -383,8 +407,13 @@ BASE_URL  http://host1813162.hostland.pro/api
         {
             "type": "SpectacleNotFound",
             "message": "Спектакль с таким id не найден."
+        },
+        {
+            "type": "PermissionDenied",
+            "message": "Отказано в доступе."
         }
-    ]
+    ],
+    "message": "В процессе добавления спектакля в закладки возникли ошибки."
 }
 ```
 ## Delete User Bookmark
@@ -393,7 +422,10 @@ BASE_URL  http://host1813162.hostland.pro/api
 |----------------	|-------------------	|
 | request method 	| DELETE |
 | route          	| BASE_URL/user/{{user_id}}/bookmarks/{{spectacle_id}}|
-| error types    	| UserNotFound, BookmarkNotFound |
+| error types    	| UserNotFound, BookmarkNotFound, PermissionDenied |
+| required headers  | Authorization         |
+
+>*Note*: PermissionDenied - ошибка проверки токена доступа, который лежит в хэдере Authorization (для неавторизованных пользователей выполнение операции невозможно).
 
 #### RESPONSE DATA [SUCCESS]
 
@@ -419,8 +451,13 @@ BASE_URL  http://host1813162.hostland.pro/api
         {
             "type": "BookmarkNotFound",
             "message": "Закладка пользователя с таким id не найдена."
+        },
+        {
+            "type": "PermissionDenied",
+            "message": "Отказано в доступе."
         }
-    ]
+    ],
+    "message": "В процессе удаления спектакля из закладок пользователя возникли ошибки."
 }
 ```
 
@@ -430,7 +467,10 @@ BASE_URL  http://host1813162.hostland.pro/api
 |----------------	|-------------------	|
 | request method 	| GET |
 | route          	| BASE_URL/user/{{user_id}}/bookmarks|
-| error types    	| UserNotFound |
+| error types    	| UserNotFound, PermissionDenied |
+| required headers  | Authorization         |
+
+>*Note*: PermissionDenied - ошибка проверки токена доступа, который лежит в хэдере Authorization (для неавторизованных пользователей выполнение операции невозможно).
 
 #### RESPONSE DATA [SUCCESS]
 
@@ -471,8 +511,13 @@ BASE_URL  http://host1813162.hostland.pro/api
         {
             "type": "UserNotFound",
             "message": "Пользователь с таким id не найден."
+        },
+        {
+            "type": "PermissionDenied",
+            "message": "Отказано в доступе."
         }
-    ]
+    ],
+    "message": "В процессе получения информации о закладках пользователя возникли ошибки."
 }
 ```
 
@@ -482,7 +527,10 @@ BASE_URL  http://host1813162.hostland.pro/api
 |----------------	|-------------------	|
 | request method 	| GET |
 | route          	| BASE_URL/user/{{user_id}}/tickets|
-| error types    	| UserNotFound |
+| error types    	| UserNotFound, PermissionDenied |
+| required headers  | Authorization         |
+
+>*Note*: PermissionDenied - ошибка проверки токена доступа, который лежит в хэдере Authorization (для неавторизованных пользователей выполнение операции невозможно).
 
 #### RESPONSE DATA [SUCCESS]
 
@@ -585,8 +633,13 @@ BASE_URL  http://host1813162.hostland.pro/api
         {
             "type": "UserNotFound",
             "message": "Пользователь с таким id не найден."
+        },
+        {
+            "type": "PermissionDenied",
+            "message": "Отказано в доступе."
         }
-    ]
+    ],
+    "message": "В процессе получения информации о истории платежей пользователя возникли ошибки."
 }
 ```
 ## Get User Commetns
@@ -595,7 +648,10 @@ BASE_URL  http://host1813162.hostland.pro/api
 |----------------	|-------------------	|
 | request method 	| GET |
 | route          	| BASE_URL/user/{{user_id}}/comments|
-| error types    	| UserNotFound |
+| error types    	| UserNotFound, PermissionDenied |
+| required headers  | Authorization         |
+
+>*Note*: PermissionDenied - ошибка проверки токена доступа, который лежит в хэдере Authorization (для неавторизованных пользователей выполнение операции невозможно).
 
 #### RESPONSE DATA [SUCCESS]
 
@@ -650,8 +706,13 @@ BASE_URL  http://host1813162.hostland.pro/api
         {
             "type": "UserNotFound",
             "message": "Пользователь с таким id не найден."
+        },
+        {
+            "type": "PermissionDenied",
+            "message": "Отказано в доступе."
         }
-    ]
+    ],
+    "message": "В процессе получения комментариев пользователя возникли ошибки."
 }
 ```
 
@@ -661,7 +722,10 @@ BASE_URL  http://host1813162.hostland.pro/api
 |----------------	|-------------------	|
 | request method 	| POST |
 | route          	| BASE_URL/spectacles|
-| error types    	| TheaterNotFound |
+| error types    	| TheaterNotFound, PermissionDenied |
+| required headers  | Authorization         |
+
+>*Note*: PermissionDenied - ошибка проверки токена доступа, который лежит в хэдере Authorization (для неавторизованных пользователей выполнение операции невозможно).
 
 #### REQUEST DATA
 
@@ -696,8 +760,13 @@ BASE_URL  http://host1813162.hostland.pro/api
         {
             "type": "TheaterNotFound",
             "message": "Театр с таким id не найден."
+        },
+        {
+            "type": "PermissionDenied",
+            "message": "Отказано в доступе."
         }
-    ]
+    ],
+    "message": "В процессе добавления спектакля возникли ошибки."
 }
 ```
 
@@ -707,7 +776,10 @@ BASE_URL  http://host1813162.hostland.pro/api
 |----------------	|-------------------	|
 | request method 	| PATCH |
 | route          	| BASE_URL/spectacles/{{spectacle_id}}|
-| error types    	| SpectacleNotFound |
+| error types    	| SpectacleNotFound, PermissionDenied |
+| required headers  | Authorization         |
+
+>*Note*: PermissionDenied - ошибка проверки токена доступа, который лежит в хэдере Authorization (для неавторизованных пользователей выполнение операции невозможно).
 
 #### REQUEST DATA
 
@@ -731,8 +803,13 @@ BASE_URL  http://host1813162.hostland.pro/api
         {
             "type": "SpectacleNotFound",
             "message": "Спектакль с таким id не найден."
+        },
+        {
+            "type": "PermissionDenied",
+            "message": "Отказано в доступе."
         }
-    ]
+    ],
+    "message": "В процессе обновления спектакля возникли ошибки."
 }
 ```
 
@@ -770,10 +847,11 @@ BASE_URL  http://host1813162.hostland.pro/api
     "has_errors": true,
     "errors": [
         {
-            "type": "TheaterNotFound",
-            "message": "Театр с таким id не найден."
+            "type": "SpectacleNotFound",
+            "message": "Спектакль с таким id не найден."
         }
-    ]
+    ],
+    "message": "В процессе получения информации о спектакле возникли ошибки."
 }
 ```
 
@@ -782,39 +860,242 @@ BASE_URL  http://host1813162.hostland.pro/api
 |attribute        |value         	      |
 |----------------	|-------------------	|
 | request method 	| GET |
-| route          	| BASE_URL/theaters|
-| error types    	| |
+| route          	| BASE_URL/spectacles?theater_id={{theater_id}}|
+| error types    	| TheaterNotFound, PermissionDenied|
 
 #### RESPONSE DATA [SUCCESS]
 
->*Note*: 1) Возвращаются все театры. В примере ответа от сервера приведено 2 результата. 2) Если театров нет, theaters будет пустым списком.
+>*Note*: 1) Возвращаются все спектакли с трибутом id театра == theater_id. В примере ответа от сервера приведено 2 результата. 2) Если спектаклей нет, spectacles будет пустым списком.
 
 ```json
 {
     "has_errors": false,
     "errors": [],
-    "theaters": [
+    "spectacles": [
         {
             "id": 1,
-            "name": "theater_name_1",
-            "description": "theater_description_1"
-            "address": "theater_address_1",
-            "logo": "theater_logo_1",
-            "photo": "theater_photo_1"
-            "cash_desk_phone_number": "theater_cash_desk_phone_number_1",
-            "phone_number_for_reference": "theater_phone_number_for_reference_1"
+            "name": "spectacle_name_1",
+            "rate": 4.7,
+            "poster": "spectacle_poster_1"
         },
         {
             "id": 2,
-            "name": "theater_name_2",
-            "description": "theater_description_2"
-            "address": "theater_address_2",
-            "logo": "theater_logo_2",
-            "photo": "theater_photo_2"
-            "cash_desk_phone_number": "theater_cash_desk_phone_number_2",
-            "phone_number_for_reference": "theater_phone_number_for_reference_2"
+            "name": "spectacle_name_2",
+            "rate": 4.1,
+            "poster": "spectacle_poster_2"
         },
     ]
+}
+```
+
+#### RESPONSE DATA [FAIL]
+
+```json
+{
+    "has_errors": true,
+    "errors": [
+        {
+            "type": "TheaterNotFound",
+            "message": "Театр с таким id не найден."
+        }
+    ],
+    "message": "В процессе получения информации о спектаклях театра возникли ошибки."
+}
+```
+
+## Delete Spectacle
+
+|attribute        |value         	      |
+|----------------	|-------------------	|
+| request method 	| DELETE |
+| route          	| BASE_URL/spectacles/{{spectacle_id}}|
+| error types    	| SpectacleNotFound, PermissionDenied |
+| required headers  | Authorization         |
+
+>*Note*: PermissionDenied - ошибка проверки токена доступа, который лежит в хэдере Authorization (для неавторизованных пользователей выполнение операции невозможно).
+
+#### RESPONSE DATA [SUCCESS]
+
+```json
+{
+    "has_errors": false,
+    "errors": [],
+    "message": "Спектакль успешно удален",
+}
+```
+#### RESPONSE DATA [FAIL]
+
+```json
+{
+    "has_errors": true,
+    "errors": [
+        {
+            "type": "SpectacleNotFound",
+            "message": "Спектакль с таким id не найден."
+        },
+        {
+            "type": "PermissionDenied",
+            "message": "Отказано в доступе."
+        }
+    ],
+    "message": "В процессе удаления спектакля возникли ошибки."
+}
+```
+
+## Add Event
+
+|attribute        |value         	      |
+|----------------	|-------------------	|
+| request method 	| POST |
+| route          	| BASE_URL/events|
+| error types    	| SpectacleNotFound, HallNotFound, PermissionDenied |
+| required headers  | Authorization         |
+
+>*Note*: PermissionDenied - ошибка проверки токена доступа, который лежит в хэдере Authorization (для неавторизованных пользователей выполнение операции невозможно).
+
+#### REQUEST DATA
+
+```json
+{
+    "dated_at": "event_date",
+    "description": "event_description"
+    "is_premiere": true,
+    "is_choosen_for_main_page": false,
+    "available_seats_number": 145,
+    "spectacle_id": 25,
+    "hall_id": 2
+}
+```
+
+#### RESPONSE DATA [SUCCESS]
+
+```json
+{
+    "has_errors": false,
+    "errors": [],
+    "message": "Событие успешно добавлено."
+}
+```
+
+#### RESPONSE DATA [FAIL]
+
+>*Note*: 1) Возвращаются только найденные ошибки; 2) Перечислены все возможные ошибки.
+
+```json
+{
+    "has_errors": true,
+    "errors": [
+        {
+            "type": "SpectacleNotFound",
+            "message": "Спектакль с таким id не найден."
+        },
+        {
+            "type": "HallNotFound",
+            "message": "Зал с таким id не найден."
+        },
+        {
+            "type": "PermissionDenied",
+            "message": "Отказано в доступе."
+        }
+    ],
+    "message": "В процессе добавления события возникли ошибки."
+}
+```
+
+## Update Event
+
+|attribute        |value         	      |
+|----------------	|-------------------	|
+| request method 	| PATCH |
+| route          	| BASE_URL/events/{{event_id}}|
+| error types    	| EventNotFound, SpectacleNotFound, HallNotFound, PermissionDenied |
+| required headers  | Authorization         |
+
+>*Note*: PermissionDenied - ошибка проверки токена доступа, который лежит в хэдере Authorization (для неавторизованных пользователей выполнение операции невозможно).
+
+#### REQUEST DATA
+
+```json
+{
+    "dated_at": "new_event_date",
+    "description": "new_event_description"
+    "is_premiere": false,
+    "is_choosen_for_main_page": false,
+    "available_seats_number": 234,
+    "spectacle_id": 12,
+    "hall_id": 1
+}
+```
+
+#### RESPONSE DATA [FAIL]
+
+>*Note*: 1) Возвращаются только найденные ошибки; 2) Перечислены все возможные ошибки.
+
+```json
+{
+    "has_errors": true,
+    "errors": [
+        {
+            "type": "EventNotFound",
+            "message": "Событие с таким id не найдено."
+        },
+        {
+            "type": "SpectacleNotFound",
+            "message": "Спектакль с таким id не найден."
+        },
+        {
+            "type": "HallNotFound",
+            "message": "Зал с таким id не найден."
+        },
+        {
+            "type": "PermissionDenied",
+            "message": "Отказано в доступе."
+        }
+    ],
+    "message": "В процессе обновления информации о событии возникли ошибки."
+}
+```
+
+## Get Event
+
+|attribute        |value         	      |
+|----------------	|-------------------	|
+| request method 	| GET |
+| route          	| BASE_URL/event?id={{event_id}}|
+| error types    	| EventNotFound |
+
+#### RESPONSE DATA [SUCCESS]
+
+>*Note*: 1) Возвращаются событие c id == event_id.
+
+```json
+{
+    "has_errors": false,
+    "errors": [],
+    "event": {
+        "dated_at": "event_date",
+        "description": "event_description"
+        "is_premiere": true,
+        "is_choosen_for_main_page": false,
+        "available_seats_number": 145,
+        "spectacle_id": 25,
+        "hall_id": 2
+    }
+}
+```
+
+#### RESPONSE DATA [FAIL]
+
+```json
+{
+    "has_errors": true,
+    "errors": [
+        {
+            "type": "EventNotFound",
+            "message": "Событие с таким id не найдено."
+        }
+    ],
+    "message": "В процессе получения информации о событии возникли ошибки."
 }
 ```
 
@@ -896,9 +1177,50 @@ BASE_URL  http://host1813162.hostland.pro/api
             "type": "DateFormatError",
             "message": "Неверный формат даты."
         }
-    ]
+    ],
+    "message": "В процессе получения информации о событиях возникли ошибки."
 }
 ```
+
+## Delete Event
+
+|attribute        |value         	      |
+|----------------	|-------------------	|
+| request method 	| DELETE |
+| route          	| BASE_URL/events/{{event_id}}|
+| error types    	| EventNotFound, Permission Denied |
+| required headers  | Authorization         |
+
+>*Note*: PermissionDenied - ошибка проверки токена доступа, который лежит в хэдере Authorization (для неавторизованных пользователей выполнение операции невозможно).
+
+#### RESPONSE DATA [SUCCESS]
+
+```json
+{
+    "has_errors": false,
+    "errors": [],
+    "message": "Событие успешно удалено",
+}
+```
+#### RESPONSE DATA [FAIL]
+
+```json
+{
+    "has_errors": true,
+    "errors": [
+        {
+            "type": "EventNotFound",
+            "message": "Событие с таким id не найдено."
+        },
+        {
+            "type": "PermissionDenied",
+            "message": "Отказано в доступе."
+        }
+    ],
+    "message": "В процессе удаления события возникли ошибки."
+}
+```
+
 ## Get Premieres
 
 |attribute        |value         	      |
@@ -1023,7 +1345,10 @@ BASE_URL  http://host1813162.hostland.pro/api
 |----------------	|-------------------	|
 | request method 	| POST |
 | route          	| BASE_URL/theaters|
-| error types    	|  |
+| error types    	| PermissionDenied |
+| required headers  | Authorization         |
+
+>*Note*: PermissionDenied - ошибка проверки токена доступа, который лежит в хэдере Authorization (для неавторизованных пользователей выполнение операции невозможно).
 
 #### REQUEST DATA
 
@@ -1050,13 +1375,31 @@ BASE_URL  http://host1813162.hostland.pro/api
 }
 ```
 
+#### RESPONSE DATA [FAIL]
+
+```json
+{
+    "has_errors": true,
+    "errors": [
+        {
+            "type": "PermissionDenied",
+            "message": "Отказано в доступе."
+        }
+    ],
+    "message": "В процессе добавления нового театра возникли ошибки."
+}
+```
+
 ## Update Theater
 
 |attribute        |value         	      |
 |----------------	|-------------------	|
 | request method 	| PATCH |
 | route          	| BASE_URL/theaters/{{theater_id}}|
-| error types    	| TheaterNotFound |
+| error types    	| TheaterNotFound, PermissionDenied |
+| required headers  | Authorization         |
+
+>*Note*: PermissionDenied - ошибка проверки токена доступа, который лежит в хэдере Authorization (для неавторизованных пользователей выполнение операции невозможно).
 
 #### REQUEST DATA
 
@@ -1081,8 +1424,13 @@ BASE_URL  http://host1813162.hostland.pro/api
         {
             "type": "TheaterNotFound",
             "message": "Театр с таким id не найден."
+        },
+        {
+            "type": "PermissionDenied",
+            "message": "Отказано в доступе."
         }
-    ]
+    ],
+    "message": "В процессе обновления информации о театре возникли ошибки."
 }
 ```
 
@@ -1125,7 +1473,8 @@ BASE_URL  http://host1813162.hostland.pro/api
             "type": "TheaterNotFound",
             "message": "Театр с таким id не найден."
         }
-    ]
+    ],
+    "message": "В процессе получения информации о театре возникли ошибки."
 }
 ```
 
@@ -1170,6 +1519,45 @@ BASE_URL  http://host1813162.hostland.pro/api
 }
 ```
 
+## Delete Theater
+
+|attribute        |value         	      |
+|----------------	|-------------------	|
+| request method 	| DELETE |
+| route          	| BASE_URL/theaters/{{theater_id}}|
+| error types    	| TheaterNotFound, PermissionDenied |
+| required headers  | Authorization         |
+
+>*Note*: PermissionDenied - ошибка проверки токена доступа, который лежит в хэдере Authorization (для неавторизованных пользователей выполнение операции невозможно).
+
+#### RESPONSE DATA [SUCCESS]
+
+```json
+{
+    "has_errors": false,
+    "errors": [],
+    "message": "Театр успешно удален",
+}
+```
+#### RESPONSE DATA [FAIL]
+
+```json
+{
+    "has_errors": true,
+    "errors": [
+        {
+            "type": "TheaterNotFound",
+            "message": "Театр с таким id не найден."
+        },
+        {
+            "type": "PermissionDenied",
+            "message": "Отказано в доступе."
+        }
+    ],
+    "message": "В процессе удаления театра возникли ошибки."
+}
+```
+
 ## Get Theater Preview
 
 |attribute        |value         	      |
@@ -1199,7 +1587,8 @@ BASE_URL  http://host1813162.hostland.pro/api
             "type": "TheaterNotFound",
             "message": "Театр с таким id не найден."
         }
-    ]
+    ],
+    "message": "В процессе загрузки превью театра возникли ошибки."
 }
 ```
 
@@ -1232,6 +1621,7 @@ BASE_URL  http://host1813162.hostland.pro/api
             "type": "TheaterNotFound",
             "message": "Спектакль с таким id не найден."
         }
-    ]
+    ],
+    "message": "В процессе загрузки трейлера спектакля возникли ошибки."
 }
 ```
