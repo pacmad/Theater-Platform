@@ -27,6 +27,15 @@
 >24. добавлено API для удаления театра
 >25. добавлено API для получения превью театра
 >26. добавлено API для получения тизера спектакля
+>27. добавлено API для добавления социальной сети
+>28. добавлено API для изменения социальной сети
+>29. добавлено API для получения социальной сети
+>30. добавлено API для удаления социальной сети
+>31. добавлено API для добавления группы театра в социальной сети
+>32. добавлено API для изменения группы театра в социальной сети
+>33. добавлено API для получения группы театра в социальной сети
+>34. добавлено API для получения групп театра в социальной сети
+>35. добавлено API для удаления группы театра в социальной сети
 
 BASE_URL  http://host1813162.hostland.pro/api
 
@@ -1623,5 +1632,396 @@ BASE_URL  http://host1813162.hostland.pro/api
         }
     ],
     "message": "В процессе загрузки трейлера спектакля возникли ошибки."
+}
+```
+
+## Add Social Network
+
+|attribute        |value         	      |
+|----------------	|-------------------	|
+| request method 	| POST |
+| route          	| BASE_URL/socialnetworks|
+| error types    	| PermissionDenied |
+| required headers  | Authorization         |
+
+>*Note*: PermissionDenied - ошибка проверки токена доступа, который лежит в хэдере Authorization (для неавторизованных пользователей выполнение операции невозможно).
+
+#### REQUEST DATA
+
+```json
+{
+    "name": "social_network_name",
+    "logo": "social_network_logo"
+}
+```
+
+#### RESPONSE DATA [SUCCESS]
+
+```json
+{
+    "has_errors": false,
+    "errors": [],
+    "message": "Социальная сеть успешно добавлена."
+}
+```
+
+#### RESPONSE DATA [FAIL]
+
+```json
+{
+    "has_errors": true,
+    "errors": [
+        {
+            "type": "PermissionDenied",
+            "message": "Отказано в доступе."
+        }
+    ],
+    "message": "В процессе добавления социальной сети возникли ошибки."
+}
+```
+
+## Update Social Network
+
+|attribute        |value         	      |
+|----------------	|-------------------	|
+| request method 	| PATCH |
+| route          	| BASE_URL/socialnetworks/{{social_network_id}}|
+| error types    	| SocialNetworkNotFound, PermissionDenied |
+| required headers  | Authorization         |
+
+>*Note*: PermissionDenied - ошибка проверки токена доступа, который лежит в хэдере Authorization (для неавторизованных пользователей выполнение операции невозможно).
+
+#### REQUEST DATA
+
+```json
+{
+    "name": "new_social_network_name",
+    "logo": "new_social_network_logo"
+}
+```
+
+#### RESPONSE DATA [FAIL]
+
+```json
+{
+    "has_errors": true,
+    "errors": [
+        {
+            "type": "SocialNetworkNotFound",
+            "message": "Социальная сеть с таким id не найдена."
+        },
+        {
+            "type": "PermissionDenied",
+            "message": "Отказано в доступе."
+        }
+    ],
+    "message": "В процессе обновления социальной сети возникли ошибки."
+}
+```
+
+## Get Social Network
+
+|attribute        |value         	      |
+|----------------	|-------------------	|
+| request method 	| GET |
+| route          	| BASE_URL/socialnetworks?id={{social_network_id}}|
+| error types    	| SocialNetworkNotFound |
+
+#### RESPONSE DATA [SUCCESS]
+
+>*Note*: 1) Возвращаются социальная сеть c id == social_network_id.
+
+```json
+{
+    "has_errors": false,
+    "errors": [],
+    "social_network": {
+        "name": "social_network_name",
+        "logo": "social_network_logo"
+    }
+}
+```
+
+#### RESPONSE DATA [FAIL]
+
+```json
+{
+    "has_errors": true,
+    "errors": [
+        {
+            "type": "SocialNetworkNotFound",
+            "message": "Социальная сеть с таким id не найдена."
+        }
+    ],
+    "message": "В процессе получения информации о социальной сети возникли ошибки."
+}
+```
+
+## Delete Social Network
+
+|attribute        |value         	      |
+|----------------	|-------------------	|
+| request method 	| DELETE |
+| route          	| BASE_URL/socialnetworks/{{social_network_id}}|
+| error types    	| SocialNetworkNotFound, PermissionDenied |
+| required headers  | Authorization         |
+
+>*Note*: PermissionDenied - ошибка проверки токена доступа, который лежит в хэдере Authorization (для неавторизованных пользователей выполнение операции невозможно).
+
+#### RESPONSE DATA [SUCCESS]
+
+```json
+{
+    "has_errors": false,
+    "errors": [],
+    "message": "Социальная сеть успешно удалена",
+}
+```
+#### RESPONSE DATA [FAIL]
+
+```json
+{
+    "has_errors": true,
+    "errors": [
+        {
+            "type": "SocialNetworkNotFound",
+            "message": "Социальная сеть с таким id не найдена."
+        },
+        {
+            "type": "PermissionDenied",
+            "message": "Отказано в доступе."
+        }
+    ],
+    "message": "В процессе удаления социальной сети возникли ошибки."
+}
+```
+
+## Add Theater Social Network Community Group
+
+|attribute        |value         	      |
+|----------------	|-------------------	|
+| request method 	| POST |
+| route          	| BASE_URL/theaters/{{theater_id}}/socialnetworks/{{social_network_id}}|
+| error types    	| PermissionDenied, TheaterNotFound, SocialNetworkNotFound |
+| required headers  | Authorization         |
+
+>*Note*: PermissionDenied - ошибка проверки токена доступа, который лежит в хэдере Authorization (для неавторизованных пользователей выполнение операции невозможно).
+
+#### REQUEST DATA
+
+```json
+{
+    "url_to_community": "theater_social_network_community_group_url"
+}
+```
+
+#### RESPONSE DATA [SUCCESS]
+
+```json
+{
+    "has_errors": false,
+    "errors": [],
+    "message": "Группа театра в социальной сети успешно добавлена."
+}
+```
+
+#### RESPONSE DATA [FAIL]
+
+```json
+{
+    "has_errors": true,
+    "errors": [
+        {
+            "type": "PermissionDenied",
+            "message": "Отказано в доступе."
+        },
+        {
+            "type": "SocialNetworkNotFound",
+            "message": "Социальная сеть с таким id не найдена."
+        },
+        {
+            "type": "TheaterNotFound",
+            "message": "Театр с таким id не найден."
+        }
+    ],
+    "message": "В процессе добавления группы театра в социальной сети возникли ошибки."
+}
+```
+
+## Update Theater Social Network Community Group
+
+|attribute        |value         	      |
+|----------------	|-------------------	|
+| request method 	| PATCH |
+| route          	| BASE_URL/theaters/{{theater_id}}/socialnetworks/{{social_network_id}} |
+| error types    	| SocialNetworkNotFound, TheaterNotFound, PermissionDenied |
+| required headers  | Authorization         |
+
+>*Note*: PermissionDenied - ошибка проверки токена доступа, который лежит в хэдере Authorization (для неавторизованных пользователей выполнение операции невозможно).
+
+#### REQUEST DATA
+
+```json
+{
+    "url_to_community": "new_theater_social_network_community_group_url"
+}
+```
+
+#### RESPONSE DATA [FAIL]
+
+```json
+{
+    "has_errors": true,
+    "errors": [
+        {
+            "type": "PermissionDenied",
+            "message": "Отказано в доступе."
+        },
+        {
+            "type": "SocialNetworkNotFound",
+            "message": "Социальная сеть с таким id не найдена."
+        },
+        {
+            "type": "TheaterNotFound",
+            "message": "Театр с таким id не найден."
+        }
+    ],
+    "message": "В процессе обновления группы театра в социальной сети возникли ошибки."
+}
+```
+
+## Get Theater Social Network Community Group
+
+|attribute        |value         	      |
+|----------------	|-------------------	|
+| request method 	| GET |
+| route          	| BASE_URL/theaters/{{theater_id}}/socialnetworks/{{social_network_id}} |
+| error types    	| SocialNetworkNotFound, TheaterNotFound, PermissionDenied |
+
+#### RESPONSE DATA [SUCCESS]
+
+```json
+{
+    "has_errors": false,
+    "errors": [],
+    "url_to_community": "theater_social_network_community_group_url",
+}
+```
+
+#### RESPONSE DATA [FAIL]
+
+```json
+{
+    "has_errors": true,
+    "errors": [
+        {
+            "type": "PermissionDenied",
+            "message": "Отказано в доступе."
+        },
+        {
+            "type": "SocialNetworkNotFound",
+            "message": "Социальная сеть с таким id не найдена."
+        },
+        {
+            "type": "TheaterNotFound",
+            "message": "Театр с таким id не найден."
+        }
+    ],
+    "message": "В процессе получения информации о группе театра в социальной сети возникли ошибки."
+}
+```
+
+## Get Theater Social Network Community Groups
+
+|attribute        |value         	      |
+|----------------	|-------------------	|
+| request method 	| GET |
+| route          	| BASE_URL/theaters/{{theater_id}}/socialnetworks |
+| error types    	| TheaterNotFound, PermissionDenied |
+
+#### RESPONSE DATA [SUCCESS]
+
+>*Note*: 1) Возвращаются все url на группы театра в социальной сети. В примере ответа от сервера приведено 2 результата. 2) Если групп нет, social_networks будет пустым списком.
+
+```json
+{
+    "has_errors": false,
+    "errors": [],
+    "social_networks": [
+        {
+            "id": 1,
+            "name": "social_network_name_1",
+            "url_to_community": "theater_social_network_community_group_url_1",
+            "logo": "social_network_logo_1"
+        },
+        {
+            "id": 2,
+            "name": "social_network_name_2",
+            "url_to_community": "theater_social_network_community_group_url_2",
+            "logo": "social_network_logo_2"
+        }
+    ]
+}
+```
+
+#### RESPONSE DATA [FAIL]
+
+```json
+{
+    "has_errors": true,
+    "errors": [
+        {
+            "type": "PermissionDenied",
+            "message": "Отказано в доступе."
+        },
+        {
+            "type": "TheaterNotFound",
+            "message": "Театр с таким id не найден."
+        }
+    ],
+    "message": "В процессе получения информации о группах театра в социальных сетях возникли ошибки."
+}
+```
+
+## Delete Theater Social Network Community Group
+
+|attribute        |value         	      |
+|----------------	|-------------------	|
+| request method 	| DELETE |
+| route          	| BASE_URL/theaters/{{theater_id}}/socialnetworks/{{social_network_id}} |
+| error types    	| SocialNetworkNotFound, TheaterNotFound, PermissionDenied |
+| required headers  | Authorization         |
+
+>*Note*: PermissionDenied - ошибка проверки токена доступа, который лежит в хэдере Authorization (для неавторизованных пользователей выполнение операции невозможно).
+
+#### RESPONSE DATA [SUCCESS]
+
+```json
+{
+    "has_errors": false,
+    "errors": [],
+    "message": "Информация о группе театра в социальной сети успешно удалена",
+}
+```
+#### RESPONSE DATA [FAIL]
+
+```json
+{
+    "has_errors": true,
+    "errors": [
+        {
+            "type": "PermissionDenied",
+            "message": "Отказано в доступе."
+        },
+        {
+            "type": "SocialNetworkNotFound",
+            "message": "Социальная сеть с таким id не найдена."
+        },
+        {
+            "type": "TheaterNotFound",
+            "message": "Театр с таким id не найден."
+        }
+    ],
+    "message": "В процессе удаления группы театра в социальной сети возникли ошибки."
 }
 ```
