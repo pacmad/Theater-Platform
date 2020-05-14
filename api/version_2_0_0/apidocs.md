@@ -8,11 +8,19 @@
 >5. добавлено API для получения закладок пользователя
 >6. добавлено API для получения истории покупок пользователя
 >7. добавлено API для получения написанных пользователем отзывов
->8. добавлено API для получения событий
->9. добавлено API для получения премьер
->10. добавлено API для получения прьмьер для слайдера
->11. добавлено API для получения театров
->12. добавлено API для получения театра
+>8. добавлено API для добавления спектакля
+>9. добавлено API для изменения спектакля
+>10. добавлено API для получения спектакля
+>11. добавлено API для получения спектаклей
+>12. добавлено API для получения событий
+>13. добавлено API для получения премьер
+>14. добавлено API для получения прьмьер для слайдера
+>15. добавлено API для добавления театра
+>16. добавлено API для изменения театра
+>17. добавлено API для получения театров
+>18. добавлено API для получения театра
+>19. добавлено API для получения превью театра
+>20. добавлено API для получения тизера спектакля
 
 BASE_URL  http://host1813162.hostland.pro/api
 
@@ -646,6 +654,170 @@ BASE_URL  http://host1813162.hostland.pro/api
     ]
 }
 ```
+
+## Add Spectacle
+
+|attribute        |value         	      |
+|----------------	|-------------------	|
+| request method 	| POST |
+| route          	| BASE_URL/spectacles|
+| error types    	| TheaterNotFound |
+
+#### REQUEST DATA
+
+```json
+{
+    "name": "spectacle_name",
+    "description": "spectacle_description"
+    "rate": 0,
+    "poster": "spectacle_poster",
+    "trailer": "spectacle_trailer",
+    "slider_poster": "spectacle_slider_poster",
+    "theater_id": "theater_id"
+}
+```
+
+#### RESPONSE DATA [SUCCESS]
+
+```json
+{
+    "has_errors": false,
+    "errors": [],
+    "message": "Спектакль успешно добавлен."
+}
+```
+
+#### RESPONSE DATA [FAIL]
+
+```json
+{
+    "has_errors": true,
+    "errors": [
+        {
+            "type": "TheaterNotFound",
+            "message": "Театр с таким id не найден."
+        }
+    ]
+}
+```
+
+## Update Spectacle
+
+|attribute        |value         	      |
+|----------------	|-------------------	|
+| request method 	| PATCH |
+| route          	| BASE_URL/spectacles/{{spectacle_id}}|
+| error types    	| SpectacleNotFound |
+
+#### REQUEST DATA
+
+```json
+{
+    "name": "new_spectacle_name",
+    "description": "new_spectacle_description"
+    "rate": 0,
+    "poster": "new_spectacle_poster",
+    "trailer": "new_spectacle_trailer",
+    "slider_poster": "new_spectacle_slider_poster"
+}
+```
+
+#### RESPONSE DATA [FAIL]
+
+```json
+{
+    "has_errors": true,
+    "errors": [
+        {
+            "type": "SpectacleNotFound",
+            "message": "Спектакль с таким id не найден."
+        }
+    ]
+}
+```
+
+## Get Spectacle
+
+|attribute        |value         	      |
+|----------------	|-------------------	|
+| request method 	| GET |
+| route          	| BASE_URL/spectacles?id={{spectacle_id}}|
+| error types    	| SpectacleNotFound |
+
+#### RESPONSE DATA [SUCCESS]
+
+>*Note*: 1) Возвращаются спектакль c id == spectacle_id.
+
+```json
+{
+    "has_errors": false,
+    "errors": [],
+    "spectacle": {
+        "name": "spectacle_name",
+        "description": "spectacle_description"
+        "rate": 4.7,
+        "poster": "spectacle_poster",
+        "slider_poster": "spectacle_slider_poster",
+        "theater_id": "theater_id"
+    }
+}
+```
+
+#### RESPONSE DATA [FAIL]
+
+```json
+{
+    "has_errors": true,
+    "errors": [
+        {
+            "type": "TheaterNotFound",
+            "message": "Театр с таким id не найден."
+        }
+    ]
+}
+```
+
+## Get Spectacles
+
+|attribute        |value         	      |
+|----------------	|-------------------	|
+| request method 	| GET |
+| route          	| BASE_URL/theaters|
+| error types    	| |
+
+#### RESPONSE DATA [SUCCESS]
+
+>*Note*: 1) Возвращаются все театры. В примере ответа от сервера приведено 2 результата. 2) Если театров нет, theaters будет пустым списком.
+
+```json
+{
+    "has_errors": false,
+    "errors": [],
+    "theaters": [
+        {
+            "id": 1,
+            "name": "theater_name_1",
+            "description": "theater_description_1"
+            "address": "theater_address_1",
+            "logo": "theater_logo_1",
+            "photo": "theater_photo_1"
+            "cash_desk_phone_number": "theater_cash_desk_phone_number_1",
+            "phone_number_for_reference": "theater_phone_number_for_reference_1"
+        },
+        {
+            "id": 2,
+            "name": "theater_name_2",
+            "description": "theater_description_2"
+            "address": "theater_address_2",
+            "logo": "theater_logo_2",
+            "photo": "theater_photo_2"
+            "cash_desk_phone_number": "theater_cash_desk_phone_number_2",
+            "phone_number_for_reference": "theater_phone_number_for_reference_2"
+        },
+    ]
+}
+```
+
 ## Get Events
 
 |attribute        |value         	      |
@@ -844,6 +1016,119 @@ BASE_URL  http://host1813162.hostland.pro/api
     ]
 }
 ```
+
+## Add Theater
+
+|attribute        |value         	      |
+|----------------	|-------------------	|
+| request method 	| POST |
+| route          	| BASE_URL/theaters|
+| error types    	|  |
+
+#### REQUEST DATA
+
+```json
+{
+    "name": "theater_name",
+    "description": "theater_description"
+    "address": "theater_address",
+    "logo": "theater_logo",
+    "photo": "theater_photo",
+    "preview": "theater_preview",
+    "cash_desk_phone_number": "theater_cash_desk_phone_number",
+    "phone_number_for_reference": "theater_phone_number_for_reference"
+}
+```
+
+#### RESPONSE DATA [SUCCESS]
+
+```json
+{
+    "has_errors": false,
+    "errors": [],
+    "message": "Театр успешно добавлен."
+}
+```
+
+## Update Theater
+
+|attribute        |value         	      |
+|----------------	|-------------------	|
+| request method 	| PATCH |
+| route          	| BASE_URL/theaters/{{theater_id}}|
+| error types    	| TheaterNotFound |
+
+#### REQUEST DATA
+
+```json
+{
+    "name": "new_theater_name",
+    "description": "new_theater_description"
+    "address": "new_theater_address",
+    "logo": "new_theater_logo",
+    "photo": "new_theater_photo",
+    "preview": "new_theater_preview",
+    "cash_desk_phone_number": "new_theater_cash_desk_phone_number",
+    "phone_number_for_reference": "new_theater_phone_number_for_reference"
+}
+```
+#### RESPONSE DATA [FAIL]
+
+```json
+{
+    "has_errors": true,
+    "errors": [
+        {
+            "type": "TheaterNotFound",
+            "message": "Театр с таким id не найден."
+        }
+    ]
+}
+```
+
+## Get Theater
+
+|attribute        |value         	      |
+|----------------	|-------------------	|
+| request method 	| GET |
+| route          	| BASE_URL/theaters?id={{theater_id}}|
+| error types    	| TheaterNotFound |
+
+#### RESPONSE DATA [SUCCESS]
+
+>*Note*: 1) Возвращаются театр c id == theater_id.
+
+```json
+{
+    "has_errors": false,
+    "errors": [],
+    "theater": {
+            "id": 1,
+            "name": "theater_name_1",
+            "description": "theater_description_1"
+            "address": "theater_address_1",
+            "logo": "theater_logo_1",
+            "photo": "theater_photo_1"
+            "cash_desk_phone_number": "theater_cash_desk_phone_number_1",
+            "phone_number_for_reference": "theater_phone_number_for_reference_1"
+        }
+}
+```
+
+#### RESPONSE DATA [FAIL]
+
+```json
+{
+    "has_errors": true,
+    "errors": [
+        {
+            "type": "TheaterNotFound",
+            "message": "Театр с таким id не найден."
+        }
+    ]
+}
+```
+
 ## Get Theaters
 
 |attribute        |value         	      |
@@ -885,37 +1170,26 @@ BASE_URL  http://host1813162.hostland.pro/api
 }
 ```
 
-## Get Theater
+## Get Theater Preview
 
 |attribute        |value         	      |
 |----------------	|-------------------	|
 | request method 	| GET |
-| route          	| BASE_URL/theaters?id={{theater_id}}|
+| route          	| BASE_URL/theaters?id={{theater_id}}/preview|
 | error types    	| TheaterNotFound |
 
 #### RESPONSE DATA [SUCCESS]
 
->*Note*: 1) Возвращаются театр c id == theater_id.
+>*Note*: 1) Возвращаются превью театра чей id == theater_id.
 
 ```json
 {
     "has_errors": false,
     "errors": [],
-    "theater": {
-            "id": 1,
-            "name": "theater_name_1",
-            "description": "theater_description_1"
-            "address": "theater_address_1",
-            "logo": "theater_logo_1",
-            "photo": "theater_photo_1"
-            "cash_desk_phone_number": "theater_cash_desk_phone_number_1",
-            "phone_number_for_reference": "theater_phone_number_for_reference_1"
-        }
+    "preview": "theater_preview"
 }
 ```
 #### RESPONSE DATA [FAIL]
-
->*Note*: 1) Возвращаются только найденные ошибки
 
 ```json
 {
@@ -924,6 +1198,39 @@ BASE_URL  http://host1813162.hostland.pro/api
         {
             "type": "TheaterNotFound",
             "message": "Театр с таким id не найден."
+        }
+    ]
+}
+```
+
+## Get Spectacle Trailer
+
+|attribute        |value         	      |
+|----------------	|-------------------	|
+| request method 	| GET |
+| route          	| BASE_URL/spectacles?id={{spectacle_id}}/trailer|
+| error types    	| SpectacleNotFound |
+
+#### RESPONSE DATA [SUCCESS]
+
+>*Note*: 1) Возвращаются тизер спектаклся чей id == theater_id.
+
+```json
+{
+    "has_errors": false,
+    "errors": [],
+    "trailer": "spectacle_trailer"
+}
+```
+#### RESPONSE DATA [FAIL]
+
+```json
+{
+    "has_errors": true,
+    "errors": [
+        {
+            "type": "TheaterNotFound",
+            "message": "Спектакль с таким id не найден."
         }
     ]
 }
