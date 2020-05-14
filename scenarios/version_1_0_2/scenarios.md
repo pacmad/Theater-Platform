@@ -6,7 +6,8 @@
 + в 2. добавила согласие с правилами пользования и обработкой данных. Шаблоны документов:
  - [Письмо высылаемое при регистрации](https://schstp.github.io/Theater-Platform/scenarios/version_1_0_2/Письмо_Регистрации)
  - [Письмо высылаемое при восстановлении пароля](https://schstp.github.io/Theater-Platform/scenarios/version_1_0_2/Письмо_восстановления)
- - [version 1.0.2](https://schstp.github.io/Theater-Platform/scenarios/version_1_0_2/Политика_Данных)
+ - [Политика обработки персональных данных](https://schstp.github.io/Theater-Platform/scenarios/version_1_0_2/Политика_Данных)
+ - [Соглашение об использовании](https://schstp.github.io/Theater-Platform/scenarios/version_1_0_2/Политика_Пользования)
 
 ###### Авторизация: 
 + В пользовательском сценарии добавила, что открывается у пользователя после авторизации
