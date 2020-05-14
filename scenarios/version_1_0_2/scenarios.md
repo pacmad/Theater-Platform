@@ -4,9 +4,9 @@
 ###### Регистрация: 
 + в 1. убрала дату рождния и телефон. 
 + в 2. добавила согласие с правилами пользования и обработкой данных. Шаблоны документов:
- - ### [Письмо](https://schstp.github.io/Theater-Platform/scenarios/version_1_0_2/scenarios)
- - ### [version 1.0.2](https://schstp.github.io/Theater-Platform/scenarios/version_1_0_2/scenarios)
- - ### [version 1.0.2](https://schstp.github.io/Theater-Platform/scenarios/version_1_0_2/scenarios)
+ - [Письмо высылаемое при регистрации](https://schstp.github.io/Theater-Platform/scenarios/version_1_0_2/Письмо_Регистрации)
+ - [Письмо высылаемое при восстановлении пароля](https://schstp.github.io/Theater-Platform/scenarios/version_1_0_2/scenarios)
+ - [version 1.0.2](https://schstp.github.io/Theater-Platform/scenarios/version_1_0_2/scenarios)
 
 ###### Авторизация: 
 + В пользовательском сценарии добавила, что открывается у пользователя после авторизации
