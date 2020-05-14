@@ -280,7 +280,7 @@ BASE_URL  http://host1813162.hostland.pro/api
 |attribute          |value         	        |
 |----------------	|-------------------	|
 | request method 	| PATCH|
-| route          	| BASE_URL/user/{{user_id}}|
+| route          	| BASE_URL/user/{user_id}|
 | error types    	| UserNotFound, PermissionDenied|
 | required headers  | Authorization         |
 
@@ -331,7 +331,7 @@ BASE_URL  http://host1813162.hostland.pro/api
 |attribute          |value         	        |
 |----------------	|-------------------	|
 | request method 	| GET|
-| route          	| BASE_URL/user?id={{user_id}}|
+| route          	| BASE_URL/user?id={user_id}|
 | error types    	| UserNotFound, PermissionDenied|
 | required headers  | Authorization         |
 
@@ -378,7 +378,7 @@ BASE_URL  http://host1813162.hostland.pro/api
 |attribute        |value         	      |
 |----------------	|-------------------	|
 | request method 	| POST |
-| route          	| BASE_URL/user/{{user_id}}/bookmarks|
+| route          	| BASE_URL/user/{user_id}/bookmarks|
 | error types    	| UserNotFound, SpectacleNotFound, PermissionDenied |
 | required headers  | Authorization         |
 
@@ -430,7 +430,7 @@ BASE_URL  http://host1813162.hostland.pro/api
 |attribute        |value         	      |
 |----------------	|-------------------	|
 | request method 	| DELETE |
-| route          	| BASE_URL/user/{{user_id}}/bookmarks/{{spectacle_id}}|
+| route          	| BASE_URL/user/{user_id}/bookmarks/{spectacle_id}|
 | error types    	| UserNotFound, BookmarkNotFound, PermissionDenied |
 | required headers  | Authorization         |
 
@@ -475,7 +475,7 @@ BASE_URL  http://host1813162.hostland.pro/api
 |attribute        |value         	      |
 |----------------	|-------------------	|
 | request method 	| GET |
-| route          	| BASE_URL/user/{{user_id}}/bookmarks|
+| route          	| BASE_URL/user/{user_id}/bookmarks|
 | error types    	| UserNotFound, PermissionDenied |
 | required headers  | Authorization         |
 
@@ -535,7 +535,7 @@ BASE_URL  http://host1813162.hostland.pro/api
 |attribute        |value         	      |
 |----------------	|-------------------	|
 | request method 	| GET |
-| route          	| BASE_URL/user/{{user_id}}/tickets|
+| route          	| BASE_URL/user/{user_id}/tickets|
 | error types    	| UserNotFound, PermissionDenied |
 | required headers  | Authorization         |
 
@@ -656,7 +656,7 @@ BASE_URL  http://host1813162.hostland.pro/api
 |attribute        |value         	      |
 |----------------	|-------------------	|
 | request method 	| GET |
-| route          	| BASE_URL/user/{{user_id}}/comments|
+| route          	| BASE_URL/user/{user_id}/comments|
 | error types    	| UserNotFound, PermissionDenied |
 | required headers  | Authorization         |
 
@@ -784,7 +784,7 @@ BASE_URL  http://host1813162.hostland.pro/api
 |attribute        |value         	      |
 |----------------	|-------------------	|
 | request method 	| PATCH |
-| route          	| BASE_URL/spectacles/{{spectacle_id}}|
+| route          	| BASE_URL/spectacles/{spectacle_id}|
 | error types    	| SpectacleNotFound, PermissionDenied |
 | required headers  | Authorization         |
 
@@ -827,7 +827,7 @@ BASE_URL  http://host1813162.hostland.pro/api
 |attribute        |value         	      |
 |----------------	|-------------------	|
 | request method 	| GET |
-| route          	| BASE_URL/spectacles?id={{spectacle_id}}|
+| route          	| BASE_URL/spectacles?id={spectacle_id}|
 | error types    	| SpectacleNotFound |
 
 #### RESPONSE DATA [SUCCESS]
@@ -869,7 +869,7 @@ BASE_URL  http://host1813162.hostland.pro/api
 |attribute        |value         	      |
 |----------------	|-------------------	|
 | request method 	| GET |
-| route          	| BASE_URL/spectacles?theater_id={{theater_id}}|
+| route          	| BASE_URL/spectacles?theater_id={theater_id}|
 | error types    	| TheaterNotFound, PermissionDenied|
 
 #### RESPONSE DATA [SUCCESS]
@@ -917,7 +917,7 @@ BASE_URL  http://host1813162.hostland.pro/api
 |attribute        |value         	      |
 |----------------	|-------------------	|
 | request method 	| DELETE |
-| route          	| BASE_URL/spectacles/{{spectacle_id}}|
+| route          	| BASE_URL/spectacles/{spectacle_id}|
 | error types    	| SpectacleNotFound, PermissionDenied |
 | required headers  | Authorization         |
 
@@ -1016,7 +1016,7 @@ BASE_URL  http://host1813162.hostland.pro/api
 |attribute        |value         	      |
 |----------------	|-------------------	|
 | request method 	| PATCH |
-| route          	| BASE_URL/events/{{event_id}}|
+| route          	| BASE_URL/events/{event_id}|
 | error types    	| EventNotFound, SpectacleNotFound, HallNotFound, PermissionDenied |
 | required headers  | Authorization         |
 
@@ -1070,7 +1070,7 @@ BASE_URL  http://host1813162.hostland.pro/api
 |attribute        |value         	      |
 |----------------	|-------------------	|
 | request method 	| GET |
-| route          	| BASE_URL/event?id={{event_id}}|
+| route          	| BASE_URL/event?id={event_id}|
 | error types    	| EventNotFound |
 
 #### RESPONSE DATA [SUCCESS]
@@ -1113,7 +1113,7 @@ BASE_URL  http://host1813162.hostland.pro/api
 |attribute        |value         	      |
 |----------------	|-------------------	|
 | request method 	| GET |
-| route          	| BASE_URL/events?from={{date_range_start}}&to={{date_range_end}}&name={{spectacle_name}}&theater_id={{theater_id}}|
+| route          	| BASE_URL/events?from={date_range_start}&to={date_range_end}&name={spectacle_name}&theater_id={theater_id}|
 | error types    	| TheaterNotFound, DateFormatError |
 
 #### RESPONSE DATA [SUCCESS]
@@ -1196,7 +1196,7 @@ BASE_URL  http://host1813162.hostland.pro/api
 |attribute        |value         	      |
 |----------------	|-------------------	|
 | request method 	| DELETE |
-| route          	| BASE_URL/events/{{event_id}}|
+| route          	| BASE_URL/events/{event_id}|
 | error types    	| EventNotFound, Permission Denied |
 | required headers  | Authorization         |
 
@@ -1404,7 +1404,7 @@ BASE_URL  http://host1813162.hostland.pro/api
 |attribute        |value         	      |
 |----------------	|-------------------	|
 | request method 	| PATCH |
-| route          	| BASE_URL/theaters/{{theater_id}}|
+| route          	| BASE_URL/theaters/{theater_id}|
 | error types    	| TheaterNotFound, PermissionDenied |
 | required headers  | Authorization         |
 
@@ -1448,7 +1448,7 @@ BASE_URL  http://host1813162.hostland.pro/api
 |attribute        |value         	      |
 |----------------	|-------------------	|
 | request method 	| GET |
-| route          	| BASE_URL/theaters?id={{theater_id}}|
+| route          	| BASE_URL/theaters?id={theater_id}|
 | error types    	| TheaterNotFound |
 
 #### RESPONSE DATA [SUCCESS]
@@ -1533,7 +1533,7 @@ BASE_URL  http://host1813162.hostland.pro/api
 |attribute        |value         	      |
 |----------------	|-------------------	|
 | request method 	| DELETE |
-| route          	| BASE_URL/theaters/{{theater_id}}|
+| route          	| BASE_URL/theaters/{theater_id}|
 | error types    	| TheaterNotFound, PermissionDenied |
 | required headers  | Authorization         |
 
@@ -1572,7 +1572,7 @@ BASE_URL  http://host1813162.hostland.pro/api
 |attribute        |value         	      |
 |----------------	|-------------------	|
 | request method 	| GET |
-| route          	| BASE_URL/theaters?id={{theater_id}}/preview|
+| route          	| BASE_URL/theaters?id={theater_id}/preview|
 | error types    	| TheaterNotFound |
 
 #### RESPONSE DATA [SUCCESS]
@@ -1606,7 +1606,7 @@ BASE_URL  http://host1813162.hostland.pro/api
 |attribute        |value         	      |
 |----------------	|-------------------	|
 | request method 	| GET |
-| route          	| BASE_URL/spectacles?id={{spectacle_id}}/trailer|
+| route          	| BASE_URL/spectacles?id={spectacle_id}/trailer|
 | error types    	| SpectacleNotFound |
 
 #### RESPONSE DATA [SUCCESS]
@@ -1685,7 +1685,7 @@ BASE_URL  http://host1813162.hostland.pro/api
 |attribute        |value         	      |
 |----------------	|-------------------	|
 | request method 	| PATCH |
-| route          	| BASE_URL/socialnetworks/{{social_network_id}}|
+| route          	| BASE_URL/socialnetworks/{social_network_id}|
 | error types    	| SocialNetworkNotFound, PermissionDenied |
 | required headers  | Authorization         |
 
@@ -1724,7 +1724,7 @@ BASE_URL  http://host1813162.hostland.pro/api
 |attribute        |value         	      |
 |----------------	|-------------------	|
 | request method 	| GET |
-| route          	| BASE_URL/socialnetworks?id={{social_network_id}}|
+| route          	| BASE_URL/socialnetworks?id={social_network_id}|
 | error types    	| SocialNetworkNotFound |
 
 #### RESPONSE DATA [SUCCESS]
@@ -1762,7 +1762,7 @@ BASE_URL  http://host1813162.hostland.pro/api
 |attribute        |value         	      |
 |----------------	|-------------------	|
 | request method 	| DELETE |
-| route          	| BASE_URL/socialnetworks/{{social_network_id}}|
+| route          	| BASE_URL/socialnetworks/{social_network_id}|
 | error types    	| SocialNetworkNotFound, PermissionDenied |
 | required headers  | Authorization         |
 
@@ -1801,7 +1801,7 @@ BASE_URL  http://host1813162.hostland.pro/api
 |attribute        |value         	      |
 |----------------	|-------------------	|
 | request method 	| POST |
-| route          	| BASE_URL/theaters/{{theater_id}}/socialnetworks/{{social_network_id}}|
+| route          	| BASE_URL/theaters/{theater_id}/socialnetworks/{social_network_id}|
 | error types    	| PermissionDenied, TheaterNotFound, SocialNetworkNotFound |
 | required headers  | Authorization         |
 
@@ -1853,7 +1853,7 @@ BASE_URL  http://host1813162.hostland.pro/api
 |attribute        |value         	      |
 |----------------	|-------------------	|
 | request method 	| PATCH |
-| route          	| BASE_URL/theaters/{{theater_id}}/socialnetworks/{{social_network_id}} |
+| route          	| BASE_URL/theaters/{theater_id}/socialnetworks/{social_network_id} |
 | error types    	| SocialNetworkNotFound, TheaterNotFound, PermissionDenied |
 | required headers  | Authorization         |
 
@@ -1895,7 +1895,7 @@ BASE_URL  http://host1813162.hostland.pro/api
 |attribute        |value         	      |
 |----------------	|-------------------	|
 | request method 	| GET |
-| route          	| BASE_URL/theaters/{{theater_id}}/socialnetworks/{{social_network_id}} |
+| route          	| BASE_URL/theaters/{theater_id}/socialnetworks/{social_network_id} |
 | error types    	| SocialNetworkNotFound, TheaterNotFound, PermissionDenied |
 
 #### RESPONSE DATA [SUCCESS]
@@ -1936,7 +1936,7 @@ BASE_URL  http://host1813162.hostland.pro/api
 |attribute        |value         	      |
 |----------------	|-------------------	|
 | request method 	| GET |
-| route          	| BASE_URL/theaters/{{theater_id}}/socialnetworks |
+| route          	| BASE_URL/theaters/{theater_id}/socialnetworks |
 | error types    	| TheaterNotFound, PermissionDenied |
 
 #### RESPONSE DATA [SUCCESS]
@@ -1988,7 +1988,7 @@ BASE_URL  http://host1813162.hostland.pro/api
 |attribute        |value         	      |
 |----------------	|-------------------	|
 | request method 	| DELETE |
-| route          	| BASE_URL/theaters/{{theater_id}}/socialnetworks/{{social_network_id}} |
+| route          	| BASE_URL/theaters/{theater_id}/socialnetworks/{social_network_id} |
 | error types    	| SocialNetworkNotFound, TheaterNotFound, PermissionDenied |
 | required headers  | Authorization         |
 
