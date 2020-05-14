@@ -11,6 +11,8 @@
 >8. добавлено API для получения событий
 >9. добавлено API для получения премьер
 >10. добавлено API для получения прьмьер для слайдера
+>11. добавлено API для получения театров
+>12. добавлено API для получения театра
 
 BASE_URL  http://host1813162.hostland.pro/api
 
@@ -838,6 +840,90 @@ BASE_URL  http://host1813162.hostland.pro/api
                 "name": "theater_name_2",
                 "logo": "theater_logo_2"
             },
+        }
+    ]
+}
+```
+## Get Theaters
+
+|attribute        |value         	      |
+|----------------	|-------------------	|
+| request method 	| GET |
+| route          	| BASE_URL/theaters|
+| error types    	| |
+
+#### RESPONSE DATA [SUCCESS]
+
+>*Note*: 1) Возвращаются все театры. В примере ответа от сервера приведено 2 результата. 2) Если театров нет, theaters будет пустым списком.
+
+```json
+{
+    "has_errors": false,
+    "errors": [],
+    "theaters": [
+        {
+            "id": 1,
+            "name": "theater_name_1",
+            "description": "theater_description_1"
+            "address": "theater_address_1",
+            "logo": "theater_logo_1",
+            "photo": "theater_photo_1"
+            "cash_desk_phone_number": "theater_cash_desk_phone_number_1",
+            "phone_number_for_reference": "theater_phone_number_for_reference_1"
+        },
+        {
+            "id": 2,
+            "name": "theater_name_2",
+            "description": "theater_description_2"
+            "address": "theater_address_2",
+            "logo": "theater_logo_2",
+            "photo": "theater_photo_2"
+            "cash_desk_phone_number": "theater_cash_desk_phone_number_2",
+            "phone_number_for_reference": "theater_phone_number_for_reference_2"
+        },
+    ]
+}
+```
+
+## Get Theater
+
+|attribute        |value         	      |
+|----------------	|-------------------	|
+| request method 	| GET |
+| route          	| BASE_URL/theaters?id={{theater_id}}|
+| error types    	| TheaterNotFound |
+
+#### RESPONSE DATA [SUCCESS]
+
+>*Note*: 1) Возвращаются театр c id == theater_id.
+
+```json
+{
+    "has_errors": false,
+    "errors": [],
+    "theater": {
+            "id": 1,
+            "name": "theater_name_1",
+            "description": "theater_description_1"
+            "address": "theater_address_1",
+            "logo": "theater_logo_1",
+            "photo": "theater_photo_1"
+            "cash_desk_phone_number": "theater_cash_desk_phone_number_1",
+            "phone_number_for_reference": "theater_phone_number_for_reference_1"
+        }
+}
+```
+#### RESPONSE DATA [FAIL]
+
+>*Note*: 1) Возвращаются только найденные ошибки
+
+```json
+{
+    "has_errors": true,
+    "errors": [
+        {
+            "type": "TheaterNotFound",
+            "message": "Театр с таким id не найден."
         }
     ]
 }
