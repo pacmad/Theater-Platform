@@ -8,6 +8,9 @@
 >5. добавлено API для получения закладок пользователя
 >6. добавлено API для получения истории покупок пользователя
 >7. добавлено API для получения написанных пользователем отзывов
+>8. добавлено API для получения событий
+>9. добавлено API для получения премьер
+>10. добавлено API для получения прьмьер для слайдера
 
 BASE_URL  http://host1813162.hostland.pro/api
 
@@ -252,7 +255,7 @@ BASE_URL  http://host1813162.hostland.pro/api
 |attribute          |value         	        |
 |----------------	|-------------------	|
 | request method 	| PATCH|
-| route          	| BASE_URL/user/{user_id}|
+| route          	| BASE_URL/user/{{user_id}}|
 | error types    	| UserNotFound|
 
 #### REQUEST DATA
@@ -296,7 +299,7 @@ BASE_URL  http://host1813162.hostland.pro/api
 |attribute          |value         	        |
 |----------------	|-------------------	|
 | request method 	| GET|
-| route          	| BASE_URL/user/{user_id}|
+| route          	| BASE_URL/user?id={{user_id}}|
 | error types    	| UserNotFound|
 
 #### RESPONSE DATA [SUCCESS]
@@ -335,7 +338,7 @@ BASE_URL  http://host1813162.hostland.pro/api
 |attribute        |value         	      |
 |----------------	|-------------------	|
 | request method 	| POST |
-| route          	| BASE_URL/user/{user_id}/bookmarks|
+| route          	| BASE_URL/user/{{user_id}}/bookmarks|
 | error types    	| UserNotFound, SpectacleNotFound |
 
 #### REQUEST DATA
@@ -379,7 +382,7 @@ BASE_URL  http://host1813162.hostland.pro/api
 |attribute        |value         	      |
 |----------------	|-------------------	|
 | request method 	| DELETE |
-| route          	| BASE_URL/user/{user_id}/bookmarks/{spectacle_id}|
+| route          	| BASE_URL/user/{{user_id}}/bookmarks/{{spectacle_id}}|
 | error types    	| UserNotFound, BookmarkNotFound |
 
 #### RESPONSE DATA [SUCCESS]
@@ -416,7 +419,7 @@ BASE_URL  http://host1813162.hostland.pro/api
 |attribute        |value         	      |
 |----------------	|-------------------	|
 | request method 	| GET |
-| route          	| BASE_URL/user/{user_id}/bookmarks|
+| route          	| BASE_URL/user/{{user_id}}/bookmarks|
 | error types    	| UserNotFound |
 
 #### RESPONSE DATA [SUCCESS]
@@ -468,7 +471,7 @@ BASE_URL  http://host1813162.hostland.pro/api
 |attribute        |value         	      |
 |----------------	|-------------------	|
 | request method 	| GET |
-| route          	| BASE_URL/user/{user_id}/tickets|
+| route          	| BASE_URL/user/{{user_id}}/tickets|
 | error types    	| UserNotFound |
 
 #### RESPONSE DATA [SUCCESS]
@@ -581,7 +584,7 @@ BASE_URL  http://host1813162.hostland.pro/api
 |attribute        |value         	      |
 |----------------	|-------------------	|
 | request method 	| GET |
-| route          	| BASE_URL/user/{user_id}/comments|
+| route          	| BASE_URL/user/{{user_id}}/comments|
 | error types    	| UserNotFound |
 
 #### RESPONSE DATA [SUCCESS]
@@ -637,6 +640,204 @@ BASE_URL  http://host1813162.hostland.pro/api
         {
             "type": "UserNotFound",
             "message": "Пользователь с таким id не найден."
+        }
+    ]
+}
+```
+## Get Events
+
+|attribute        |value         	      |
+|----------------	|-------------------	|
+| request method 	| GET |
+| route          	| BASE_URL/events?from={{date_range_start}}&to={{date_range_end}}&name={{spectacle_name}}&theater_id={{theater_id}}|
+| error types    	| TheaterNotFound, DateFormatError |
+
+#### RESPONSE DATA [SUCCESS]
+
+>*Note*: 1) Возвращаются все события, чья дата показа (dated_at) лежит в интервале [date_range_start;date_range_end], название спектакля содержит подстроку spectacle_name, а id театра равен theater_id. В примере ответа от сервера приведено 2 результата. 2) Если таких событий нет, соответственно, events будет пустым списком.
+
+```json
+{
+    "has_errors": false,
+    "errors": [],
+    "events": [
+        {
+            "eventData": {
+                "id": "event_id_1",
+                "datedAt": "event_date_1",
+                "description": "event_description_1",
+                "is_premiere": "true/false",
+                "available_seats_number": "available_seats_number_1"
+            },
+            "spectacleData": {
+                "id": "spectacle_id_1",
+                "name": "spectacle_name_1",
+                "description": "spectacle_name_1",
+                "poster": "spectacle_poster_1",
+                "rate": "spectacle_rate_1"
+            },
+            "theaterData": {
+                "id": "theater_id_1",
+                "name": "theater_name_1",
+                "logo": "theater_logo_1"
+            },
+        },
+        {
+            "eventData": {
+                "id": "event_id_2",
+                "datedAt": "event_date_2",
+                "description": "event_description_2",
+                "is_premiere": "true/false",
+                "available_seats_number": "available_seats_number_2"
+            },
+            "spectacleData": {
+                "id": "spectacle_id_2",
+                "name": "spectacle_name_2",
+                "description": "spectacle_name_2",
+                "poster": "spectacle_poster_2",
+                "rate": "spectacle_rate_2"
+            },
+            "theaterData": {
+                "id": "theater_id_2",
+                "name": "theater_name_2",
+                "logo": "theater_logo_2"
+            },
+        },
+    ]
+}
+```
+#### RESPONSE DATA [FAIL]
+
+>*Note*: 1) Возвращаются только найденные ошибки
+
+```json
+{
+    "has_errors": true,
+    "errors": [
+        {
+            "type": "TheaterNotFound",
+            "message": "Театр с таким id не найден."
+        },
+        {
+            "type": "DateFormatError",
+            "message": "Неверный формат даты."
+        }
+    ]
+}
+```
+## Get Premieres
+
+|attribute        |value         	      |
+|----------------	|-------------------	|
+| request method 	| GET |
+| route          	| BASE_URL/events?is_premiere=true|
+| error types    	|  |
+
+#### RESPONSE DATA [SUCCESS]
+
+>*Note*: 1) Возвращаются все события, чей параметр is_premiere == true. В примере ответа от сервера приведено 2 результата. 2) Если таких событий нет, соответственно, premieres будет пустым списком.
+
+```json
+{
+    "has_errors": false,
+    "errors": [],
+    "premieres": [
+        {
+            "eventData": {
+                "id": "event_id_1",
+                "datedAt": "event_date_1",
+                "description": "event_description_1",
+                "available_seats_number": "available_seats_number_1"
+            },
+            "spectacleData": {
+                "id": "spectacle_id_1",
+                "name": "spectacle_name_1",
+                "description": "spectacle_name_1",
+                "poster": "spectacle_poster_1"
+            },
+            "theaterData": {
+                "id": "theater_id_1",
+                "name": "theater_name_1",
+                "logo": "theater_logo_1"
+            },
+        },
+        {
+            "eventData": {
+                "id": "event_id_2",
+                "datedAt": "event_date_2",
+                "description": "event_description_2",
+                "available_seats_number": "available_seats_number_2"
+            },
+            "spectacleData": {
+                "id": "spectacle_id_2",
+                "name": "spectacle_name_2",
+                "description": "spectacle_name_2",
+                "poster": "spectacle_poster_2"
+            },
+            "theaterData": {
+                "id": "theater_id_2",
+                "name": "theater_name_2",
+                "logo": "theater_logo_2"
+            },
+        }
+    ]
+}
+```
+
+## Get Main Page Premieres
+
+|attribute        |value         	      |
+|----------------	|-------------------	|
+| request method 	| GET |
+| route          	| BASE_URL/events?is_choosen_for_main_page=true|
+| error types    	|  |
+
+#### RESPONSE DATA [SUCCESS]
+
+>*Note*: 1) Возвращаются все события, чей параметр is_choosen_for_main_page == true. В примере ответа от сервера приведено 2 результата. 2) Если таких событий нет, соответственно, premieres будет пустым списком.
+
+```json
+{
+    "has_errors": false,
+    "errors": [],
+    "premieres": [
+        {
+            "eventData": {
+                "id": "event_id_1",
+                "datedAt": "event_date_1",
+                "description": "event_description_1",
+                "available_seats_number": "available_seats_number_1"
+            },
+            "spectacleData": {
+                "id": "spectacle_id_1",
+                "name": "spectacle_name_1",
+                "description": "spectacle_name_1",
+                "sliderPoster": "spectacle_slider_poster_1"
+            },
+            "theaterData": {
+                "id": "theater_id_1",
+                "name": "theater_name_1",
+                "logo": "theater_logo_1"
+            },
+        },
+        {
+            "eventData": {
+                "id": "event_id_2",
+                "datedAt": "event_date_2",
+                "description": "event_description_2",
+                "available_seats_number": "available_seats_number_2"
+            },
+            "spectacleData": {
+                "id": "spectacle_id_2",
+                "name": "spectacle_name_2",
+                "description": "spectacle_name_2",
+                "sliderPoster": "spectacle_slider_poster_2"
+            },
+            "theaterData": {
+                "id": "theater_id_2",
+                "name": "theater_name_2",
+                "logo": "theater_logo_2"
+            },
         }
     ]
 }
