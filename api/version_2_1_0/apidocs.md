@@ -1,11 +1,14 @@
 # API v2.0.0
 
 >*updates*:
->1. добавлено API для добавления зала
->2. добавлено API для изменения зала
->3. добавлено API для получения зала
->4. добавлено API для получения залов
->5. добавлено API для удаления зала
+>1. В POST запросы (там где было необходимо) в response добавлены id новой записи
+>2. Добавлен упущенный в некоторых PATCH запросах ответ с сообщением об успешности операции
+>3. В некоторые API блока авторизации/регистрации в FAIL ответах были добавлены общие агрегирующие сообщения об ошибке
+>4. добавлено API для добавления зала
+>5. добавлено API для изменения зала
+>6. добавлено API для получения зала
+>7. добавлено API для получения залов
+>8. добавлено API для удаления зала
 
 BASE_URL  http://host1813162.hostland.pro/api
 
@@ -154,7 +157,7 @@ BASE_URL  http://host1813162.hostland.pro/api
             "message": "Пользователь с таким e-mail не зарегистрирован"
         }
     ],
-    "message": null
+    "message": "При отправке запроса на восстановление пароля возникли ошибки"
 }
 ```
 
@@ -203,7 +206,7 @@ BASE_URL  http://host1813162.hostland.pro/api
             "message": "Пользователь с таким адресом электронной почты не зарегистрирован"
         }
     ],
-    "message": null
+    "message": "В процессе изменения пароля возникли ошибки"
 }
 ```
 
@@ -242,7 +245,7 @@ BASE_URL  http://host1813162.hostland.pro/api
             "message": "Ваша почта уже подтверждена."
         }
     ],
-    "message": null
+    "message": "В процессе верификации email позникли ошибки."
 }
 ```
 ## Update User Profile
@@ -726,6 +729,9 @@ BASE_URL  http://host1813162.hostland.pro/api
 {
     "has_errors": false,
     "errors": [],
+    "spectacle": {
+        "id": 255,
+    },
     "message": "Спектакль успешно добавлен."
 }
 ```
@@ -770,6 +776,16 @@ BASE_URL  http://host1813162.hostland.pro/api
     "poster": "new_spectacle_poster",
     "trailer": "new_spectacle_trailer",
     "slider_poster": "new_spectacle_slider_poster"
+}
+```
+
+#### RESPONSE DATA [SUCCESS]
+
+```json
+{
+    "has_errors": false,
+    "errors": [],
+    "message": "Спектакль успешно обновлен."
 }
 ```
 
@@ -952,6 +968,9 @@ BASE_URL  http://host1813162.hostland.pro/api
 {
     "has_errors": false,
     "errors": [],
+    "event": {
+        "id": 255,
+    },
     "message": "Событие успешно добавлено."
 }
 ```
@@ -1003,6 +1022,16 @@ BASE_URL  http://host1813162.hostland.pro/api
     "available_seats_number": 234,
     "spectacle_id": 12,
     "hall_id": 1
+}
+```
+
+#### RESPONSE DATA [SUCCESS]
+
+```json
+{
+    "has_errors": false,
+    "errors": [],
+    "message": "Событие успешно обновлено."
 }
 ```
 
@@ -1350,6 +1379,9 @@ BASE_URL  http://host1813162.hostland.pro/api
 {
     "has_errors": false,
     "errors": [],
+    "theater": {
+        "id": 255,
+    },
     "message": "Театр успешно добавлен."
 }
 ```
@@ -1394,6 +1426,17 @@ BASE_URL  http://host1813162.hostland.pro/api
     "phone_number_for_reference": "new_theater_phone_number_for_reference"
 }
 ```
+
+#### RESPONSE DATA [SUCCESS]
+
+```json
+{
+    "has_errors": false,
+    "errors": [],
+    "message": "Театр успешно обновлен."
+}
+```
+
 #### RESPONSE DATA [FAIL]
 
 ```json
@@ -1581,8 +1624,6 @@ BASE_URL  http://host1813162.hostland.pro/api
 
 #### RESPONSE DATA [SUCCESS]
 
->*Note*: 1) Возвращаются тизер спектаклся чей id == theater_id.
-
 ```json
 {
     "has_errors": false,
@@ -1590,6 +1631,7 @@ BASE_URL  http://host1813162.hostland.pro/api
     "trailer": "spectacle_trailer"
 }
 ```
+
 #### RESPONSE DATA [FAIL]
 
 ```json
@@ -1631,6 +1673,9 @@ BASE_URL  http://host1813162.hostland.pro/api
 {
     "has_errors": false,
     "errors": [],
+    "social_network": {
+        "id": 255,
+    },
     "message": "Социальная сеть успешно добавлена."
 }
 ```
@@ -1667,6 +1712,16 @@ BASE_URL  http://host1813162.hostland.pro/api
 {
     "name": "new_social_network_name",
     "logo": "new_social_network_logo"
+}
+```
+
+#### RESPONSE DATA [SUCCESS]
+
+```json
+{
+    "has_errors": false,
+    "errors": [],
+    "message": "Социальная сеть успешно обновлена."
 }
 ```
 
@@ -1747,6 +1802,7 @@ BASE_URL  http://host1813162.hostland.pro/api
     "message": "Социальная сеть успешно удалена",
 }
 ```
+
 #### RESPONSE DATA [FAIL]
 
 ```json
@@ -1791,6 +1847,9 @@ BASE_URL  http://host1813162.hostland.pro/api
 {
     "has_errors": false,
     "errors": [],
+    "social_network": {
+        "id": 43
+    },
     "message": "Группа театра в социальной сети успешно добавлена."
 }
 ```
@@ -1834,6 +1893,16 @@ BASE_URL  http://host1813162.hostland.pro/api
 ```json
 {
     "url_to_community": "new_theater_social_network_community_group_url"
+}
+```
+
+#### RESPONSE DATA [SUCCESS]
+
+```json
+{
+    "has_errors": false,
+    "errors": [],
+    "message": "Группа театра в социальной сети успешно обновлена."
 }
 ```
 
@@ -2067,6 +2136,16 @@ BASE_URL  http://host1813162.hostland.pro/api
     "name": "new_hall_name",
     "scheme": "new_hall_scheme"
     "capacity": 156
+}
+```
+
+#### RESPONSE DATA [SUCCESS]
+
+```json
+{
+    "has_errors": false,
+    "errors": [],
+    "message": "Зал успешно обновлен."
 }
 ```
 
