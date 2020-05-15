@@ -1,41 +1,11 @@
 # API v2.0.0
 
 >*updates*:
->1. добавлено API для изменения профиля пользователя
->2. добавлено API для получения профиля пользователя
->3. добавлено API для добавления новой закладки пользователя
->4. добавлено API для удаления закладки пользователя
->5. добавлено API для получения закладок пользователя
->6. добавлено API для получения истории покупок пользователя
->7. добавлено API для получения написанных пользователем отзывов
->8. добавлено API для добавления спектакля
->9. добавлено API для изменения спектакля
->10. добавлено API для получения спектакля
->11. добавлено API для получения спектаклей
->12. добавлено API для удаления спектакля
->13. добавлено API для добавления события
->14. добавлено API для изменения события
->15. добавлено API для получения события
->16. добавлено API для получения событий
->17. добавлено API для удаления события
->18. добавлено API для получения премьер
->19. добавлено API для получения прьмьер для слайдера
->20. добавлено API для добавления театра
->21. добавлено API для изменения театра
->22. добавлено API для получения театров
->23. добавлено API для получения театра
->24. добавлено API для удаления театра
->25. добавлено API для получения превью театра
->26. добавлено API для получения тизера спектакля
->27. добавлено API для добавления социальной сети
->28. добавлено API для изменения социальной сети
->29. добавлено API для получения социальной сети
->30. добавлено API для удаления социальной сети
->31. добавлено API для добавления группы театра в социальной сети
->32. добавлено API для изменения группы театра в социальной сети
->33. добавлено API для получения группы театра в социальной сети
->34. добавлено API для получения групп театра в социальной сети
->35. добавлено API для удаления группы театра в социальной сети
+>1. добавлено API для добавления зала
+>2. добавлено API для изменения зала
+>3. добавлено API для получения зала
+>4. добавлено API для получения залов
+>5. добавлено API для удаления зала
 
 BASE_URL  http://host1813162.hostland.pro/api
 
@@ -2023,5 +1993,226 @@ BASE_URL  http://host1813162.hostland.pro/api
         }
     ],
     "message": "В процессе удаления группы театра в социальной сети возникли ошибки."
+}
+```
+## Add Hall
+
+|attribute        |value         	      |
+|----------------	|-------------------	|
+| request method 	| POST |
+| route          	| BASE_URL/halls|
+| error types    	| TheaterNotFound, PermissionDenied |
+| required headers  | Authorization         |
+
+>*Note*: PermissionDenied - ошибка проверки токена доступа, который лежит в хэдере Authorization (для неавторизованных пользователей выполнение операции невозможно).
+
+#### REQUEST DATA
+
+```json
+{
+    "name": "hall_name",
+    "scheme": "hall_scheme"
+    "capacity": 156,
+    "theater_id": "theater_id"
+}
+```
+
+#### RESPONSE DATA [SUCCESS]
+
+```json
+{
+    "has_errors": false,
+    "errors": [],
+    "hall": {
+        "id": 34
+    }
+    "message": "Зал успешно добавлен."
+}
+```
+
+#### RESPONSE DATA [FAIL]
+
+```json
+{
+    "has_errors": true,
+    "errors": [
+        {
+            "type": "TheaterNotFound",
+            "message": "Театр с таким id не найден."
+        },
+        {
+            "type": "PermissionDenied",
+            "message": "Отказано в доступе."
+        }
+    ],
+    "message": "В процессе добавления зала возникли ошибки."
+}
+```
+
+## Update Hall
+
+|attribute        |value         	      |
+|----------------	|-------------------	|
+| request method 	| PATCH |
+| route          	| BASE_URL/halls/{hall_id}|
+| error types    	| HallNotFound, PermissionDenied |
+| required headers  | Authorization         |
+
+>*Note*: PermissionDenied - ошибка проверки токена доступа, который лежит в хэдере Authorization (для неавторизованных пользователей выполнение операции невозможно).
+
+#### REQUEST DATA
+
+```json
+{
+    "name": "new_hall_name",
+    "scheme": "new_hall_scheme"
+    "capacity": 156
+}
+```
+
+#### RESPONSE DATA [FAIL]
+
+```json
+{
+    "has_errors": true,
+    "errors": [
+        {
+            "type": "PermissionDenied",
+            "message": "Отказано в доступе."
+        },
+        {
+            "type": "HallNotFound",
+            "message": "Зал с таким id не найден."
+        }
+    ],
+    "message": "В процессе обновления информации о зале возникли ошибки."
+}
+```
+
+## Get Hall
+
+|attribute        |value         	      |
+|----------------	|-------------------	|
+| request method 	| GET |
+| route          	| BASE_URL/halls?id={hall_id}|
+| error types    	| HallNotFound |
+
+#### RESPONSE DATA [SUCCESS]
+
+```json
+{
+    "has_errors": false,
+    "errors": [],
+    "hall": {
+        "id": 89,
+        "name": "hall_name",
+        "scheme": "hall_scheme"
+        "capacity": 156,
+        "theater_id": "theater_id"
+    }
+}
+```
+
+#### RESPONSE DATA [FAIL]
+
+```json
+{
+    "has_errors": true,
+    "errors": [
+        {
+            "type": "HallNotFound",
+            "message": "Зал с таким id не найден."
+        }
+    ],
+    "message": "В процессе получения информации о зале возникли ошибки."
+}
+```
+
+## Get Theater Halls
+
+|attribute        |value         	      |
+|----------------	|-------------------	|
+| request method 	| GET |
+| route          	| BASE_URL/halls?theater_id={theater_id}|
+| error types    	| TheaterNotFound, PermissionDenied|
+
+#### RESPONSE DATA [SUCCESS]
+
+>*Note*: 1) Возвращаются все залы с трибутом id театра == theater_id. В примере ответа от сервера приведено 2 результата. 2) Если залов нет, halls будет пустым списком.
+
+```json
+{
+    "has_errors": false,
+    "errors": [],
+    "halls": [
+        {
+            "id": 89,
+            "name": "hall_name_1",
+            "scheme": "hall_scheme_1"
+            "capacity": 313,
+            "theater_id": "theater_id_1"
+        },
+        {
+            "id": 123,
+            "name": "hall_name_2",
+            "scheme": "hall_scheme_2"
+            "capacity": 123,
+            "theater_id": "theater_id_2"
+        } 
+    ]
+}
+```
+
+#### RESPONSE DATA [FAIL]
+
+```json
+{
+    "has_errors": true,
+    "errors": [
+        {
+            "type": "TheaterNotFound",
+            "message": "Театр с таким id не найден."
+        }
+    ],
+    "message": "В процессе получения информации о залах театра возникли ошибки."
+}
+```
+
+## Delete Hall
+
+|attribute        |value         	      |
+|----------------	|-------------------	|
+| request method 	| DELETE |
+| route          	| BASE_URL/halls/{hall_id}|
+| error types    	| HallNotFound, PermissionDenied |
+| required headers  | Authorization         |
+
+>*Note*: PermissionDenied - ошибка проверки токена доступа, который лежит в хэдере Authorization (для неавторизованных пользователей выполнение операции невозможно).
+
+#### RESPONSE DATA [SUCCESS]
+
+```json
+{
+    "has_errors": false,
+    "errors": [],
+    "message": "Зал успешно удален",
+}
+```
+#### RESPONSE DATA [FAIL]
+
+```json
+{
+    "has_errors": true,
+    "errors": [
+        {
+            "type": "HallNotFound",
+            "message": "Зал с таким id не найден."
+        },
+        {
+            "type": "PermissionDenied",
+            "message": "Отказано в доступе."
+        }
+    ],
+    "message": "В процессе удаления зала возникли ошибки."
 }
 ```
