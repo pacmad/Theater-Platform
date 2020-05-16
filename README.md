@@ -15,5 +15,5 @@
 
 * ## [Reference](https://schstp.github.io/Theater-Platform/reference/content)
 
-* ## [Tests](https://github.com/schstp/Theater-Platform/blob/master/tests/tests.md)
+* ## [Tests](https://github.com/schstp/Theater-Platform/blob/master/tests/tests)
 
