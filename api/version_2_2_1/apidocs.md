@@ -1088,7 +1088,7 @@ UPDATED
 ```json
 {
     "name": "spectacle_name",
-    "description": "spectacle_description"
+    "description": "spectacle_description",
     "rate": 0,
     "duration": 90,
     "year": 2019,
@@ -1151,7 +1151,7 @@ UPDATED
 ```json
 {
     "name": "new_spectacle_name",
-    "description": "new_spectacle_description"
+    "description": "new_spectacle_description",
     "rate": 0,
     "duration": 90,
     "year": 2019,
@@ -1212,7 +1212,7 @@ UPDATED
     "errors": [],
     "spectacle": {
         "name": "spectacle_name",
-        "description": "spectacle_description"
+        "description": "spectacle_description",
         "rate": 4.7,
         "duration": 90,
         "year": 2019,
