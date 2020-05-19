@@ -11,13 +11,13 @@
 2. [Authorization](#Authorization)
 3. [Logout](#Logout)
 4. [Password Reset Request](#Password-Reset-Request)
-5. [Registration](#Registration)
-6. [Registration](#Registration)
-7. [Registration](#Registration)
-8. [Registration](#Registration)
-9. [Registration](#Registration)
-10. [Registration](#Registration)
-11. [Registration](#Registration)
+5. [Password Reset](#Password-Reset)
+6. [Email Verification](#Email-Verification)
+7. [Update User Profile](#Update-User-Profile)
+8. [Get User Profile](#Get-User-Profile)
+9. [Add User Bookmark](#Add-User-Bookmark)
+10. [Delete User Bookmark](#Delete-User-Bookmark)
+11. [Get User Bookmarks](#Get-User-Bookmarks)
 12. [Registration](#Registration)
 13. [Registration](#Registration)
 14. [Registration](#Registration)
@@ -30,6 +30,8 @@
 BASE_URL  http://host1813162.hostland.pro/api
 
 ## Registration
+
+[<-- Back to Table Of Contents](#Table-Of-Contents)
 
 |attribute        |value         	      |
 |----------------	|-------------------	|
@@ -75,6 +77,8 @@ BASE_URL  http://host1813162.hostland.pro/api
 ```
 
 ## Authorization
+
+[<-- Back to Table Of Contents](#Table-Of-Contents)
 
 |attribute        |value         	      |
 |----------------	|-------------------	|
@@ -134,6 +138,8 @@ BASE_URL  http://host1813162.hostland.pro/api
 
 ## Logout
 
+[<-- Back to Table Of Contents](#Table-Of-Contents)
+
 |attribute          |value         	        |
 |----------------	|-------------------	|
 | request method 	| POST              	|
@@ -143,6 +149,8 @@ BASE_URL  http://host1813162.hostland.pro/api
 >*Note*: Формально логаут это удаление токена, т.е. никакие дополнительные данные не нужны. Токен будет в приведенном хэдере запроса. 
 
 ## Password Reset Request
+
+[<-- Back to Table Of Contents](#Table-Of-Contents)
 
 |attribute          |value         	        |
 |----------------	|-------------------	|
@@ -185,6 +193,8 @@ BASE_URL  http://host1813162.hostland.pro/api
 ```
 
 ## Password Reset
+
+[<-- Back to Table Of Contents](#Table-Of-Contents)
 
 |attribute          |value         	        |
 |----------------	|-------------------	|
@@ -235,6 +245,8 @@ BASE_URL  http://host1813162.hostland.pro/api
 
 ## Email Verification
 
+[<-- Back to Table Of Contents](#Table-Of-Contents)
+
 |attribute          |value         	        |
 |----------------	|-------------------	|
 | request method 	| GET              	    |
@@ -272,6 +284,8 @@ BASE_URL  http://host1813162.hostland.pro/api
 }
 ```
 ## Update User Profile
+
+[<-- Back to Table Of Contents](#Table-Of-Contents)
 
 |attribute          |value         	        |
 |----------------	|-------------------	|
@@ -324,6 +338,8 @@ BASE_URL  http://host1813162.hostland.pro/api
 ```
 ## Get User Profile
 
+[<-- Back to Table Of Contents](#Table-Of-Contents)
+
 |attribute          |value         	        |
 |----------------	|-------------------	|
 | request method 	| GET|
@@ -370,6 +386,8 @@ BASE_URL  http://host1813162.hostland.pro/api
 }
 ```
 ## Add User Bookmark
+
+[<-- Back to Table Of Contents](#Table-Of-Contents)
 
 |attribute        |value         	      |
 |----------------	|-------------------	|
@@ -423,6 +441,8 @@ BASE_URL  http://host1813162.hostland.pro/api
 ```
 ## Delete User Bookmark
 
+[<-- Back to Table Of Contents](#Table-Of-Contents)
+
 |attribute        |value         	      |
 |----------------	|-------------------	|
 | request method 	| DELETE |
@@ -467,6 +487,8 @@ BASE_URL  http://host1813162.hostland.pro/api
 ```
 
 ## Get User Bookmarks
+
+[<-- Back to Table Of Contents](#Table-Of-Contents)
 
 |attribute        |value         	      |
 |----------------	|-------------------	|
