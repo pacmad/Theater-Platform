@@ -3,6 +3,9 @@
 >*updates*:
 >1. К payload регистрации добавлены фамилия, имя и отчество
 >2. К payload авторизации в ответе, соответственно, добавлены фамилия, имя и отчество
+>3. добавлено API для добавления мест в зале
+>4. добавлено API для получения мест в зале
+>5. добавлено API для удаления мест в зале
 
 BASE_URL  http://host1813162.hostland.pro/api
 
@@ -2293,5 +2296,200 @@ BASE_URL  http://host1813162.hostland.pro/api
         }
     ],
     "message": "В процессе удаления зала возникли ошибки."
+}
+```
+
+## Add Seats
+
+|attribute        |value         	      |
+|----------------	|-------------------	|
+| request method 	| POST |
+| route          	| BASE_URL/seats|
+| error types    	| HallNotFound, PermissionDenied |
+| required headers  | Authorization         |
+
+>*Note*: PermissionDenied - ошибка проверки токена доступа, который лежит в хэдере Authorization (для неавторизованных пользователей выполнение операции невозможно).
+
+>*Note*: В request data содержится список "посадочных мест", которые необходимо добавить. В примере приведено 3, в общем случае количество мест в списке не ограничено (может быть в разы больше). Предусмотри ситацию с пустым списком (если в запросе не будет элементов в списке). local_id не сохраняется в базе!! см.комментарий к ответу на запрос
+
+#### REQUEST DATA
+
+```json
+{
+    "seats": [
+        {
+            "local_id": "0",
+            "row": 23,
+            "column": 15,
+            "zone": "main",
+            "hall_id": "hall_id_seat_is_bound_to"
+        },
+        {
+            "local_id": "1",
+            "row": 19,
+            "column": 14,
+            "zone": "parter",
+            "hall_id": "hall_id_seat_is_bound_to"
+        },
+        {
+            "local_id": "2",
+            "row": 26,
+            "column": 9,
+            "zone": "balcony",
+            "hall_id": "hall_id_seat_is_bound_to"
+        }
+    ]
+}
+```
+
+#### RESPONSE DATA [SUCCESS]
+
+>*Note*: В ответе тебе нужно вернуть id каждого добавленного в бд места, при этом завернуть его вместе с local_id, которое тебе пришло в запросе для однозначной обратной идентификации.
+
+```json
+{
+    "has_errors": false,
+    "errors": [],
+    "seats": {
+        {
+            "local_id": 0,
+            "id": 322
+        },
+        {
+            "local_id": 1,
+            "id": 323
+        },
+        {
+            "local_id": 2,
+            "id": 324
+        }
+    }
+    "message": "Места в зале успешно добавлены."
+}
+```
+
+#### RESPONSE DATA [FAIL]
+
+```json
+{
+    "has_errors": true,
+    "errors": [
+        {
+            "type": "HallNotFound",
+            "message": "Зал с таким id не найден."
+        },
+        {
+            "type": "PermissionDenied",
+            "message": "Отказано в доступе."
+        }
+    ],
+    "message": "В процессе добавления мест в зале возникли ошибки."
+}
+```
+
+## Get Hall Seats
+
+|attribute        |value         	      |
+|----------------	|-------------------	|
+| request method 	| GET |
+| route          	| BASE_URL/seats?hall_id={hall_id}|
+| error types    	| HallNotFound |
+
+>*Note*: 1) Возвращаются все места в зале атрибут hall_id которых равен id зала в запросе. В примере ответа от сервера приведено 3 результата. 2) Если записей о местах в зале нет, seats будет пустым списком.
+
+#### RESPONSE DATA [SUCCESS]
+
+```json
+{
+    "has_errors": false,
+    "errors": [],
+    "seats": [
+        {
+            "id": "0",
+            "row": 23,
+            "column": 15,
+            "zone": "main"
+        },
+        {
+            "id": "1",
+            "row": 19,
+            "column": 14,
+            "zone": "parter"
+        },
+        {
+            "id": "2",
+            "row": 26,
+            "column": 9,
+            "zone": "balcony"
+        }
+    ]
+}
+```
+
+#### RESPONSE DATA [FAIL]
+
+```json
+{
+    "has_errors": true,
+    "errors": [
+        {
+            "type": "HallNotFound",
+            "message": "Зал с таким id не найден."
+        }
+    ],
+    "message": "В процессе получения информации о местах в зале возникли ошибки."
+}
+```
+
+## Delete Seats
+
+|attribute        |value         	      |
+|----------------	|-------------------	|
+| request method 	| PATCH |
+| route          	| BASE_URL/seats?hall_id={hall_id}|
+| error types    	| HallNotFound, SeatNotFound, PermissionDenied |
+| required headers  | Authorization         |
+
+>*Note*: PermissionDenied - ошибка проверки токена доступа, который лежит в хэдере Authorization (для неавторизованных пользователей выполнение операции невозможно).
+
+>*Note*: Метод запроса - PATCH, это не ошибка. Дело в том, что необходимо иметь возможность удалять сразу несколько записей из таблицы "Место". В нагрузке запроса будет список id мест, которые необходимо удалить. Это один из подходов к решению проблемы о множественном удалении. Количество мест для удаления неограничено.
+
+#### REQUEST DATA
+
+```json
+{
+    "seats_to_delete": [23, 25, 324, 1234, 23, 123]
+}
+```
+
+#### RESPONSE DATA [SUCCESS]
+
+```json
+{
+    "has_errors": false,
+    "errors": [],
+    "message": "Информация о местах в зале успешно удалена",
+}
+```
+#### RESPONSE DATA [FAIL]
+
+```json
+{
+    "has_errors": true,
+    "errors": [
+        {
+            "type": "HallNotFound",
+            "message": "Зал с таким id не найден."
+        },
+        {
+            "type": "PermissionDenied",
+            "message": "Отказано в доступе."
+        },
+        {
+            "type": "SeatNotFound",
+            "message": "Место с id = {seat_id} не найдено."
+        },
+    ],
+    "message": "В процессе удаления информации о местах в зале возникли ошибки."
 }
 ```
