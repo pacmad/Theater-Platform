@@ -66,9 +66,36 @@
 57. [Get Event Ticket](#Get-Event-Ticket)
 58. [Update Event Tickets](#Update-Event-Tickets)
 59. [Delete Tickets](#Delete-Tickets)
-60. [Registration](#Registration)
-61. [Registration](#Registration)
-62. [Registration](#Registration)
+60. [Tickets Purchase](#Tickets-Purchase)
+61. [Add Actor](#Add-Actor)
+62. [Update Actor](#Update-Actor)
+63. [Get Actor](#Get-Actor)
+64. [Delete Actor](#Delete-Actor)
+65. [Add Actors to Spectacle](#Add-Actors-to-Spectacle)
+66. [Get Spectacle Actors](#Get-Spectacle-Actors)
+67. [Delete Actors From Spectacle](#Delete-Actors-From-Spectacle)
+68. [Add Producer](#Add-Producer)
+69. [Update Producer](#Update-Producer)
+70. [Get Producer](#Get-Producer)
+71. [Delete Producer](#Delete-Producer)
+72. [Add Producers to Spectacle](#Add-Producer-to-Spectacle)
+73. [Get Spectacle Producers](#Get-Spectacle-Producers)
+74. [Delete Producers From Spectacle](#Delete-Producers-From-Spectacle)
+75. [Add Author](#Add-Author)
+76. [Update Author](#Update-Author)
+77. [Get Author](#Get-Author)
+78. [Delete Author](#Delete-Author)
+79. [Add Authors to Spectacle](#Add-Authors-to-Spectacle)
+80. [Get Spectacle Authors](#Get-Spectacle-Authors)
+81. [Delete Authors From Spectacle](#Delete-Authors-From-Spectacle)
+82. [Add Artist](#Add-Artist)
+83. [Update Artist](#Update-Artist)
+84. [Get Artist](#Get-Artist)
+85. [Delete Artist](#Delete-Artist)
+86. [Add Artists to Spectacle](#Add-Artists-to-Spectacle)
+87. [Get Spectacle Artists](#Get-Spectacle-Artists)
+88. [Delete Artists From Spectacle](#Delete-Artists-From-Spectacle)
+
 
 BASE_URL  http://host1813162.hostland.pro/api
 
@@ -3219,6 +3246,8 @@ BASE_URL  http://host1813162.hostland.pro/api
 
 ## Tickets Purchase
 
+[<-- Back to Table Of Contents](#Table-Of-Contents)
+
 |attribute        |value         	      |
 |----------------	|-------------------	|
 | request method 	| POST |
@@ -3272,6 +3301,8 @@ BASE_URL  http://host1813162.hostland.pro/api
 
 ## Add Actor
 
+[<-- Back to Table Of Contents](#Table-Of-Contents)
+
 |attribute        |value         	      |
 |----------------	|-------------------	|
 | request method 	| POST |
@@ -3324,6 +3355,8 @@ BASE_URL  http://host1813162.hostland.pro/api
 ```
 
 ## Update Actor
+
+[<-- Back to Table Of Contents](#Table-Of-Contents)
 
 |attribute        |value         	      |
 |----------------	|-------------------	|
@@ -3379,6 +3412,8 @@ BASE_URL  http://host1813162.hostland.pro/api
 
 ## Get Actor
 
+[<-- Back to Table Of Contents](#Table-Of-Contents)
+
 |attribute        |value         	      |
 |----------------	|-------------------	|
 | request method 	| GET |
@@ -3418,6 +3453,8 @@ BASE_URL  http://host1813162.hostland.pro/api
 
 ## Delete Actor
 
+[<-- Back to Table Of Contents](#Table-Of-Contents)
+
 |attribute        |value         	      |
 |----------------	|-------------------	|
 | request method 	| DELETE |
@@ -3456,6 +3493,8 @@ BASE_URL  http://host1813162.hostland.pro/api
 ```
 
 ## Add Actors to Spectacle
+
+[<-- Back to Table Of Contents](#Table-Of-Contents)
 
 |attribute        |value         	      |
 |----------------	|-------------------	|
@@ -3524,6 +3563,8 @@ BASE_URL  http://host1813162.hostland.pro/api
 
 ## Get Spectacle Actors
 
+[<-- Back to Table Of Contents](#Table-Of-Contents)
+
 |attribute        |value         	      |
 |----------------	|-------------------	|
 | request method 	| GET |
@@ -3582,6 +3623,8 @@ BASE_URL  http://host1813162.hostland.pro/api
 ```
 
 ## Delete Actors From Spectacle
+
+[<-- Back to Table Of Contents](#Table-Of-Contents)
 
 |attribute        |value         	      |
 |----------------	|-------------------	|
