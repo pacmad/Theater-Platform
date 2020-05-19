@@ -25,11 +25,11 @@
 16. [Get Spectacle Comments](#Get-Spectacle-Comments)
 17. [Comment Verification](#Comment-Verification)
 18. [Delete Comment](#Delete-Comment)
-19. [Registration](#Registration)
-20. [Registration](#Registration)
-21. [Registration](#Registration)
-22. [Registration](#Registration)
-23. [Registration](#Registration)
+19. [Add Spectacle](#Add-Spectacle)
+20. [Update Spectacle](#Update-Spectacle)
+21. [Get Spectacle](#Get-Spectacle)
+22. [Get Spectacles](#Get-Spectacles)
+23. [Delete Spectacle](#Delete-Spectacle)
 24. [Registration](#Registration)
 25. [Registration](#Registration)
 26. [Registration](#Registration)
@@ -1021,6 +1021,8 @@ BASE_URL  http://host1813162.hostland.pro/api
 
 ## Add Spectacle
 
+[<-- Back to Table Of Contents](#Table-Of-Contents)
+
 |attribute        |value         	      |
 |----------------	|-------------------	|
 | request method 	| POST |
@@ -1078,6 +1080,8 @@ BASE_URL  http://host1813162.hostland.pro/api
 
 ## Update Spectacle
 
+[<-- Back to Table Of Contents](#Table-Of-Contents)
+
 |attribute        |value         	      |
 |----------------	|-------------------	|
 | request method 	| PATCH |
@@ -1131,6 +1135,8 @@ BASE_URL  http://host1813162.hostland.pro/api
 
 ## Get Spectacle
 
+[<-- Back to Table Of Contents](#Table-Of-Contents)
+
 |attribute        |value         	      |
 |----------------	|-------------------	|
 | request method 	| GET |
@@ -1172,6 +1178,8 @@ BASE_URL  http://host1813162.hostland.pro/api
 ```
 
 ## Get Spectacles
+
+[<-- Back to Table Of Contents](#Table-Of-Contents)
 
 |attribute        |value         	      |
 |----------------	|-------------------	|
@@ -1220,6 +1228,8 @@ BASE_URL  http://host1813162.hostland.pro/api
 ```
 
 ## Delete Spectacle
+
+[<-- Back to Table Of Contents](#Table-Of-Contents)
 
 |attribute        |value         	      |
 |----------------	|-------------------	|
