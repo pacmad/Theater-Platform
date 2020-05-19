@@ -8,100 +8,100 @@
 ## Table Of Contents
 
 1. [Registration](#registration)
-2. [Authorization](#Authorization)
-3. [Logout](#Logout)
-4. [Password Reset Request](#Password-Reset-Request)
-5. [Password Reset](#Password-Reset)
-6. [Email Verification](#Email-Verification)
-7. [Update User Profile](#Update-User-Profile)
-8. [Get User Profile](#Get-User-Profile)
-9. [Add User Bookmark](#Add-User-Bookmark)
-10. [Delete User Bookmark](#Delete-User-Bookmark)
-11. [Get User Bookmarks](#Get-User-Bookmarks)
-12. [Get User Purchase History](#Get-User-Purchase-History)
-13. [Get User Commetns](#Get-User-Commetns)
-14. [Add Comment](#Add-Comment)
-15. [Update Comment](#Update-Comment)
-16. [Get Spectacle Comments](#Get-Spectacle-Comments)
-17. [Comment Verification](#Comment-Verification)
-18. [Delete Comment](#Delete-Comment)
-19. [Add Spectacle](#Add-Spectacle)
-20. [Update Spectacle](#Update-Spectacle)
-21. [Get Spectacle](#Get-Spectacle)
-22. [Get Spectacles](#Get-Spectacles)
-23. [Delete Spectacle](#Delete-Spectacle)
-24. [Add Event](#Add-Event)
-25. [Update Event](#Update-Event)
-26. [Get Event](#Get-Event)
-27. [Get Events](#Get-Events)
-28. [Delete Event](#Delete-Event)
-29. [Get Premieres](#Get-Premieres)
-30. [Get Main Page Premieres](#Get-Main-Page-Premieres)
-31. [Add Theater](#Add-Theater)
-32. [Update Theater](#Update-Theater)
-33. [Get Theater](#Get-Theater)
-34. [Get Theaters](#Get-Theaters)
-35. [Delete Theater](#Delete-Theater)
-36. [Get Theater Preview](#Get-Theater-Preview)
-37. [Get Spectacle Trailer](#Get-Spectacle-Trailer)
-38. [Add Social Network](#Add-Social-Network)
-39. [Update Social Network](#Update-Social-Network)
-40. [Get Social Network](#Get-Social-Network)
-41. [Delete Social Network](#Delete-Social-Network)
-42. [Add Theater Social Network Community Group](#Add-Theater-Social-Network-Community-Group)
-43. [Update Theater Social Network Community Group](#Update-Theater-Social-Network-Community-Group)
-44. [Get Theater Social Network Community Group](#Get-Theater-Social-Network-Community-Group)
-45. [Get Theater Social Network Community Groups](#Get-Theater-Social-Network-Community-Groups)
-46. [Delete Theater Social Network Community Group](#Delete-Theater-Social-Network-Community-Group)
-47. [Add Hall](#Add-Hall)
-48. [Update Hall](#Update-Hall)
-49. [Get Hall](#Get-Hall)
-50. [Get Theater Halls](#Get-Theater-Halls)
-51. [Delete Hall](#Delete-Hall)
-52. [Add Seats](#Add-Seats)
-53. [Get Hall Seats](#Get-Hall-Seats)
-54. [Delete Seats](#Delete-Seats)
-55. [Add Tickets](#Add-Tickets)
-56. [Get Event Tickets](#Get-Event-Tickets)
-57. [Get Event Ticket](#Get-Event-Ticket)
-58. [Update Event Tickets](#Update-Event-Tickets)
-59. [Delete Tickets](#Delete-Tickets)
-60. [Tickets Purchase](#Tickets-Purchase)
-61. [Add Actor](#Add-Actor)
-62. [Update Actor](#Update-Actor)
-63. [Get Actor](#Get-Actor)
-64. [Delete Actor](#Delete-Actor)
-65. [Add Actors to Spectacle](#Add-Actors-to-Spectacle)
-66. [Get Spectacle Actors](#Get-Spectacle-Actors)
-67. [Delete Actors From Spectacle](#Delete-Actors-From-Spectacle)
-68. [Add Producer](#Add-Producer)
-69. [Update Producer](#Update-Producer)
-70. [Get Producer](#Get-Producer)
-71. [Delete Producer](#Delete-Producer)
-72. [Add Producers to Spectacle](#Add-Producer-to-Spectacle)
-73. [Get Spectacle Producers](#Get-Spectacle-Producers)
-74. [Delete Producers From Spectacle](#Delete-Producers-From-Spectacle)
-75. [Add Author](#Add-Author)
-76. [Update Author](#Update-Author)
-77. [Get Author](#Get-Author)
-78. [Delete Author](#Delete-Author)
-79. [Add Authors to Spectacle](#Add-Authors-to-Spectacle)
-80. [Get Spectacle Authors](#Get-Spectacle-Authors)
-81. [Delete Authors From Spectacle](#Delete-Authors-From-Spectacle)
-82. [Add Artist](#Add-Artist)
-83. [Update Artist](#Update-Artist)
-84. [Get Artist](#Get-Artist)
-85. [Delete Artist](#Delete-Artist)
-86. [Add Artists to Spectacle](#Add-Artists-to-Spectacle)
-87. [Get Spectacle Artists](#Get-Spectacle-Artists)
-88. [Delete Artists From Spectacle](#Delete-Artists-From-Spectacle)
+2. [Authorization](#authorization)
+3. [Logout](#logout)
+4. [Password Reset Request](#password-reset-request)
+5. [Password Reset](#password-reset)
+6. [Email Verification](#email-verification)
+7. [Update User Profile](#update-user-profile)
+8. [Get User Profile](#get-user-profile)
+9. [Add User Bookmark](#add-user-bookmark)
+10. [Delete User Bookmark](#delete-user-bookmark)
+11. [Get User Bookmarks](#get-user-bookmarks)
+12. [Get User Purchase History](#get-user-purchase-history)
+13. [Get User Commetns](#get-user-commetns)
+14. [Add Comment](#add-comment)
+15. [Update Comment](#update-comment)
+16. [Get Spectacle Comments](#get-spectacle-comments)
+17. [Comment Verification](#comment-verification)
+18. [Delete Comment](#delete-comment)
+19. [Add Spectacle](#add-spectacle)
+20. [Update Spectacle](#update-spectacle)
+21. [Get Spectacle](#get-spectacle)
+22. [Get Spectacles](#get-spectacles)
+23. [Delete Spectacle](#delete-spectacle)
+24. [Add Event](#add-event)
+25. [Update Event](#update-event)
+26. [Get Event](#get-event)
+27. [Get Events](#get-events)
+28. [Delete Event](#delete-event)
+29. [Get Premieres](#get-premieres)
+30. [Get Main Page Premieres](#get-main-page-premieres)
+31. [Add Theater](#add-theater)
+32. [Update Theater](#update-theater)
+33. [Get Theater](#get-theater)
+34. [Get Theaters](#get-theaters)
+35. [Delete Theater](#delete-theater)
+36. [Get Theater Preview](#get-theater-preview)
+37. [Get Spectacle Trailer](#get-spectacle-trailer)
+38. [Add Social Network](#add-social-network)
+39. [Update Social Network](#update-social-social)
+40. [Get Social Network](#get-social-social)
+41. [Delete Social Network](#delete-social-social)
+42. [Add Theater Social Network Community Group](#add-theater-social-network-community-group)
+43. [Update Theater Social Network Community Group](#update-theater-social-network-community-group)
+44. [Get Theater Social Network Community Group](#get-theater-social-network-community-group)
+45. [Get Theater Social Network Community Groups](#get-theater-social-network-community-groups)
+46. [Delete Theater Social Network Community Group](#delete-theater-social-network-community-group)
+47. [Add Hall](#add-hall)
+48. [Update Hall](#update-hall)
+49. [Get Hall](#get-hall)
+50. [Get Theater Halls](#get-theater-halls)
+51. [Delete Hall](#delete-hall)
+52. [Add Seats](#add-seats)
+53. [Get Hall Seats](#get-hall-seats)
+54. [Delete Seats](#delete-seats)
+55. [Add Tickets](#add-tickets)
+56. [Get Event Tickets](#get-event-tickets)
+57. [Get Event Ticket](#get-event-ticket)
+58. [Update Event Tickets](#update-event-tickets)
+59. [Delete Tickets](#delete-tickets)
+60. [Tickets Purchase](#tickets-purchase)
+61. [Add Actor](#add-actor)
+62. [Update Actor](#update-actor)
+63. [Get Actor](#get-actor)
+64. [Delete Actor](#delete-actor)
+65. [Add Actors to Spectacle](#add-actors-to-spectacle)
+66. [Get Spectacle Actors](#get-spectacle-actors)
+67. [Delete Actors From Spectacle](#delete-actors-from-spectacle)
+68. [Add Producer](#add-producer)
+69. [Update Producer](#update-producer)
+70. [Get Producer](#get-producer)
+71. [Delete Producer](#delete-producer)
+72. [Add Producers to Spectacle](#add-producer-to-spectacle)
+73. [Get Spectacle Producers](#get-spectacle-producers)
+74. [Delete Producers From Spectacle](#delete-producers-from-spectacle)
+75. [Add Author](#add-author)
+76. [Update Author](#update-author)
+77. [Get Author](#get-author)
+78. [Delete Author](#delete-author)
+79. [Add Authors to Spectacle](#add-authors-to-spectacle)
+80. [Get Spectacle Authors](#get-spectacle-authors)
+81. [Delete Authors From Spectacle](#delete-authors-from-spectacle)
+82. [Add Artist](#add-artist)
+83. [Update Artist](#update-artist)
+84. [Get Artist](#get-artist)
+85. [Delete Artist](#delete-artist)
+86. [Add Artists to Spectacle](#add-artists-to-spectacle)
+87. [Get Spectacle Artists](#get-spectacle-artists)
+88. [Delete Artists From Spectacle](#delete-artists-from-spectacle)
 
 
 BASE_URL  http://host1813162.hostland.pro/api
 
 ## Registration
 
-[<-- Back to Table Of Contents](#Table-Of-Contents)
+[<-- Back to Table Of Contents](#table-of-contents)
 
 |attribute        |value         	      |
 |----------------	|-------------------	|
@@ -148,7 +148,7 @@ BASE_URL  http://host1813162.hostland.pro/api
 
 ## Authorization
 
-[<-- Back to Table Of Contents](#Table-Of-Contents)
+[<-- Back to Table Of Contents](#table-of-contents)
 
 |attribute        |value         	      |
 |----------------	|-------------------	|
@@ -208,7 +208,7 @@ BASE_URL  http://host1813162.hostland.pro/api
 
 ## Logout
 
-[<-- Back to Table Of Contents](#Table-Of-Contents)
+[<-- Back to Table Of Contents](#table-of-contents)
 
 |attribute          |value         	        |
 |----------------	|-------------------	|
@@ -220,7 +220,7 @@ BASE_URL  http://host1813162.hostland.pro/api
 
 ## Password Reset Request
 
-[<-- Back to Table Of Contents](#Table-Of-Contents)
+[<-- Back to Table Of Contents](#table-of-contents)
 
 |attribute          |value         	        |
 |----------------	|-------------------	|
@@ -264,7 +264,7 @@ BASE_URL  http://host1813162.hostland.pro/api
 
 ## Password Reset
 
-[<-- Back to Table Of Contents](#Table-Of-Contents)
+[<-- Back to Table Of Contents](#table-of-contents)
 
 |attribute          |value         	        |
 |----------------	|-------------------	|
@@ -315,7 +315,7 @@ BASE_URL  http://host1813162.hostland.pro/api
 
 ## Email Verification
 
-[<-- Back to Table Of Contents](#Table-Of-Contents)
+[<-- Back to Table Of Contents](#table-of-contents)
 
 |attribute          |value         	        |
 |----------------	|-------------------	|
@@ -355,7 +355,7 @@ BASE_URL  http://host1813162.hostland.pro/api
 ```
 ## Update User Profile
 
-[<-- Back to Table Of Contents](#Table-Of-Contents)
+[<-- Back to Table Of Contents](#table-of-contents)
 
 |attribute          |value         	        |
 |----------------	|-------------------	|
@@ -408,7 +408,7 @@ BASE_URL  http://host1813162.hostland.pro/api
 ```
 ## Get User Profile
 
-[<-- Back to Table Of Contents](#Table-Of-Contents)
+[<-- Back to Table Of Contents](#table-of-contents)
 
 |attribute          |value         	        |
 |----------------	|-------------------	|
@@ -457,7 +457,7 @@ BASE_URL  http://host1813162.hostland.pro/api
 ```
 ## Add User Bookmark
 
-[<-- Back to Table Of Contents](#Table-Of-Contents)
+[<-- Back to Table Of Contents](#table-of-contents)
 
 |attribute        |value         	      |
 |----------------	|-------------------	|
@@ -511,7 +511,7 @@ BASE_URL  http://host1813162.hostland.pro/api
 ```
 ## Delete User Bookmark
 
-[<-- Back to Table Of Contents](#Table-Of-Contents)
+[<-- Back to Table Of Contents](#table-of-contents)
 
 |attribute        |value         	      |
 |----------------	|-------------------	|
@@ -558,7 +558,7 @@ BASE_URL  http://host1813162.hostland.pro/api
 
 ## Get User Bookmarks
 
-[<-- Back to Table Of Contents](#Table-Of-Contents)
+[<-- Back to Table Of Contents](#table-of-contents)
 
 |attribute        |value         	      |
 |----------------	|-------------------	|
@@ -620,7 +620,7 @@ BASE_URL  http://host1813162.hostland.pro/api
 
 ## Get User Purchase History
 
-[<-- Back to Table Of Contents](#Table-Of-Contents)
+[<-- Back to Table Of Contents](#table-of-contents)
 
 |attribute        |value         	      |
 |----------------	|-------------------	|
@@ -743,7 +743,7 @@ BASE_URL  http://host1813162.hostland.pro/api
 ```
 ## Get User Commetns
 
-[<-- Back to Table Of Contents](#Table-Of-Contents)
+[<-- Back to Table Of Contents](#table-of-contents)
 
 |attribute        |value         	      |
 |----------------	|-------------------	|
@@ -819,7 +819,7 @@ BASE_URL  http://host1813162.hostland.pro/api
 
 ## Add Comment
 
-[<-- Back to Table Of Contents](#Table-Of-Contents)
+[<-- Back to Table Of Contents](#table-of-contents)
 
 |attribute        |value         	      |
 |----------------	|-------------------	|
@@ -881,7 +881,7 @@ BASE_URL  http://host1813162.hostland.pro/api
 
 ## Update Comment
 
-[<-- Back to Table Of Contents](#Table-Of-Contents)
+[<-- Back to Table Of Contents](#table-of-contents)
 
 |attribute        |value         	      |
 |----------------	|-------------------	|
@@ -933,7 +933,7 @@ BASE_URL  http://host1813162.hostland.pro/api
 
 ## Get Spectacle Comments
 
-[<-- Back to Table Of Contents](#Table-Of-Contents)
+[<-- Back to Table Of Contents](#table-of-contents)
 
 |attribute        |value         	      |
 |----------------	|-------------------	|
@@ -989,7 +989,7 @@ BASE_URL  http://host1813162.hostland.pro/api
 
 ## Comment Verification
 
-[<-- Back to Table Of Contents](#Table-Of-Contents)
+[<-- Back to Table Of Contents](#table-of-contents)
 
 |attribute        |value         	      |
 |----------------	|-------------------	|
@@ -1029,7 +1029,7 @@ BASE_URL  http://host1813162.hostland.pro/api
 
 ## Delete Comment
 
-[<-- Back to Table Of Contents](#Table-Of-Contents)
+[<-- Back to Table Of Contents](#table-of-contents)
 
 |attribute        |value         	      |
 |----------------	|-------------------	|
@@ -1070,7 +1070,7 @@ BASE_URL  http://host1813162.hostland.pro/api
 
 ## Add Spectacle
 
-[<-- Back to Table Of Contents](#Table-Of-Contents)
+[<-- Back to Table Of Contents](#table-of-contents)
 
 UPDATED
 
@@ -1133,7 +1133,7 @@ UPDATED
 
 ## Update Spectacle
 
-[<-- Back to Table Of Contents](#Table-Of-Contents)
+[<-- Back to Table Of Contents](#table-of-contents)
 
 UPDATED
 
@@ -1192,7 +1192,7 @@ UPDATED
 
 ## Get Spectacle
 
-[<-- Back to Table Of Contents](#Table-Of-Contents)
+[<-- Back to Table Of Contents](#table-of-contents)
 
 UPDATED
 
@@ -1240,7 +1240,7 @@ UPDATED
 
 ## Get Spectacles
 
-[<-- Back to Table Of Contents](#Table-Of-Contents)
+[<-- Back to Table Of Contents](#table-of-contents)
 
 |attribute        |value         	      |
 |----------------	|-------------------	|
@@ -1290,7 +1290,7 @@ UPDATED
 
 ## Delete Spectacle
 
-[<-- Back to Table Of Contents](#Table-Of-Contents)
+[<-- Back to Table Of Contents](#table-of-contents)
 
 |attribute        |value         	      |
 |----------------	|-------------------	|
@@ -1331,7 +1331,7 @@ UPDATED
 
 ## Add Event
 
-[<-- Back to Table Of Contents](#Table-Of-Contents)
+[<-- Back to Table Of Contents](#table-of-contents)
 
 |attribute        |value         	      |
 |----------------	|-------------------	|
@@ -1396,7 +1396,7 @@ UPDATED
 
 ## Update Event
 
-[<-- Back to Table Of Contents](#Table-Of-Contents)
+[<-- Back to Table Of Contents](#table-of-contents)
 
 |attribute        |value         	      |
 |----------------	|-------------------	|
@@ -1462,7 +1462,7 @@ UPDATED
 
 ## Get Event
 
-[<-- Back to Table Of Contents](#Table-Of-Contents)
+[<-- Back to Table Of Contents](#table-of-contents)
 
 |attribute        |value         	      |
 |----------------	|-------------------	|
@@ -1507,7 +1507,7 @@ UPDATED
 
 ## Get Events
 
-[<-- Back to Table Of Contents](#Table-Of-Contents)
+[<-- Back to Table Of Contents](#table-of-contents)
 
 |attribute        |value         	      |
 |----------------	|-------------------	|
@@ -1592,7 +1592,7 @@ UPDATED
 
 ## Delete Event
 
-[<-- Back to Table Of Contents](#Table-Of-Contents)
+[<-- Back to Table Of Contents](#table-of-contents)
 
 |attribute        |value         	      |
 |----------------	|-------------------	|
@@ -1633,7 +1633,7 @@ UPDATED
 
 ## Get Premieres
 
-[<-- Back to Table Of Contents](#Table-Of-Contents)
+[<-- Back to Table Of Contents](#table-of-contents)
 
 |attribute        |value         	      |
 |----------------	|-------------------	|
@@ -1694,7 +1694,7 @@ UPDATED
 
 ## Get Main Page Premieres
 
-[<-- Back to Table Of Contents](#Table-Of-Contents)
+[<-- Back to Table Of Contents](#table-of-contents)
 
 |attribute        |value         	      |
 |----------------	|-------------------	|
@@ -1755,7 +1755,7 @@ UPDATED
 
 ## Add Theater
 
-[<-- Back to Table Of Contents](#Table-Of-Contents)
+[<-- Back to Table Of Contents](#table-of-contents)
 
 |attribute        |value         	      |
 |----------------	|-------------------	|
@@ -1811,7 +1811,7 @@ UPDATED
 
 ## Update Theater
 
-[<-- Back to Table Of Contents](#Table-Of-Contents)
+[<-- Back to Table Of Contents](#table-of-contents)
 
 |attribute        |value         	      |
 |----------------	|-------------------	|
@@ -1868,7 +1868,7 @@ UPDATED
 
 ## Get Theater
 
-[<-- Back to Table Of Contents](#Table-Of-Contents)
+[<-- Back to Table Of Contents](#table-of-contents)
 
 |attribute        |value         	      |
 |----------------	|-------------------	|
@@ -1914,7 +1914,7 @@ UPDATED
 
 ## Get Theaters
 
-[<-- Back to Table Of Contents](#Table-Of-Contents)
+[<-- Back to Table Of Contents](#table-of-contents)
 
 |attribute        |value         	      |
 |----------------	|-------------------	|
@@ -1957,7 +1957,7 @@ UPDATED
 
 ## Delete Theater
 
-[<-- Back to Table Of Contents](#Table-Of-Contents)
+[<-- Back to Table Of Contents](#table-of-contents)
 
 |attribute        |value         	      |
 |----------------	|-------------------	|
@@ -1998,7 +1998,7 @@ UPDATED
 
 ## Get Theater Preview
 
-[<-- Back to Table Of Contents](#Table-Of-Contents)
+[<-- Back to Table Of Contents](#table-of-contents)
 
 |attribute        |value         	      |
 |----------------	|-------------------	|
@@ -2034,7 +2034,7 @@ UPDATED
 
 ## Get Spectacle Trailer
 
-[<-- Back to Table Of Contents](#Table-Of-Contents)
+[<-- Back to Table Of Contents](#table-of-contents)
 
 |attribute        |value         	      |
 |----------------	|-------------------	|
@@ -2069,7 +2069,7 @@ UPDATED
 
 ## Add Social Network
 
-[<-- Back to Table Of Contents](#Table-Of-Contents)
+[<-- Back to Table Of Contents](#table-of-contents)
 
 |attribute        |value         	      |
 |----------------	|-------------------	|
@@ -2119,7 +2119,7 @@ UPDATED
 
 ## Update Social Network
 
-[<-- Back to Table Of Contents](#Table-Of-Contents)
+[<-- Back to Table Of Contents](#table-of-contents)
 
 |attribute        |value         	      |
 |----------------	|-------------------	|
@@ -2170,7 +2170,7 @@ UPDATED
 
 ## Get Social Network
 
-[<-- Back to Table Of Contents](#Table-Of-Contents)
+[<-- Back to Table Of Contents](#table-of-contents)
 
 |attribute        |value         	      |
 |----------------	|-------------------	|
@@ -2210,7 +2210,7 @@ UPDATED
 
 ## Delete Social Network
 
-[<-- Back to Table Of Contents](#Table-Of-Contents)
+[<-- Back to Table Of Contents](#table-of-contents)
 
 |attribute        |value         	      |
 |----------------	|-------------------	|
@@ -2252,7 +2252,7 @@ UPDATED
 
 ## Add Theater Social Network Community Group
 
-[<-- Back to Table Of Contents](#Table-Of-Contents)
+[<-- Back to Table Of Contents](#table-of-contents)
 
 |attribute        |value         	      |
 |----------------	|-------------------	|
@@ -2309,7 +2309,7 @@ UPDATED
 
 ## Update Theater Social Network Community Group
 
-[<-- Back to Table Of Contents](#Table-Of-Contents)
+[<-- Back to Table Of Contents](#table-of-contents)
 
 |attribute        |value         	      |
 |----------------	|-------------------	|
@@ -2363,7 +2363,7 @@ UPDATED
 
 ## Get Theater Social Network Community Group
 
-[<-- Back to Table Of Contents](#Table-Of-Contents)
+[<-- Back to Table Of Contents](#table-of-contents)
 
 |attribute        |value         	      |
 |----------------	|-------------------	|
@@ -2406,7 +2406,7 @@ UPDATED
 
 ## Get Theater Social Network Community Groups
 
-[<-- Back to Table Of Contents](#Table-Of-Contents)
+[<-- Back to Table Of Contents](#table-of-contents)
 
 |attribute        |value         	      |
 |----------------	|-------------------	|
@@ -2460,7 +2460,7 @@ UPDATED
 
 ## Delete Theater Social Network Community Group
 
-[<-- Back to Table Of Contents](#Table-Of-Contents)
+[<-- Back to Table Of Contents](#table-of-contents)
 
 |attribute        |value         	      |
 |----------------	|-------------------	|
@@ -2504,7 +2504,7 @@ UPDATED
 ```
 ## Add Hall
 
-[<-- Back to Table Of Contents](#Table-Of-Contents)
+[<-- Back to Table Of Contents](#table-of-contents)
 
 |attribute        |value         	      |
 |----------------	|-------------------	|
@@ -2560,7 +2560,7 @@ UPDATED
 
 ## Update Hall
 
-[<-- Back to Table Of Contents](#Table-Of-Contents)
+[<-- Back to Table Of Contents](#table-of-contents)
 
 |attribute        |value         	      |
 |----------------	|-------------------	|
@@ -2612,7 +2612,7 @@ UPDATED
 
 ## Get Hall
 
-[<-- Back to Table Of Contents](#Table-Of-Contents)
+[<-- Back to Table Of Contents](#table-of-contents)
 
 |attribute        |value         	      |
 |----------------	|-------------------	|
@@ -2653,7 +2653,7 @@ UPDATED
 
 ## Get Theater Halls
 
-[<-- Back to Table Of Contents](#Table-Of-Contents)
+[<-- Back to Table Of Contents](#table-of-contents)
 
 |attribute        |value         	      |
 |----------------	|-------------------	|
@@ -2705,7 +2705,7 @@ UPDATED
 
 ## Delete Hall
 
-[<-- Back to Table Of Contents](#Table-Of-Contents)
+[<-- Back to Table Of Contents](#table-of-contents)
 
 |attribute        |value         	      |
 |----------------	|-------------------	|
@@ -2746,7 +2746,7 @@ UPDATED
 
 ## Add Seats
 
-[<-- Back to Table Of Contents](#Table-Of-Contents)
+[<-- Back to Table Of Contents](#table-of-contents)
 
 |attribute        |value         	      |
 |----------------	|-------------------	|
@@ -2836,7 +2836,7 @@ UPDATED
 
 ## Get Hall Seats
 
-[<-- Back to Table Of Contents](#Table-Of-Contents)
+[<-- Back to Table Of Contents](#table-of-contents)
 
 |attribute        |value         	      |
 |----------------	|-------------------	|
@@ -2892,7 +2892,7 @@ UPDATED
 
 ## Delete Seats
 
-[<-- Back to Table Of Contents](#Table-Of-Contents)
+[<-- Back to Table Of Contents](#table-of-contents)
 
 |attribute        |value         	      |
 |----------------	|-------------------	|
@@ -2947,7 +2947,7 @@ UPDATED
 
 ## Add Tickets
 
-[<-- Back to Table Of Contents](#Table-Of-Contents)
+[<-- Back to Table Of Contents](#table-of-contents)
 
 |attribute        |value         	      |
 |----------------	|-------------------	|
@@ -3038,7 +3038,7 @@ UPDATED
 
 ## Get Event Tickets
 
-[<-- Back to Table Of Contents](#Table-Of-Contents)
+[<-- Back to Table Of Contents](#table-of-contents)
 
 |attribute        |value         	      |
 |----------------	|-------------------	|
@@ -3094,7 +3094,7 @@ UPDATED
 
 ## Get Event Ticket
 
-[<-- Back to Table Of Contents](#Table-Of-Contents)
+[<-- Back to Table Of Contents](#table-of-contents)
 
 |attribute        |value         	      |
 |----------------	|-------------------	|
@@ -3135,7 +3135,7 @@ UPDATED
 
 ## Update Tickets
 
-[<-- Back to Table Of Contents](#Table-Of-Contents)
+[<-- Back to Table Of Contents](#table-of-contents)
 
 |attribute        |value         	      |
 |----------------	|-------------------	|
@@ -3203,7 +3203,7 @@ UPDATED
 
 ## Delete Tickets
 
-[<-- Back to Table Of Contents](#Table-Of-Contents)
+[<-- Back to Table Of Contents](#table-of-contents)
 
 |attribute        |value         	      |
 |----------------	|-------------------	|
@@ -3258,7 +3258,7 @@ UPDATED
 
 ## Tickets Purchase
 
-[<-- Back to Table Of Contents](#Table-Of-Contents)
+[<-- Back to Table Of Contents](#table-of-contents)
 
 |attribute        |value         	      |
 |----------------	|-------------------	|
@@ -3313,7 +3313,7 @@ UPDATED
 
 ## Add Actor
 
-[<-- Back to Table Of Contents](#Table-Of-Contents)
+[<-- Back to Table Of Contents](#table-of-contents)
 
 |attribute        |value         	      |
 |----------------	|-------------------	|
@@ -3368,7 +3368,7 @@ UPDATED
 
 ## Update Actor
 
-[<-- Back to Table Of Contents](#Table-Of-Contents)
+[<-- Back to Table Of Contents](#table-of-contents)
 
 |attribute        |value         	      |
 |----------------	|-------------------	|
@@ -3424,7 +3424,7 @@ UPDATED
 
 ## Get Actor
 
-[<-- Back to Table Of Contents](#Table-Of-Contents)
+[<-- Back to Table Of Contents](#table-of-contents)
 
 |attribute        |value         	      |
 |----------------	|-------------------	|
@@ -3465,7 +3465,7 @@ UPDATED
 
 ## Delete Actor
 
-[<-- Back to Table Of Contents](#Table-Of-Contents)
+[<-- Back to Table Of Contents](#table-of-contents)
 
 |attribute        |value         	      |
 |----------------	|-------------------	|
@@ -3506,7 +3506,7 @@ UPDATED
 
 ## Add Actors to Spectacle
 
-[<-- Back to Table Of Contents](#Table-Of-Contents)
+[<-- Back to Table Of Contents](#table-of-contents)
 
 |attribute        |value         	      |
 |----------------	|-------------------	|
@@ -3575,7 +3575,7 @@ UPDATED
 
 ## Get Spectacle Actors
 
-[<-- Back to Table Of Contents](#Table-Of-Contents)
+[<-- Back to Table Of Contents](#table-of-contents)
 
 |attribute        |value         	      |
 |----------------	|-------------------	|
@@ -3636,7 +3636,7 @@ UPDATED
 
 ## Delete Actors From Spectacle
 
-[<-- Back to Table Of Contents](#Table-Of-Contents)
+[<-- Back to Table Of Contents](#table-of-contents)
 
 |attribute        |value         	      |
 |----------------	|-------------------	|
@@ -3691,7 +3691,7 @@ UPDATED
 
 ## Add Producer
 
-[<-- Back to Table Of Contents](#Table-Of-Contents)
+[<-- Back to Table Of Contents](#table-of-contents)
 
 |attribute        |value         	      |
 |----------------	|-------------------	|
@@ -3746,7 +3746,7 @@ UPDATED
 
 ## Update Producer
 
-[<-- Back to Table Of Contents](#Table-Of-Contents)
+[<-- Back to Table Of Contents](#table-of-contents)
 
 |attribute        |value         	      |
 |----------------	|-------------------	|
@@ -3802,7 +3802,7 @@ UPDATED
 
 ## Get Producer
 
-[<-- Back to Table Of Contents](#Table-Of-Contents)
+[<-- Back to Table Of Contents](#table-of-contents)
 
 |attribute        |value         	      |
 |----------------	|-------------------	|
@@ -3843,7 +3843,7 @@ UPDATED
 
 ## Delete Producer
 
-[<-- Back to Table Of Contents](#Table-Of-Contents)
+[<-- Back to Table Of Contents](#table-of-contents)
 
 |attribute        |value         	      |
 |----------------	|-------------------	|
@@ -3884,7 +3884,7 @@ UPDATED
 
 ## Add Producers to Spectacle
 
-[<-- Back to Table Of Contents](#Table-Of-Contents)
+[<-- Back to Table Of Contents](#table-of-contents)
 
 |attribute        |value         	      |
 |----------------	|-------------------	|
@@ -3950,7 +3950,7 @@ UPDATED
 
 ## Get Spectacle Producers
 
-[<-- Back to Table Of Contents](#Table-Of-Contents)
+[<-- Back to Table Of Contents](#table-of-contents)
 
 |attribute        |value         	      |
 |----------------	|-------------------	|
@@ -4011,7 +4011,7 @@ UPDATED
 
 ## Delete Producers From Spectacle
 
-[<-- Back to Table Of Contents](#Table-Of-Contents)
+[<-- Back to Table Of Contents](#table-of-contents)
 
 |attribute        |value         	      |
 |----------------	|-------------------	|
@@ -4066,7 +4066,7 @@ UPDATED
 
 ## Add Author
 
-[<-- Back to Table Of Contents](#Table-Of-Contents)
+[<-- Back to Table Of Contents](#table-of-contents)
 
 |attribute        |value         	      |
 |----------------	|-------------------	|
@@ -4121,7 +4121,7 @@ UPDATED
 
 ## Update Author
 
-[<-- Back to Table Of Contents](#Table-Of-Contents)
+[<-- Back to Table Of Contents](#table-of-contents)
 
 |attribute        |value         	      |
 |----------------	|-------------------	|
@@ -4177,7 +4177,7 @@ UPDATED
 
 ## Get Author
 
-[<-- Back to Table Of Contents](#Table-Of-Contents)
+[<-- Back to Table Of Contents](#table-of-contents)
 
 |attribute        |value         	      |
 |----------------	|-------------------	|
@@ -4218,7 +4218,7 @@ UPDATED
 
 ## Delete Author
 
-[<-- Back to Table Of Contents](#Table-Of-Contents)
+[<-- Back to Table Of Contents](#table-of-contents)
 
 |attribute        |value         	      |
 |----------------	|-------------------	|
@@ -4259,7 +4259,7 @@ UPDATED
 
 ## Add Authors to Spectacle
 
-[<-- Back to Table Of Contents](#Table-Of-Contents)
+[<-- Back to Table Of Contents](#table-of-contents)
 
 |attribute        |value         	      |
 |----------------	|-------------------	|
@@ -4325,7 +4325,7 @@ UPDATED
 
 ## Get Spectacle Authors
 
-[<-- Back to Table Of Contents](#Table-Of-Contents)
+[<-- Back to Table Of Contents](#table-of-contents)
 
 |attribute        |value         	      |
 |----------------	|-------------------	|
@@ -4386,7 +4386,7 @@ UPDATED
 
 ## Delete Authors From Spectacle
 
-[<-- Back to Table Of Contents](#Table-Of-Contents)
+[<-- Back to Table Of Contents](#table-of-contents)
 
 |attribute        |value         	      |
 |----------------	|-------------------	|
@@ -4441,7 +4441,7 @@ UPDATED
 
 ## Add Artist
 
-[<-- Back to Table Of Contents](#Table-Of-Contents)
+[<-- Back to Table Of Contents](#table-of-contents)
 
 |attribute        |value         	      |
 |----------------	|-------------------	|
@@ -4496,7 +4496,7 @@ UPDATED
 
 ## Update Artist
 
-[<-- Back to Table Of Contents](#Table-Of-Contents)
+[<-- Back to Table Of Contents](#table-of-contents)
 
 |attribute        |value         	      |
 |----------------	|-------------------	|
@@ -4552,7 +4552,7 @@ UPDATED
 
 ## Get Artist
 
-[<-- Back to Table Of Contents](#Table-Of-Contents)
+[<-- Back to Table Of Contents](#table-of-contents)
 
 |attribute        |value         	      |
 |----------------	|-------------------	|
@@ -4593,7 +4593,7 @@ UPDATED
 
 ## Delete Artist
 
-[<-- Back to Table Of Contents](#Table-Of-Contents)
+[<-- Back to Table Of Contents](#table-of-contents)
 
 |attribute        |value         	      |
 |----------------	|-------------------	|
@@ -4634,7 +4634,7 @@ UPDATED
 
 ## Add Artists to Spectacle
 
-[<-- Back to Table Of Contents](#Table-Of-Contents)
+[<-- Back to Table Of Contents](#table-of-contents)
 
 |attribute        |value         	      |
 |----------------	|-------------------	|
@@ -4700,7 +4700,7 @@ UPDATED
 
 ## Get Spectacle Artists
 
-[<-- Back to Table Of Contents](#Table-Of-Contents)
+[<-- Back to Table Of Contents](#table-of-contents)
 
 |attribute        |value         	      |
 |----------------	|-------------------	|
@@ -4761,7 +4761,7 @@ UPDATED
 
 ## Delete Artists From Spectacle
 
-[<-- Back to Table Of Contents](#Table-Of-Contents)
+[<-- Back to Table Of Contents](#table-of-contents)
 
 |attribute        |value         	      |
 |----------------	|-------------------	|
