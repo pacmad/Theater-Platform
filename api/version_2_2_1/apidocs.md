@@ -7,7 +7,7 @@
 
 ## Table Of Contents
 
-1. [Registration](#Registration)
+1. [Registration](#registration)
 2. [Authorization](#Authorization)
 3. [Logout](#Logout)
 4. [Password Reset Request](#Password-Reset-Request)
