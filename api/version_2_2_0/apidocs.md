@@ -2,6 +2,7 @@
 
 >*updates*:
 >1. К payload регистрации добавлены фамилия, имя и отчество
+>2. К payload авторизации в ответе, соответственно, добавлены фамилия, имя и отчество
 
 BASE_URL  http://host1813162.hostland.pro/api
 
@@ -76,6 +77,9 @@ BASE_URL  http://host1813162.hostland.pro/api
     "user": {
         "id": 67,
         "email": "example@mail.com",
+        "name": "Ivan",
+        "surname": "Ivanov",
+        "middle_name": "Ivanovich"
     }
 }
 ```
