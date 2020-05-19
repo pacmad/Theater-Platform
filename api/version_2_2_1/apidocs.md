@@ -10,7 +10,7 @@
 1. [Registration](#Registration)
 2. [Authorization](#Authorization)
 3. [Logout](#Logout)
-4. [Password Reset Request](#Password~Reset~Request)
+4. [Password Reset Request](#Password-Reset-Request)
 5. [Registration](#Registration)
 6. [Registration](#Registration)
 7. [Registration](#Registration)
