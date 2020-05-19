@@ -1072,6 +1072,8 @@ BASE_URL  http://host1813162.hostland.pro/api
 
 [<-- Back to Table Of Contents](#Table-Of-Contents)
 
+UPDATED
+
 |attribute        |value         	      |
 |----------------	|-------------------	|
 | request method 	| POST |
@@ -1088,6 +1090,8 @@ BASE_URL  http://host1813162.hostland.pro/api
     "name": "spectacle_name",
     "description": "spectacle_description"
     "rate": 0,
+    "duration": 90,
+    "year": 2019,
     "poster": "spectacle_poster",
     "trailer": "spectacle_trailer",
     "slider_poster": "spectacle_slider_poster",
@@ -1131,6 +1135,8 @@ BASE_URL  http://host1813162.hostland.pro/api
 
 [<-- Back to Table Of Contents](#Table-Of-Contents)
 
+UPDATED
+
 |attribute        |value         	      |
 |----------------	|-------------------	|
 | request method 	| PATCH |
@@ -1147,6 +1153,8 @@ BASE_URL  http://host1813162.hostland.pro/api
     "name": "new_spectacle_name",
     "description": "new_spectacle_description"
     "rate": 0,
+    "duration": 90,
+    "year": 2019,
     "poster": "new_spectacle_poster",
     "trailer": "new_spectacle_trailer",
     "slider_poster": "new_spectacle_slider_poster"
@@ -1186,6 +1194,8 @@ BASE_URL  http://host1813162.hostland.pro/api
 
 [<-- Back to Table Of Contents](#Table-Of-Contents)
 
+UPDATED
+
 |attribute        |value         	      |
 |----------------	|-------------------	|
 | request method 	| GET |
@@ -1204,6 +1214,8 @@ BASE_URL  http://host1813162.hostland.pro/api
         "name": "spectacle_name",
         "description": "spectacle_description"
         "rate": 4.7,
+        "duration": 90,
+        "year": 2019,
         "poster": "spectacle_poster",
         "slider_poster": "spectacle_slider_poster",
         "theater_id": "theater_id"
