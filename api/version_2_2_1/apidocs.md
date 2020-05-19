@@ -24,7 +24,7 @@
 15. [Update Comment](#Update-Comment)
 16. [Get Spectacle Comments](#Get-Spectacle-Comments)
 17. [Comment Verification](#Comment-Verification)
-18. [Delete Comment](#Delete Comment)
+18. [Delete Comment](#Delete-Comment)
 19. [Registration](#Registration)
 20. [Registration](#Registration)
 21. [Registration](#Registration)
