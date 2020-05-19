@@ -58,14 +58,14 @@
 49. [Get Hall](#Get-Hall)
 50. [Get Theater Halls](#Get-Theater-Halls)
 51. [Delete Hall](#Delete-Hall)
-52. [Registration](#Registration)
-53. [Registration](#Registration)
-54. [Registration](#Registration)
-55. [Registration](#Registration)
-56. [Registration](#Registration)
-57. [Registration](#Registration)
-58. [Registration](#Registration)
-59. [Registration](#Registration)
+52. [Add Seats](#Add-Seats)
+53. [Get Hall Seats](#Get-Hall-Seats)
+54. [Delete Seats](#Delete-Seats)
+55. [Add Tickets](#Add-Tickets)
+56. [Get Event Tickets](#Get-Event-Tickets)
+57. [Get Event Ticket](#Get-Event-Ticket)
+58. [Update Event Tickets](#Update-Event-Tickets)
+59. [Delete Tickets](#Delete-Tickets)
 60. [Registration](#Registration)
 61. [Registration](#Registration)
 62. [Registration](#Registration)
@@ -2707,6 +2707,8 @@ BASE_URL  http://host1813162.hostland.pro/api
 
 ## Add Seats
 
+[<-- Back to Table Of Contents](#Table-Of-Contents)
+
 |attribute        |value         	      |
 |----------------	|-------------------	|
 | request method 	| POST |
@@ -2795,6 +2797,8 @@ BASE_URL  http://host1813162.hostland.pro/api
 
 ## Get Hall Seats
 
+[<-- Back to Table Of Contents](#Table-Of-Contents)
+
 |attribute        |value         	      |
 |----------------	|-------------------	|
 | request method 	| GET |
@@ -2849,6 +2853,8 @@ BASE_URL  http://host1813162.hostland.pro/api
 
 ## Delete Seats
 
+[<-- Back to Table Of Contents](#Table-Of-Contents)
+
 |attribute        |value         	      |
 |----------------	|-------------------	|
 | request method 	| PATCH |
@@ -2901,6 +2907,8 @@ BASE_URL  http://host1813162.hostland.pro/api
 ```
 
 ## Add Tickets
+
+[<-- Back to Table Of Contents](#Table-Of-Contents)
 
 |attribute        |value         	      |
 |----------------	|-------------------	|
@@ -2991,6 +2999,8 @@ BASE_URL  http://host1813162.hostland.pro/api
 
 ## Get Event Tickets
 
+[<-- Back to Table Of Contents](#Table-Of-Contents)
+
 |attribute        |value         	      |
 |----------------	|-------------------	|
 | request method 	| GET |
@@ -3045,6 +3055,8 @@ BASE_URL  http://host1813162.hostland.pro/api
 
 ## Get Event Ticket
 
+[<-- Back to Table Of Contents](#Table-Of-Contents)
+
 |attribute        |value         	      |
 |----------------	|-------------------	|
 | request method 	| GET |
@@ -3083,6 +3095,8 @@ BASE_URL  http://host1813162.hostland.pro/api
 ```
 
 ## Update Tickets
+
+[<-- Back to Table Of Contents](#Table-Of-Contents)
 
 |attribute        |value         	      |
 |----------------	|-------------------	|
@@ -3148,7 +3162,9 @@ BASE_URL  http://host1813162.hostland.pro/api
 }
 ```
 
-## Delete Seats
+## Delete Tickets
+
+[<-- Back to Table Of Contents](#Table-Of-Contents)
 
 |attribute        |value         	      |
 |----------------	|-------------------	|
