@@ -12,6 +12,40 @@
 >9. добавлено API для изменения билетов
 >10. добавлено API для удаления билетов
 >11. добавлено комплексное API для "покупки билета"
+>12. добавлено API для добавления комментария к спектаклю
+>13. добавлено API для получения комментариев к спектаклю
+>14. добавлено API для обновления комментария к спектаклю
+>15. добавлено API для подтверждения комментария к спектаклю
+>16. добавлено API для удаления комментария к спектаклю
+>17. добавлено API для добавления актера
+>18. добавлено API для получения актера
+>19. добавлено API для обновления актера
+>20. добавлено API для удаления актера
+>21. добавлено API для добавления актеров в спектакль
+>22. добавлено API для получения актеров спектакля
+>23. добавлено API для удаления актеров из спектакля
+>24. добавлено API для добавления продюссера
+>25. добавлено API для получения продюссера
+>26. добавлено API для обновления продюссера
+>27. добавлено API для удаления продюссера
+>28. добавлено API для добавления продюссеров в спектакль
+>29. добавлено API для получения продюссеров спектакля
+>30. добавлено API для удаления продюссеров из спектакля
+>31. добавлено API для добавления автора
+>32. добавлено API для получения автора
+>33. добавлено API для обновления автора
+>34. добавлено API для удаления автора
+>35. добавлено API для добавления авторов в спектакль
+>36. добавлено API для получения авторов спектакля
+>37. добавлено API для удаления авторов из спектакля
+>38. добавлено API для добавления художника
+>39. добавлено API для получения художника
+>40. добавлено API для обновления художника
+>41. добавлено API для удаления художника
+>42. добавлено API для добавления художников в спектакль
+>43. добавлено API для получения художников спектакля
+>44. добавлено API для удаления художников из спектакля
+
 
 BASE_URL  http://host1813162.hostland.pro/api
 
@@ -704,6 +738,247 @@ BASE_URL  http://host1813162.hostland.pro/api
         }
     ],
     "message": "В процессе получения комментариев пользователя возникли ошибки."
+}
+```
+
+## Add Comment
+
+|attribute        |value         	      |
+|----------------	|-------------------	|
+| request method 	| POST |
+| route          	| BASE_URL/comments|
+| error types    	| SpectacleNotFound, UserNotFound, PermissionDenied |
+| required headers  | Authorization         |
+
+>*Note*: PermissionDenied - ошибка проверки токена доступа, который лежит в хэдере Authorization (для неавторизованных пользователей выполнение операции невозможно).
+
+>*Note*:  При добавлении комменатрия в нагрузке запроса отсутствуют атрибуты created_at (штампуется на стророне сервера) и is_confirmed (при создании комментарий не может быть подтвержден модератором, т.е. дефолтное значение is_confirmed = false).
+
+#### REQUEST DATA
+
+```json
+{
+    "content": "comment_content",
+    "rate": 5,
+    "spectacle_id": 232,
+    "user_id": 23
+}
+```
+
+#### RESPONSE DATA [SUCCESS]
+
+```json
+{
+    "has_errors": false,
+    "errors": [],
+    "comment": {
+        "id": 233,
+    },
+    "message": "Комментарий успешно добавлен и ожидает подтверждения модератором."
+}
+```
+
+#### RESPONSE DATA [FAIL]
+
+```json
+{
+    "has_errors": true,
+    "errors": [
+        {
+            "type": "SpectacleNotFound",
+            "message": "Спектакль с таким id не найден."
+        },
+        {
+            "type": "UserNotFound",
+            "message": "Пользователь с таким id не найден."
+        },
+        {
+            "type": "PermissionDenied",
+            "message": "Отказано в доступе."
+        }
+    ],
+    "message": "В процессе добавления комментария возникли ошибки."
+}
+```
+
+## Update Comment
+
+|attribute        |value         	      |
+|----------------	|-------------------	|
+| request method 	| PATCH |
+| route          	| BASE_URL/comments/{comment_id}|
+| error types    	| CommentNotFound, PermissionDenied |
+| required headers  | Authorization         |
+
+>*Note*: PermissionDenied - ошибка проверки токена доступа, который лежит в хэдере Authorization (для неавторизованных пользователей выполнение операции невозможно).
+
+#### REQUEST DATA
+
+```json
+{
+    "content": "new_comment_content",
+    "rate": 3,
+    "is_confirmed": false
+}
+```
+
+#### RESPONSE DATA [SUCCESS]
+
+```json
+{
+    "has_errors": false,
+    "errors": [],
+    "message": "Комментарий успешно обновлен и ожидает подтверждения модератором."
+}
+```
+
+#### RESPONSE DATA [FAIL]
+
+```json
+{
+    "has_errors": true,
+    "errors": [
+        {
+            "type": "CommentNotFound",
+            "message": "Комментарий с таким id не найден."
+        },
+        {
+            "type": "PermissionDenied",
+            "message": "Отказано в доступе."
+        }
+    ],
+    "message": "В процессе обновления комментария возникли ошибки."
+}
+```
+
+## Get Spectacle Comments
+
+|attribute        |value         	      |
+|----------------	|-------------------	|
+| request method 	| GET |
+| route          	| BASE_URL/comments?spectacle_id={spectacle_id}&is_confirmed=true|
+| error types    	| SpectacleNotFound |
+
+>*Note*: Возвращаются все комментарии к спектаклю с id = spectacle_id, при этом только подтвердженные модератором (is_confirmed = true). В примере приведено 3 комменатрия. Если комментариев удовлетворяющих условиям нет, commets будет пустым списком.
+
+#### RESPONSE DATA [SUCCESS]
+
+```json
+{
+    "has_errors": false,
+    "errors": [],
+    "comments": [
+            {
+                "id": 34,
+                "content": "comment_content_1",
+                "rate": 5,
+                "createdAt": "comment_created_at_1"
+            },
+            {
+                "id": 123,
+                "content": "comment_content_2",
+                "rate": 3,
+                "createdAt": "comment_created_at_2"
+            },
+            {
+                "id": 1233,
+                "content": "comment_content_3",
+                "rate": 4,
+                "createdAt": "comment_created_at_3"
+            }
+    ]
+}
+```
+
+#### RESPONSE DATA [FAIL]
+
+```json
+{
+    "has_errors": true,
+    "errors": [
+        {
+            "type": "SpectacleNotFound",
+            "message": "Спекталь с таким id не найден."
+        }
+    ],
+    "message": "В процессе получения комментариев к спектаклю возникли ошибки."
+}
+```
+
+## Comment Verification
+
+|attribute        |value         	      |
+|----------------	|-------------------	|
+| request method 	| GET |
+| route          	| BASE_URL/comments/verify/{comment_id}|
+| error types    	| CommentNotFound, PermissionDenied|
+| required headers  | Authorization         |
+
+>*Note*: PermissionDenied - ошибка проверки токена доступа, который лежит в хэдере Authorization (для неавторизованных пользователей выполнение операции невозможно).
+
+#### RESPONSE DATA [SUCCESS]
+
+>*Note*: 1) Атрибут is_confirmed комментария с id = comment_id устанавливается в true.
+
+```json
+{
+    "has_errors": false,
+    "errors": [],
+    "message": "Комментарий подтвержден"
+}
+```
+
+#### RESPONSE DATA [FAIL]
+
+```json
+{
+    "has_errors": true,
+    "errors": [
+        {
+            "type": "CommentNotFound",
+            "message": "Комментарий с таким id не найден."
+        }
+    ],
+    "message": "В процессе верификации комментария произошли ошибки."
+}
+```
+
+## Delete Comment
+
+|attribute        |value         	      |
+|----------------	|-------------------	|
+| request method 	| DELETE |
+| route          	| BASE_URL/comments/{comment_id}|
+| error types    	| CommentNotFound, PermissionDenied |
+| required headers  | Authorization         |
+
+>*Note*: PermissionDenied - ошибка проверки токена доступа, который лежит в хэдере Authorization (для неавторизованных пользователей выполнение операции невозможно).
+
+#### RESPONSE DATA [SUCCESS]
+
+```json
+{
+    "has_errors": false,
+    "errors": [],
+    "message": "Комментарий успешно удален",
+}
+```
+#### RESPONSE DATA [FAIL]
+
+```json
+{
+    "has_errors": true,
+    "errors": [
+        {
+            "type": "CommentNotFound",
+            "message": "Комментарий с таким id не найден."
+        },
+        {
+            "type": "PermissionDenied",
+            "message": "Отказано в доступе."
+        }
+    ],
+    "message": "В процессе удаления комментария возникли ошибки."
 }
 ```
 
@@ -2851,5 +3126,1452 @@ BASE_URL  http://host1813162.hostland.pro/api
         }
     ],
     "message": "В процессе покупки билетов возникли ошибки."
+}
+```
+
+## Add Actor
+
+|attribute        |value         	      |
+|----------------	|-------------------	|
+| request method 	| POST |
+| route          	| BASE_URL/actors|
+| error types    	| PermissionDenied |
+| required headers  | Authorization         |
+
+>*Note*: PermissionDenied - ошибка проверки токена доступа, который лежит в хэдере Authorization (для неавторизованных пользователей выполнение операции невозможно).
+
+#### REQUEST DATA
+
+```json
+{
+    "surname": "actor_surname",
+    "name": "actor_name"
+    "middle_name": "actor_middle_name",
+    "life": "actor_life",
+    "photo": "actor_photo"
+}
+```
+
+#### RESPONSE DATA [SUCCESS]
+
+```json
+{
+    "has_errors": false,
+    "errors": [],
+    "actor": {
+        "id": 255,
+    },
+    "message": "Актер успешно добавлен."
+}
+```
+
+#### RESPONSE DATA [FAIL]
+
+>*Note*: 1) Возвращаются только найденные ошибки
+
+```json
+{
+    "has_errors": true,
+    "errors": [
+        {
+            "type": "PermissionDenied",
+            "message": "Отказано в доступе."
+        }
+    ],
+    "message": "В процессе добавления актера возникли ошибки."
+}
+```
+
+## Update Actor
+
+|attribute        |value         	      |
+|----------------	|-------------------	|
+| request method 	| PATCH |
+| route          	| BASE_URL/actors/{actor_id}|
+| error types    	| ActorNotFound, PermissionDenied |
+| required headers  | Authorization         |
+
+>*Note*: PermissionDenied - ошибка проверки токена доступа, который лежит в хэдере Authorization (для неавторизованных пользователей выполнение операции невозможно).
+
+#### REQUEST DATA
+
+```json
+{
+    "surname": "new_actor_surname",
+    "name": "new_actor_name"
+    "middle_name": "new_actor_middle_name",
+    "life": "new_actor_life",
+    "photo": "new_actor_photo"
+}
+```
+
+#### RESPONSE DATA [SUCCESS]
+
+```json
+{
+    "has_errors": false,
+    "errors": [],
+    "message": "Информация об актере успешно обновлена."
+}
+```
+
+#### RESPONSE DATA [FAIL]
+
+>*Note*: 1) Возвращаются только найденные ошибки; 2) Перечислены все возможные ошибки.
+
+```json
+{
+    "has_errors": true,
+    "errors": [
+        {
+            "type": "ActorNotFound",
+            "message": "Актер с таким id не найден."
+        },
+        {
+            "type": "PermissionDenied",
+            "message": "Отказано в доступе."
+        }
+    ],
+    "message": "В процессе обновления информации об актере возникли ошибки."
+}
+```
+
+## Get Actor
+
+|attribute        |value         	      |
+|----------------	|-------------------	|
+| request method 	| GET |
+| route          	| BASE_URL/actors?id={actor_id}|
+| error types    	| ActorNotFound |
+
+#### RESPONSE DATA [SUCCESS]
+
+```json
+{
+    "has_errors": false,
+    "errors": [],
+    "actor": {
+        "surname": "actor_surname",
+        "name": "actor_name"
+        "middle_name": "actor_middle_name",
+        "life": "actor_life",
+        "photo": "actor_photo"
+    }
+}
+```
+
+#### RESPONSE DATA [FAIL]
+
+```json
+{
+    "has_errors": true,
+    "errors": [
+        {
+            "type": "ActorNotFound",
+            "message": "Актер с таким id не найден."
+        }
+    ],
+    "message": "В процессе получения информации об актере возникли ошибки."
+}
+```
+
+## Delete Actor
+
+|attribute        |value         	      |
+|----------------	|-------------------	|
+| request method 	| DELETE |
+| route          	| BASE_URL/actors/{actor_id}|
+| error types    	| ActorNotFound, Permission Denied |
+| required headers  | Authorization         |
+
+>*Note*: PermissionDenied - ошибка проверки токена доступа, который лежит в хэдере Authorization (для неавторизованных пользователей выполнение операции невозможно).
+
+#### RESPONSE DATA [SUCCESS]
+
+```json
+{
+    "has_errors": false,
+    "errors": [],
+    "message": "Информация об актере успешно удалена",
+}
+```
+#### RESPONSE DATA [FAIL]
+
+```json
+{
+    "has_errors": true,
+    "errors": [
+        {
+            "type": "ActorNotFound",
+            "message": "Актер с таким id не найден."
+        },
+        {
+            "type": "PermissionDenied",
+            "message": "Отказано в доступе."
+        }
+    ],
+    "message": "В процессе удаления информации об актере возникли ошибки."
+}
+```
+
+## Add Actors to Spectacle
+
+|attribute        |value         	      |
+|----------------	|-------------------	|
+| request method 	| POST |
+| route          	| BASE_URL/theaters/{theater_id}/spectacles/{spectacle_id}/actors|
+| error types    	| TheaterNotFound, SpectacleNotFound, PermissionDenied |
+| required headers  | Authorization         |
+
+>*Note*: PermissionDenied - ошибка проверки токена доступа, который лежит в хэдере Authorization (для неавторизованных пользователей выполнение операции невозможно).
+
+>*Note*: В request data содержится список актеров спектакля (id актера и его роль в спектакле), которые необходимо добавить. В примере приведено 3, в общем случае количество актеров в списке не ограничено (может быть в разы больше). Предусмотри ситацию с пустым списком (если в запросе не будет элементов в списке).
+
+#### REQUEST DATA
+
+```json
+{
+    "actors": [
+        {
+            "actor_id": 434,
+            "role": "role_in_spectacle"
+        },
+        {
+            "actor_id": 32,
+            "role": "role_in_spectacle"
+        },
+        {
+            "actor_id": 1,
+            "role": "role_in_spectacle"
+        }
+    ]
+}
+```
+
+#### RESPONSE DATA [SUCCESS]
+
+```json
+{
+    "has_errors": false,
+    "errors": [],
+    "message": "Актеры успешно добавлены в спектакль."
+}
+```
+
+#### RESPONSE DATA [FAIL]
+
+```json
+{
+    "has_errors": true,
+    "errors": [
+        {
+            "type": "TheaterNotFound",
+            "message": "Театр с таким id не найден."
+        },
+        {
+            "type": "SpectacleNotFound",
+            "message": "Спектакль с таким id не найден."
+        },
+        {
+            "type": "PermissionDenied",
+            "message": "Отказано в доступе."
+        }
+    ],
+    "message": "В процессе добавления актеров в спектакль возникли ошибки."
+}
+```
+
+## Get Spectacle Actors
+
+|attribute        |value         	      |
+|----------------	|-------------------	|
+| request method 	| GET |
+| route          	| BASE_URL/actors?spectacle_id={spectacle_id}|
+| error types    	| SpectacleNotFound, PermissionDenied |
+| required headers  | Authorization         |
+
+#### RESPONSE DATA [SUCCESS]
+
+```json
+{
+    "has_errors": false,
+    "errors": [],
+    "actors": [
+        {   
+            "id": 342,
+            "surname": "actor_surname",
+            "name": "actor_name"
+            "middle_name": "actor_middle_name",
+            "life": "actor_life",
+            "photo": "actor_photo"
+        },
+        {   
+            "id": 34,
+            "surname": "actor_surname",
+            "name": "actor_name"
+            "middle_name": "actor_middle_name",
+            "life": "actor_life",
+            "photo": "actor_photo"
+        },
+        {   
+            "id": 786,
+            "surname": "actor_surname",
+            "name": "actor_name"
+            "middle_name": "actor_middle_name",
+            "life": "actor_life",
+            "photo": "actor_photo"
+        }
+    ]
+}
+```
+
+#### RESPONSE DATA [FAIL]
+
+```json
+{
+    "has_errors": true,
+    "errors": [
+        {
+            "type": "SpectacleNotFound",
+            "message": "Спектакль с таким id не найден."
+        }
+    ],
+    "message": "В процессе получения информации об актерах спектакля возникли ошибки."
+}
+```
+
+## Delete Actors From Spectacle
+
+|attribute        |value         	      |
+|----------------	|-------------------	|
+| request method 	| PATCH |
+| route          	| BASE_URL/actors?spectacle_id={spectacle_id}|
+| error types    	| SpectacleNotFound, ActorNotFound, PermissionDenied |
+| required headers  | Authorization         |
+
+>*Note*: PermissionDenied - ошибка проверки токена доступа, который лежит в хэдере Authorization (для неавторизованных пользователей выполнение операции невозможно).
+
+>*Note*: Метод запроса - PATCH, это не ошибка. Дело в том, что необходимо иметь возможность удалять сразу несколько записей из таблицы "Spectacle Actor". В нагрузке запроса будет список id актеров, которые необходимо удалить из данной таблицы. Это один из подходов к решению проблемы о множественном удалении. Количество актеров для удаления из спектакля неограничено.
+
+#### REQUEST DATA
+
+```json
+{
+    "actors_to_delete": [23, 25, 324, 1234, 23, 123]
+}
+```
+
+#### RESPONSE DATA [SUCCESS]
+
+```json
+{
+    "has_errors": false,
+    "errors": [],
+    "message": "Актеры успешно удалены из спектакля",
+}
+```
+#### RESPONSE DATA [FAIL]
+
+```json
+{
+    "has_errors": true,
+    "errors": [
+        {
+            "type": "SpectacleNotFound",
+            "message": "Спектакль с таким id не найден."
+        },
+        {
+            "type": "PermissionDenied",
+            "message": "Отказано в доступе."
+        },
+        {
+            "type": "ActorNotFound",
+            "message": "Актер с id = {actor_id} не найден."
+        },
+    ],
+    "message": "В процессе удаления актеров из спектакля возникли ошибки."
+}
+```
+
+## Add Producer
+
+|attribute        |value         	      |
+|----------------	|-------------------	|
+| request method 	| POST |
+| route          	| BASE_URL/producers|
+| error types    	| PermissionDenied |
+| required headers  | Authorization         |
+
+>*Note*: PermissionDenied - ошибка проверки токена доступа, который лежит в хэдере Authorization (для неавторизованных пользователей выполнение операции невозможно).
+
+#### REQUEST DATA
+
+```json
+{
+    "surname": "producer_surname",
+    "name": "producer_name"
+    "middle_name": "producer_middle_name",
+    "life": "producer_life",
+    "photo": "producer_photo"
+}
+```
+
+#### RESPONSE DATA [SUCCESS]
+
+```json
+{
+    "has_errors": false,
+    "errors": [],
+    "producer": {
+        "id": 255,
+    },
+    "message": "Продюсер успешно добавлен."
+}
+```
+
+#### RESPONSE DATA [FAIL]
+
+>*Note*: 1) Возвращаются только найденные ошибки
+
+```json
+{
+    "has_errors": true,
+    "errors": [
+        {
+            "type": "PermissionDenied",
+            "message": "Отказано в доступе."
+        }
+    ],
+    "message": "В процессе добавления продюсера возникли ошибки."
+}
+```
+
+## Update Producer
+
+|attribute        |value         	      |
+|----------------	|-------------------	|
+| request method 	| PATCH |
+| route          	| BASE_URL/producers/{producer_id}|
+| error types    	| ProducerNotFound, PermissionDenied |
+| required headers  | Authorization         |
+
+>*Note*: PermissionDenied - ошибка проверки токена доступа, который лежит в хэдере Authorization (для неавторизованных пользователей выполнение операции невозможно).
+
+#### REQUEST DATA
+
+```json
+{
+    "surname": "new_producer_surname",
+    "name": "new_producer_name"
+    "middle_name": "new_producer_middle_name",
+    "life": "new_producer_life",
+    "photo": "new_producer_photo"
+}
+```
+
+#### RESPONSE DATA [SUCCESS]
+
+```json
+{
+    "has_errors": false,
+    "errors": [],
+    "message": "Информация о продюсере успешно обновлена."
+}
+```
+
+#### RESPONSE DATA [FAIL]
+
+>*Note*: 1) Возвращаются только найденные ошибки; 2) Перечислены все возможные ошибки.
+
+```json
+{
+    "has_errors": true,
+    "errors": [
+        {
+            "type": "ProducerNotFound",
+            "message": "Продюсер с таким id не найден."
+        },
+        {
+            "type": "PermissionDenied",
+            "message": "Отказано в доступе."
+        }
+    ],
+    "message": "В процессе обновления информации о продюсере возникли ошибки."
+}
+```
+
+## Get Producer
+
+|attribute        |value         	      |
+|----------------	|-------------------	|
+| request method 	| GET |
+| route          	| BASE_URL/producers?id={producer_id}|
+| error types    	| ProducerNotFound |
+
+#### RESPONSE DATA [SUCCESS]
+
+```json
+{
+    "has_errors": false,
+    "errors": [],
+    "producer": {
+        "surname": "producer_surname",
+        "name": "producer_name"
+        "middle_name": "producer_middle_name",
+        "life": "producer_life",
+        "photo": "producer_photo"
+    }
+}
+```
+
+#### RESPONSE DATA [FAIL]
+
+```json
+{
+    "has_errors": true,
+    "errors": [
+        {
+            "type": "ProducerNotFound",
+            "message": "Продюсер с таким id не найден."
+        }
+    ],
+    "message": "В процессе получения информации о продюсере возникли ошибки."
+}
+```
+
+## Delete Producer
+
+|attribute        |value         	      |
+|----------------	|-------------------	|
+| request method 	| DELETE |
+| route          	| BASE_URL/producers/{producer_id}|
+| error types    	| ProducerNotFound, PermissionDenied |
+| required headers  | Authorization         |
+
+>*Note*: PermissionDenied - ошибка проверки токена доступа, который лежит в хэдере Authorization (для неавторизованных пользователей выполнение операции невозможно).
+
+#### RESPONSE DATA [SUCCESS]
+
+```json
+{
+    "has_errors": false,
+    "errors": [],
+    "message": "Информация о продюсере успешно удалена",
+}
+```
+#### RESPONSE DATA [FAIL]
+
+```json
+{
+    "has_errors": true,
+    "errors": [
+        {
+            "type": "ProducerNotFound",
+            "message": "Продюсер с таким id не найден."
+        },
+        {
+            "type": "PermissionDenied",
+            "message": "Отказано в доступе."
+        }
+    ],
+    "message": "В процессе удаления информации о продюсере возникли ошибки."
+}
+```
+
+## Add Producers to Spectacle
+
+|attribute        |value         	      |
+|----------------	|-------------------	|
+| request method 	| POST |
+| route          	| BASE_URL/theaters/{theater_id}/spectacles/{spectacle_id}/producers|
+| error types    	| TheaterNotFound, SpectacleNotFound, PermissionDenied |
+| required headers  | Authorization         |
+
+>*Note*: PermissionDenied - ошибка проверки токена доступа, который лежит в хэдере Authorization (для неавторизованных пользователей выполнение операции невозможно).
+
+>*Note*: В request data содержится список продюсеров спектакля (id продюсера), которые необходимо добавить. В примере приведено 3, в общем случае количество продюсеров в списке не ограничено (может быть в разы больше). Предусмотри ситацию с пустым списком (если в запросе не будет элементов в списке).
+
+#### REQUEST DATA
+
+```json
+{
+    "producers": [
+        {
+            "id": 434
+        },
+        {
+            "id": 32
+        },
+        {
+            "id": 1
+        }
+    ]
+}
+```
+
+#### RESPONSE DATA [SUCCESS]
+
+```json
+{
+    "has_errors": false,
+    "errors": [],
+    "message": "Продюсеры спектакля успешно добавлены."
+}
+```
+
+#### RESPONSE DATA [FAIL]
+
+```json
+{
+    "has_errors": true,
+    "errors": [
+        {
+            "type": "TheaterNotFound",
+            "message": "Театр с таким id не найден."
+        },
+        {
+            "type": "SpectacleNotFound",
+            "message": "Спектакль с таким id не найден."
+        },
+        {
+            "type": "PermissionDenied",
+            "message": "Отказано в доступе."
+        }
+    ],
+    "message": "В процессе добавления продюсеров в спектакль возникли ошибки."
+}
+```
+
+## Get Spectacle Producers
+
+|attribute        |value         	      |
+|----------------	|-------------------	|
+| request method 	| GET |
+| route          	| BASE_URL/producers?spectacle_id={spectacle_id}|
+| error types    	| SpectacleNotFound, PermissionDenied |
+| required headers  | Authorization         |
+
+#### RESPONSE DATA [SUCCESS]
+
+```json
+{
+    "has_errors": false,
+    "errors": [],
+    "producers": [
+        {   
+            "id": 342,
+            "surname": "producer_surname",
+            "name": "producer_name"
+            "middle_name": "producer_middle_name",
+            "life": "producer_life",
+            "photo": "producer_photo"
+        },
+        {   
+            "id": 34,
+            "surname": "producer_surname",
+            "name": "producer_name"
+            "middle_name": "producer_middle_name",
+            "life": "producer_life",
+            "photo": "producer_photo"
+        },
+        {   
+            "id": 786,
+            "surname": "producer_surname",
+            "name": "producer_name"
+            "middle_name": "producer_middle_name",
+            "life": "producer_life",
+            "photo": "producer_photo"
+        }
+    ]
+}
+```
+
+#### RESPONSE DATA [FAIL]
+
+```json
+{
+    "has_errors": true,
+    "errors": [
+        {
+            "type": "SpectacleNotFound",
+            "message": "Спектакль с таким id не найден."
+        }
+    ],
+    "message": "В процессе получения информации о продюсерах спектакля возникли ошибки."
+}
+```
+
+## Delete Producers From Spectacle
+
+|attribute        |value         	      |
+|----------------	|-------------------	|
+| request method 	| PATCH |
+| route          	| BASE_URL/producers?spectacle_id={spectacle_id}|
+| error types    	| SpectacleNotFound,  ProducerNotFound, PermissionDenied |
+| required headers  | Authorization         |
+
+>*Note*: PermissionDenied - ошибка проверки токена доступа, который лежит в хэдере Authorization (для неавторизованных пользователей выполнение операции невозможно).
+
+>*Note*: Метод запроса - PATCH, это не ошибка. Дело в том, что необходимо иметь возможность удалять сразу несколько записей из таблицы "Spectacle Producer". В нагрузке запроса будет список id продюсеров, которые необходимо удалить из данной таблицы. Это один из подходов к решению проблемы о множественном удалении. Количество продюсеров для удаления из спектакля неограничено.
+
+#### REQUEST DATA
+
+```json
+{
+    "producers_to_delete": [23, 25, 324, 1234, 23, 123]
+}
+```
+
+#### RESPONSE DATA [SUCCESS]
+
+```json
+{
+    "has_errors": false,
+    "errors": [],
+    "message": "Продюсеры успешно удалены из спектакля",
+}
+```
+#### RESPONSE DATA [FAIL]
+
+```json
+{
+    "has_errors": true,
+    "errors": [
+        {
+            "type": "SpectacleNotFound",
+            "message": "Спектакль с таким id не найден."
+        },
+        {
+            "type": "PermissionDenied",
+            "message": "Отказано в доступе."
+        },
+        {
+            "type": "ProducerNotFound",
+            "message": "Продюсер с id = {producer_id} не найден."
+        },
+    ],
+    "message": "В процессе удаления продюсеров из спектакля возникли ошибки."
+}
+```
+
+## Add Author
+
+|attribute        |value         	      |
+|----------------	|-------------------	|
+| request method 	| POST |
+| route          	| BASE_URL/authors|
+| error types    	| PermissionDenied |
+| required headers  | Authorization         |
+
+>*Note*: PermissionDenied - ошибка проверки токена доступа, который лежит в хэдере Authorization (для неавторизованных пользователей выполнение операции невозможно).
+
+#### REQUEST DATA
+
+```json
+{
+    "surname": "author_surname",
+    "name": "author_name"
+    "middle_name": "author_middle_name",
+    "life": "author_life",
+    "photo": "author_photo"
+}
+```
+
+#### RESPONSE DATA [SUCCESS]
+
+```json
+{
+    "has_errors": false,
+    "errors": [],
+    "author": {
+        "id": 255,
+    },
+    "message": "Автор успешно добавлен."
+}
+```
+
+#### RESPONSE DATA [FAIL]
+
+>*Note*: 1) Возвращаются только найденные ошибки
+
+```json
+{
+    "has_errors": true,
+    "errors": [
+        {
+            "type": "PermissionDenied",
+            "message": "Отказано в доступе."
+        }
+    ],
+    "message": "В процессе добавления автора возникли ошибки."
+}
+```
+
+## Update Author
+
+|attribute        |value         	      |
+|----------------	|-------------------	|
+| request method 	| PATCH |
+| route          	| BASE_URL/authors/{author_id}|
+| error types    	| AuthorNotFound, PermissionDenied |
+| required headers  | Authorization         |
+
+>*Note*: PermissionDenied - ошибка проверки токена доступа, который лежит в хэдере Authorization (для неавторизованных пользователей выполнение операции невозможно).
+
+#### REQUEST DATA
+
+```json
+{
+    "surname": "new_author_surname",
+    "name": "new_author_name"
+    "middle_name": "new_author_middle_name",
+    "life": "new_author_life",
+    "photo": "new_author_photo"
+}
+```
+
+#### RESPONSE DATA [SUCCESS]
+
+```json
+{
+    "has_errors": false,
+    "errors": [],
+    "message": "Информация об авторе успешно обновлена."
+}
+```
+
+#### RESPONSE DATA [FAIL]
+
+>*Note*: 1) Возвращаются только найденные ошибки; 2) Перечислены все возможные ошибки.
+
+```json
+{
+    "has_errors": true,
+    "errors": [
+        {
+            "type": "AuthorNotFound",
+            "message": "Автор с таким id не найден."
+        },
+        {
+            "type": "PermissionDenied",
+            "message": "Отказано в доступе."
+        }
+    ],
+    "message": "В процессе обновления информации об авторе возникли ошибки."
+}
+```
+
+## Get Author
+
+|attribute        |value         	      |
+|----------------	|-------------------	|
+| request method 	| GET |
+| route          	| BASE_URL/authors?id={author_id}|
+| error types    	| AuthorNotFound |
+
+#### RESPONSE DATA [SUCCESS]
+
+```json
+{
+    "has_errors": false,
+    "errors": [],
+    "author": {
+        "surname": "new_author_surname",
+        "name": "new_author_name"
+        "middle_name": "new_author_middle_name",
+        "life": "new_author_life",
+        "photo": "new_author_photo"
+    }
+}
+```
+
+#### RESPONSE DATA [FAIL]
+
+```json
+{
+    "has_errors": true,
+    "errors": [
+        {
+            "type": "AuthorNotFound",
+            "message": "Автор с таким id не найден."
+        }
+    ],
+    "message": "В процессе получения информации об авторе возникли ошибки."
+}
+```
+
+## Delete Author
+
+|attribute        |value         	      |
+|----------------	|-------------------	|
+| request method 	| DELETE |
+| route          	| BASE_URL/authors/{author_id}|
+| error types    	| AuthorNotFound, PermissionDenied |
+| required headers  | Authorization         |
+
+>*Note*: PermissionDenied - ошибка проверки токена доступа, который лежит в хэдере Authorization (для неавторизованных пользователей выполнение операции невозможно).
+
+#### RESPONSE DATA [SUCCESS]
+
+```json
+{
+    "has_errors": false,
+    "errors": [],
+    "message": "Информация об авторе успешно удалена",
+}
+```
+#### RESPONSE DATA [FAIL]
+
+```json
+{
+    "has_errors": true,
+    "errors": [
+        {
+            "type": "AuthorNotFound",
+            "message": "Автор с таким id не найден."
+        },
+        {
+            "type": "PermissionDenied",
+            "message": "Отказано в доступе."
+        }
+    ],
+    "message": "В процессе удаления информации об авторе возникли ошибки."
+}
+```
+
+## Add Authors to Spectacle
+
+|attribute        |value         	      |
+|----------------	|-------------------	|
+| request method 	| POST |
+| route          	| BASE_URL/theaters/{theater_id}/spectacles/{spectacle_id}/authors|
+| error types    	| TheaterNotFound, SpectacleNotFound, PermissionDenied |
+| required headers  | Authorization         |
+
+>*Note*: PermissionDenied - ошибка проверки токена доступа, который лежит в хэдере Authorization (для неавторизованных пользователей выполнение операции невозможно).
+
+>*Note*: В request data содержится список авторов спектакля (id автора), которые необходимо добавить. В примере приведено 3, в общем случае количество авторов в списке не ограничено (может быть в разы больше). Предусмотри ситацию с пустым списком (если в запросе не будет элементов в списке).
+
+#### REQUEST DATA
+
+```json
+{
+    "authors": [
+        {
+            "id": 434
+        },
+        {
+            "id": 32
+        },
+        {
+            "id": 1
+        }
+    ]
+}
+```
+
+#### RESPONSE DATA [SUCCESS]
+
+```json
+{
+    "has_errors": false,
+    "errors": [],
+    "message": "Авторы спектакля успешно добавлены."
+}
+```
+
+#### RESPONSE DATA [FAIL]
+
+```json
+{
+    "has_errors": true,
+    "errors": [
+        {
+            "type": "TheaterNotFound",
+            "message": "Театр с таким id не найден."
+        },
+        {
+            "type": "SpectacleNotFound",
+            "message": "Спектакль с таким id не найден."
+        },
+        {
+            "type": "PermissionDenied",
+            "message": "Отказано в доступе."
+        }
+    ],
+    "message": "В процессе добавления продюсеров в спектакль возникли ошибки."
+}
+```
+
+## Get Spectacle Authors
+
+|attribute        |value         	      |
+|----------------	|-------------------	|
+| request method 	| GET |
+| route          	| BASE_URL/authors?spectacle_id={spectacle_id}|
+| error types    	| SpectacleNotFound, PermissionDenied |
+| required headers  | Authorization         |
+
+#### RESPONSE DATA [SUCCESS]
+
+```json
+{
+    "has_errors": false,
+    "errors": [],
+    "authors": [
+        {   
+            "id": 342,
+            "surname": "author_surname",
+            "name": "author_name"
+            "middle_name": "author_middle_name",
+            "life": "author_life",
+            "photo": "author_photo"
+        },
+        {   
+            "id": 34,
+            "surname": "author_surname",
+            "name": "author_name"
+            "middle_name": "author_middle_name",
+            "life": "author_life",
+            "photo": "author_photo"
+        },
+        {   
+            "id": 786,
+            "surname": "author_surname",
+            "name": "author_name"
+            "middle_name": "author_middle_name",
+            "life": "author_life",
+            "photo": "author_photo"
+        }
+    ]
+}
+```
+
+#### RESPONSE DATA [FAIL]
+
+```json
+{
+    "has_errors": true,
+    "errors": [
+        {
+            "type": "SpectacleNotFound",
+            "message": "Спектакль с таким id не найден."
+        }
+    ],
+    "message": "В процессе получения информации об авторах спектакля возникли ошибки."
+}
+```
+
+## Delete Authors From Spectacle
+
+|attribute        |value         	      |
+|----------------	|-------------------	|
+| request method 	| PATCH |
+| route          	| BASE_URL/authors?spectacle_id={spectacle_id}|
+| error types    	| SpectacleNotFound,  AuthorNotFound, PermissionDenied |
+| required headers  | Authorization         |
+
+>*Note*: PermissionDenied - ошибка проверки токена доступа, который лежит в хэдере Authorization (для неавторизованных пользователей выполнение операции невозможно).
+
+>*Note*: Метод запроса - PATCH, это не ошибка. Дело в том, что необходимо иметь возможность удалять сразу несколько записей из таблицы "Spectacle Author". В нагрузке запроса будет список id авторов, которые необходимо удалить из данной таблицы. Это один из подходов к решению проблемы о множественном удалении. Количество авторов для удаления из спектакля неограничено.
+
+#### REQUEST DATA
+
+```json
+{
+    "authors_to_delete": [23, 25, 324, 1234, 23, 123]
+}
+```
+
+#### RESPONSE DATA [SUCCESS]
+
+```json
+{
+    "has_errors": false,
+    "errors": [],
+    "message": "Авторы успешно удалены из спектакля",
+}
+```
+#### RESPONSE DATA [FAIL]
+
+```json
+{
+    "has_errors": true,
+    "errors": [
+        {
+            "type": "SpectacleNotFound",
+            "message": "Спектакль с таким id не найден."
+        },
+        {
+            "type": "PermissionDenied",
+            "message": "Отказано в доступе."
+        },
+        {
+            "type": "AuthorNotFound",
+            "message": "Автор с id = {author_id} не найден."
+        },
+    ],
+    "message": "В процессе удаления авторов из спектакля возникли ошибки."
+}
+```
+
+## Add Artist
+
+|attribute        |value         	      |
+|----------------	|-------------------	|
+| request method 	| POST |
+| route          	| BASE_URL/artists|
+| error types    	| PermissionDenied |
+| required headers  | Authorization         |
+
+>*Note*: PermissionDenied - ошибка проверки токена доступа, который лежит в хэдере Authorization (для неавторизованных пользователей выполнение операции невозможно).
+
+#### REQUEST DATA
+
+```json
+{
+    "surname": "artist_surname",
+    "name": "artist_name"
+    "middle_name": "artist_middle_name",
+    "life": "artist_life",
+    "photo": "artist_photo"
+}
+```
+
+#### RESPONSE DATA [SUCCESS]
+
+```json
+{
+    "has_errors": false,
+    "errors": [],
+    "author": {
+        "id": 255,
+    },
+    "message": "Художник успешно добавлен."
+}
+```
+
+#### RESPONSE DATA [FAIL]
+
+>*Note*: 1) Возвращаются только найденные ошибки
+
+```json
+{
+    "has_errors": true,
+    "errors": [
+        {
+            "type": "PermissionDenied",
+            "message": "Отказано в доступе."
+        }
+    ],
+    "message": "В процессе добавления художника возникли ошибки."
+}
+```
+
+## Update Artist
+
+|attribute        |value         	      |
+|----------------	|-------------------	|
+| request method 	| PATCH |
+| route          	| BASE_URL/artists/{artist_id}|
+| error types    	| ArtistNotFound, PermissionDenied |
+| required headers  | Authorization         |
+
+>*Note*: PermissionDenied - ошибка проверки токена доступа, который лежит в хэдере Authorization (для неавторизованных пользователей выполнение операции невозможно).
+
+#### REQUEST DATA
+
+```json
+{
+    "surname": "new_artist_surname",
+    "name": "new_artist_name"
+    "middle_name": "new_artist_middle_name",
+    "life": "new_artist_life",
+    "photo": "new_artist_photo"
+}
+```
+
+#### RESPONSE DATA [SUCCESS]
+
+```json
+{
+    "has_errors": false,
+    "errors": [],
+    "message": "Информация о художнике успешно обновлена."
+}
+```
+
+#### RESPONSE DATA [FAIL]
+
+>*Note*: 1) Возвращаются только найденные ошибки; 2) Перечислены все возможные ошибки.
+
+```json
+{
+    "has_errors": true,
+    "errors": [
+        {
+            "type": "ArtistNotFound",
+            "message": "Художник с таким id не найден."
+        },
+        {
+            "type": "PermissionDenied",
+            "message": "Отказано в доступе."
+        }
+    ],
+    "message": "В процессе обновления информации о художнике возникли ошибки."
+}
+```
+
+## Get Artist
+
+|attribute        |value         	      |
+|----------------	|-------------------	|
+| request method 	| GET |
+| route          	| BASE_URL/artists?id={artist_id}|
+| error types    	| ArtistNotFound |
+
+#### RESPONSE DATA [SUCCESS]
+
+```json
+{
+    "has_errors": false,
+    "errors": [],
+    "artist": {
+        "surname": "artist_surname",
+        "name": "artist_name"
+        "middle_name": "artist_middle_name",
+        "life": "artist_life",
+        "photo": "artist_photo"
+    }
+}
+```
+
+#### RESPONSE DATA [FAIL]
+
+```json
+{
+    "has_errors": true,
+    "errors": [
+        {
+            "type": "ArtistNotFound",
+            "message": "Художник с таким id не найден."
+        }
+    ],
+    "message": "В процессе получения информации о художнике возникли ошибки."
+}
+```
+
+## Delete Artist
+
+|attribute        |value         	      |
+|----------------	|-------------------	|
+| request method 	| DELETE |
+| route          	| BASE_URL/artists/{artist_id}|
+| error types    	| ArtistNotFound, PermissionDenied |
+| required headers  | Authorization         |
+
+>*Note*: PermissionDenied - ошибка проверки токена доступа, который лежит в хэдере Authorization (для неавторизованных пользователей выполнение операции невозможно).
+
+#### RESPONSE DATA [SUCCESS]
+
+```json
+{
+    "has_errors": false,
+    "errors": [],
+    "message": "Информация о художнике успешно удалена",
+}
+```
+#### RESPONSE DATA [FAIL]
+
+```json
+{
+    "has_errors": true,
+    "errors": [
+        {
+            "type": "ArtistNotFound",
+            "message": "Художник с таким id не найден."
+        },
+        {
+            "type": "PermissionDenied",
+            "message": "Отказано в доступе."
+        }
+    ],
+    "message": "В процессе удаления информации о художнике возникли ошибки."
+}
+```
+
+## Add Artists to Spectacle
+
+|attribute        |value         	      |
+|----------------	|-------------------	|
+| request method 	| POST |
+| route          	| BASE_URL/theaters/{theater_id}/spectacles/{spectacle_id}/artists|
+| error types    	| TheaterNotFound, SpectacleNotFound, PermissionDenied |
+| required headers  | Authorization         |
+
+>*Note*: PermissionDenied - ошибка проверки токена доступа, который лежит в хэдере Authorization (для неавторизованных пользователей выполнение операции невозможно).
+
+>*Note*: В request data содержится список художников спектакля (id автора), которые необходимо добавить. В примере приведено 3, в общем случае количество художников в списке не ограничено (может быть в разы больше). Предусмотри ситацию с пустым списком (если в запросе не будет элементов в списке).
+
+#### REQUEST DATA
+
+```json
+{
+    "artists": [
+        {
+            "id": 434
+        },
+        {
+            "id": 32
+        },
+        {
+            "id": 1
+        }
+    ]
+}
+```
+
+#### RESPONSE DATA [SUCCESS]
+
+```json
+{
+    "has_errors": false,
+    "errors": [],
+    "message": "Художники спектакля успешно добавлены."
+}
+```
+
+#### RESPONSE DATA [FAIL]
+
+```json
+{
+    "has_errors": true,
+    "errors": [
+        {
+            "type": "TheaterNotFound",
+            "message": "Театр с таким id не найден."
+        },
+        {
+            "type": "SpectacleNotFound",
+            "message": "Спектакль с таким id не найден."
+        },
+        {
+            "type": "PermissionDenied",
+            "message": "Отказано в доступе."
+        }
+    ],
+    "message": "В процессе добавления художников в спектакль возникли ошибки."
+}
+```
+
+## Get Spectacle Artists
+
+|attribute        |value         	      |
+|----------------	|-------------------	|
+| request method 	| GET |
+| route          	| BASE_URL/artists?spectacle_id={spectacle_id}|
+| error types    	| SpectacleNotFound, PermissionDenied |
+| required headers  | Authorization         |
+
+#### RESPONSE DATA [SUCCESS]
+
+```json
+{
+    "has_errors": false,
+    "errors": [],
+    "authors": [
+        {   
+            "id": 342,
+            "surname": "artist_surname",
+            "name": "artist_name"
+            "middle_name": "artist_middle_name",
+            "life": "artist_life",
+            "photo": "artist_photo"
+        },
+        {   
+            "id": 34,
+            "surname": "artist_surname",
+            "name": "artist_name"
+            "middle_name": "artist_middle_name",
+            "life": "artist_life",
+            "photo": "artist_photo"
+        },
+        {   
+            "id": 786,
+            "surname": "artist_surname",
+            "name": "artist_name"
+            "middle_name": "artist_middle_name",
+            "life": "artist_life",
+            "photo": "artist_photo"
+        }
+    ]
+}
+```
+
+#### RESPONSE DATA [FAIL]
+
+```json
+{
+    "has_errors": true,
+    "errors": [
+        {
+            "type": "SpectacleNotFound",
+            "message": "Спектакль с таким id не найден."
+        }
+    ],
+    "message": "В процессе получения информации о художниках спектакля возникли ошибки."
+}
+```
+
+## Delete Artists From Spectacle
+
+|attribute        |value         	      |
+|----------------	|-------------------	|
+| request method 	| PATCH |
+| route          	| BASE_URL/artists?spectacle_id={spectacle_id}|
+| error types    	| SpectacleNotFound,  ArtistNotFound, PermissionDenied |
+| required headers  | Authorization         |
+
+>*Note*: PermissionDenied - ошибка проверки токена доступа, который лежит в хэдере Authorization (для неавторизованных пользователей выполнение операции невозможно).
+
+>*Note*: Метод запроса - PATCH, это не ошибка. Дело в том, что необходимо иметь возможность удалять сразу несколько записей из таблицы "Spectacle Artist". В нагрузке запроса будет список id художников, которые необходимо удалить из данной таблицы. Это один из подходов к решению проблемы о множественном удалении. Количество художников для удаления из спектакля неограничено.
+
+#### REQUEST DATA
+
+```json
+{
+    "artists_to_delete": [23, 25, 324, 1234, 23, 123]
+}
+```
+
+#### RESPONSE DATA [SUCCESS]
+
+```json
+{
+    "has_errors": false,
+    "errors": [],
+    "message": "Художники успешно удалены из спектакля",
+}
+```
+#### RESPONSE DATA [FAIL]
+
+```json
+{
+    "has_errors": true,
+    "errors": [
+        {
+            "type": "SpectacleNotFound",
+            "message": "Спектакль с таким id не найден."
+        },
+        {
+            "type": "PermissionDenied",
+            "message": "Отказано в доступе."
+        },
+        {
+            "type": "ArtistNotFound",
+            "message": "Художник с id = {artist_id} не найден."
+        },
+    ],
+    "message": "В процессе удаления художников из спектакля возникли ошибки."
 }
 ```
