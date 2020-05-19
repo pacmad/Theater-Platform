@@ -30,18 +30,18 @@
 21. [Get Spectacle](#Get-Spectacle)
 22. [Get Spectacles](#Get-Spectacles)
 23. [Delete Spectacle](#Delete-Spectacle)
-24. [Registration](#Registration)
-25. [Registration](#Registration)
-26. [Registration](#Registration)
-27. [Registration](#Registration)
-28. [Registration](#Registration)
-29. [Registration](#Registration)
-30. [Registration](#Registration)
-31. [Registration](#Registration)
-32. [Registration](#Registration)
-33. [Registration](#Registration)
-34. [Registration](#Registration)
-35. [Registration](#Registration)
+24. [Add Event](#Add-Event)
+25. [Update Event](#Update-Event)
+26. [Get Event](#Get-Event)
+27. [Get Events](#Get-Events)
+28. [Delete Event](#Delete-Event)
+29. [Get Premieres](#Get-Premieres)
+30. [Get Main Page Premieres](#Get-Main-Page-Premieres)
+31. [Add Theater](#Add-Theater)
+32. [Update Theater](#Update-Theater)
+33. [Get Theater](#Get-Theater)
+34. [Get Theaters](#Get-Theaters)
+35. [Delete Theater](#Delete-Theater)
 36. [Registration](#Registration)
 37. [Registration](#Registration)
 38. [Registration](#Registration)
@@ -1270,6 +1270,8 @@ BASE_URL  http://host1813162.hostland.pro/api
 
 ## Add Event
 
+[<-- Back to Table Of Contents](#Table-Of-Contents)
+
 |attribute        |value         	      |
 |----------------	|-------------------	|
 | request method 	| POST |
@@ -1332,6 +1334,8 @@ BASE_URL  http://host1813162.hostland.pro/api
 ```
 
 ## Update Event
+
+[<-- Back to Table Of Contents](#Table-Of-Contents)
 
 |attribute        |value         	      |
 |----------------	|-------------------	|
@@ -1397,6 +1401,8 @@ BASE_URL  http://host1813162.hostland.pro/api
 
 ## Get Event
 
+[<-- Back to Table Of Contents](#Table-Of-Contents)
+
 |attribute        |value         	      |
 |----------------	|-------------------	|
 | request method 	| GET |
@@ -1439,6 +1445,8 @@ BASE_URL  http://host1813162.hostland.pro/api
 ```
 
 ## Get Events
+
+[<-- Back to Table Of Contents](#Table-Of-Contents)
 
 |attribute        |value         	      |
 |----------------	|-------------------	|
@@ -1523,6 +1531,8 @@ BASE_URL  http://host1813162.hostland.pro/api
 
 ## Delete Event
 
+[<-- Back to Table Of Contents](#Table-Of-Contents)
+
 |attribute        |value         	      |
 |----------------	|-------------------	|
 | request method 	| DELETE |
@@ -1561,6 +1571,8 @@ BASE_URL  http://host1813162.hostland.pro/api
 ```
 
 ## Get Premieres
+
+[<-- Back to Table Of Contents](#Table-Of-Contents)
 
 |attribute        |value         	      |
 |----------------	|-------------------	|
@@ -1621,6 +1633,8 @@ BASE_URL  http://host1813162.hostland.pro/api
 
 ## Get Main Page Premieres
 
+[<-- Back to Table Of Contents](#Table-Of-Contents)
+
 |attribute        |value         	      |
 |----------------	|-------------------	|
 | request method 	| GET |
@@ -1680,6 +1694,8 @@ BASE_URL  http://host1813162.hostland.pro/api
 
 ## Add Theater
 
+[<-- Back to Table Of Contents](#Table-Of-Contents)
+
 |attribute        |value         	      |
 |----------------	|-------------------	|
 | request method 	| POST |
@@ -1733,6 +1749,8 @@ BASE_URL  http://host1813162.hostland.pro/api
 ```
 
 ## Update Theater
+
+[<-- Back to Table Of Contents](#Table-Of-Contents)
 
 |attribute        |value         	      |
 |----------------	|-------------------	|
@@ -1789,6 +1807,8 @@ BASE_URL  http://host1813162.hostland.pro/api
 
 ## Get Theater
 
+[<-- Back to Table Of Contents](#Table-Of-Contents)
+
 |attribute        |value         	      |
 |----------------	|-------------------	|
 | request method 	| GET |
@@ -1833,6 +1853,8 @@ BASE_URL  http://host1813162.hostland.pro/api
 
 ## Get Theaters
 
+[<-- Back to Table Of Contents](#Table-Of-Contents)
+
 |attribute        |value         	      |
 |----------------	|-------------------	|
 | request method 	| GET |
@@ -1873,6 +1895,8 @@ BASE_URL  http://host1813162.hostland.pro/api
 ```
 
 ## Delete Theater
+
+[<-- Back to Table Of Contents](#Table-Of-Contents)
 
 |attribute        |value         	      |
 |----------------	|-------------------	|
