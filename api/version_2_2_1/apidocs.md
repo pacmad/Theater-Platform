@@ -18,14 +18,35 @@
 9. [Add User Bookmark](#Add-User-Bookmark)
 10. [Delete User Bookmark](#Delete-User-Bookmark)
 11. [Get User Bookmarks](#Get-User-Bookmarks)
-12. [Registration](#Registration)
-13. [Registration](#Registration)
-14. [Registration](#Registration)
-15. [Registration](#Registration)
-16. [Registration](#Registration)
-17. [Registration](#Registration)
-18. [Registration](#Registration)
+12. [Get User Purchase History](#Get-User-Purchase-History)
+13. [Get User Commetns](#Get-User-Commetns)
+14. [Add Comment](#Add-Comment)
+15. [Update Comment](#Update-Comment)
+16. [Get Spectacle Comments](#Get-Spectacle-Comments)
+17. [Comment Verification](#Comment-Verification)
+18. [Delete Comment](#Delete Comment)
 19. [Registration](#Registration)
+20. [Registration](#Registration)
+21. [Registration](#Registration)
+22. [Registration](#Registration)
+23. [Registration](#Registration)
+24. [Registration](#Registration)
+25. [Registration](#Registration)
+26. [Registration](#Registration)
+27. [Registration](#Registration)
+28. [Registration](#Registration)
+29. [Registration](#Registration)
+30. [Registration](#Registration)
+31. [Registration](#Registration)
+32. [Registration](#Registration)
+33. [Registration](#Registration)
+34. [Registration](#Registration)
+35. [Registration](#Registration)
+36. [Registration](#Registration)
+37. [Registration](#Registration)
+38. [Registration](#Registration)
+39. [Registration](#Registration)
+40. [Registration](#Registration)
 
 BASE_URL  http://host1813162.hostland.pro/api
 
@@ -550,6 +571,8 @@ BASE_URL  http://host1813162.hostland.pro/api
 
 ## Get User Purchase History
 
+[<-- Back to Table Of Contents](#Table-Of-Contents)
+
 |attribute        |value         	      |
 |----------------	|-------------------	|
 | request method 	| GET |
@@ -671,6 +694,8 @@ BASE_URL  http://host1813162.hostland.pro/api
 ```
 ## Get User Commetns
 
+[<-- Back to Table Of Contents](#Table-Of-Contents)
+
 |attribute        |value         	      |
 |----------------	|-------------------	|
 | request method 	| GET |
@@ -745,6 +770,8 @@ BASE_URL  http://host1813162.hostland.pro/api
 
 ## Add Comment
 
+[<-- Back to Table Of Contents](#Table-Of-Contents)
+
 |attribute        |value         	      |
 |----------------	|-------------------	|
 | request method 	| POST |
@@ -805,6 +832,8 @@ BASE_URL  http://host1813162.hostland.pro/api
 
 ## Update Comment
 
+[<-- Back to Table Of Contents](#Table-Of-Contents)
+
 |attribute        |value         	      |
 |----------------	|-------------------	|
 | request method 	| PATCH |
@@ -854,6 +883,8 @@ BASE_URL  http://host1813162.hostland.pro/api
 ```
 
 ## Get Spectacle Comments
+
+[<-- Back to Table Of Contents](#Table-Of-Contents)
 
 |attribute        |value         	      |
 |----------------	|-------------------	|
@@ -909,6 +940,8 @@ BASE_URL  http://host1813162.hostland.pro/api
 
 ## Comment Verification
 
+[<-- Back to Table Of Contents](#Table-Of-Contents)
+
 |attribute        |value         	      |
 |----------------	|-------------------	|
 | request method 	| GET |
@@ -946,6 +979,8 @@ BASE_URL  http://host1813162.hostland.pro/api
 ```
 
 ## Delete Comment
+
+[<-- Back to Table Of Contents](#Table-Of-Contents)
 
 |attribute        |value         	      |
 |----------------	|-------------------	|
