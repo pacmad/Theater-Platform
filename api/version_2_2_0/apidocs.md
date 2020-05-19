@@ -1,7 +1,7 @@
 # API v2.1.0
 
 >*updates*:
->1.
+>1. К payload регистрации добавлены фамилия, имя и отчество
 
 BASE_URL  http://host1813162.hostland.pro/api
 
@@ -18,6 +18,9 @@ BASE_URL  http://host1813162.hostland.pro/api
 ```json
 {
     "email": "example@mail.com",
+    "name": "Ivan",
+    "surname": "Ivanov",
+    "middle_name": "Ivanovich",
     "password": "somepassword",
     "password_confirmation": "somepassword"
 }
