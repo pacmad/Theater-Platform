@@ -6,7 +6,26 @@
 >3. исправлены опечатки во всех API
 
 ## Table Of Contents
+
 1. [Registration](#Registration)
+2. [Authorization](#Authorization)
+3. [Logout](#Logout)
+4. [Password Reset Request](#Password~Reset~Request)
+5. [Registration](#Registration)
+6. [Registration](#Registration)
+7. [Registration](#Registration)
+8. [Registration](#Registration)
+9. [Registration](#Registration)
+10. [Registration](#Registration)
+11. [Registration](#Registration)
+12. [Registration](#Registration)
+13. [Registration](#Registration)
+14. [Registration](#Registration)
+15. [Registration](#Registration)
+16. [Registration](#Registration)
+17. [Registration](#Registration)
+18. [Registration](#Registration)
+19. [Registration](#Registration)
 
 BASE_URL  http://host1813162.hostland.pro/api
 
