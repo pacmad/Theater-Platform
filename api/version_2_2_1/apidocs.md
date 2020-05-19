@@ -42,11 +42,33 @@
 33. [Get Theater](#Get-Theater)
 34. [Get Theaters](#Get-Theaters)
 35. [Delete Theater](#Delete-Theater)
-36. [Registration](#Registration)
-37. [Registration](#Registration)
-38. [Registration](#Registration)
-39. [Registration](#Registration)
-40. [Registration](#Registration)
+36. [Get Theater Preview](#Get-Theater-Preview)
+37. [Get Spectacle Trailer](#Get-Spectacle-Trailer)
+38. [Add Social Network](#Add-Social-Network)
+39. [Update Social Network](#Update-Social-Network)
+40. [Get Social Network](#Get-Social-Network)
+41. [Delete Social Network](#Delete-Social-Network)
+42. [Add Theater Social Network Community Group](#Add-Theater-Social-Network-Community-Group)
+43. [Update Theater Social Network Community Group](#Update-Theater-Social-Network-Community-Group)
+44. [Get Theater Social Network Community Group](#Get-Theater-Social-Network-Community-Group)
+45. [Get Theater Social Network Community Groups](#Get-Theater-Social-Network-Community-Groups)
+46. [Delete Theater Social Network Community Group](#Delete-Theater-Social-Network-Community-Group)
+47. [Add Hall](#Add-Hall)
+48. [Update Hall](#Update-Hall)
+49. [Get Hall](#Get-Hall)
+50. [Get Theater Halls](#Get-Theater-Halls)
+51. [Delete Hall](#Delete-Hall)
+52. [Registration](#Registration)
+53. [Registration](#Registration)
+54. [Registration](#Registration)
+55. [Registration](#Registration)
+56. [Registration](#Registration)
+57. [Registration](#Registration)
+58. [Registration](#Registration)
+59. [Registration](#Registration)
+60. [Registration](#Registration)
+61. [Registration](#Registration)
+62. [Registration](#Registration)
 
 BASE_URL  http://host1813162.hostland.pro/api
 
@@ -1937,6 +1959,8 @@ BASE_URL  http://host1813162.hostland.pro/api
 
 ## Get Theater Preview
 
+[<-- Back to Table Of Contents](#Table-Of-Contents)
+
 |attribute        |value         	      |
 |----------------	|-------------------	|
 | request method 	| GET |
@@ -1971,6 +1995,8 @@ BASE_URL  http://host1813162.hostland.pro/api
 
 ## Get Spectacle Trailer
 
+[<-- Back to Table Of Contents](#Table-Of-Contents)
+
 |attribute        |value         	      |
 |----------------	|-------------------	|
 | request method 	| GET |
@@ -2003,6 +2029,8 @@ BASE_URL  http://host1813162.hostland.pro/api
 ```
 
 ## Add Social Network
+
+[<-- Back to Table Of Contents](#Table-Of-Contents)
 
 |attribute        |value         	      |
 |----------------	|-------------------	|
@@ -2051,6 +2079,8 @@ BASE_URL  http://host1813162.hostland.pro/api
 ```
 
 ## Update Social Network
+
+[<-- Back to Table Of Contents](#Table-Of-Contents)
 
 |attribute        |value         	      |
 |----------------	|-------------------	|
@@ -2101,6 +2131,8 @@ BASE_URL  http://host1813162.hostland.pro/api
 
 ## Get Social Network
 
+[<-- Back to Table Of Contents](#Table-Of-Contents)
+
 |attribute        |value         	      |
 |----------------	|-------------------	|
 | request method 	| GET |
@@ -2138,6 +2170,8 @@ BASE_URL  http://host1813162.hostland.pro/api
 ```
 
 ## Delete Social Network
+
+[<-- Back to Table Of Contents](#Table-Of-Contents)
 
 |attribute        |value         	      |
 |----------------	|-------------------	|
@@ -2178,6 +2212,8 @@ BASE_URL  http://host1813162.hostland.pro/api
 ```
 
 ## Add Theater Social Network Community Group
+
+[<-- Back to Table Of Contents](#Table-Of-Contents)
 
 |attribute        |value         	      |
 |----------------	|-------------------	|
@@ -2234,6 +2270,8 @@ BASE_URL  http://host1813162.hostland.pro/api
 
 ## Update Theater Social Network Community Group
 
+[<-- Back to Table Of Contents](#Table-Of-Contents)
+
 |attribute        |value         	      |
 |----------------	|-------------------	|
 | request method 	| PATCH |
@@ -2286,6 +2324,8 @@ BASE_URL  http://host1813162.hostland.pro/api
 
 ## Get Theater Social Network Community Group
 
+[<-- Back to Table Of Contents](#Table-Of-Contents)
+
 |attribute        |value         	      |
 |----------------	|-------------------	|
 | request method 	| GET |
@@ -2326,6 +2366,8 @@ BASE_URL  http://host1813162.hostland.pro/api
 ```
 
 ## Get Theater Social Network Community Groups
+
+[<-- Back to Table Of Contents](#Table-Of-Contents)
 
 |attribute        |value         	      |
 |----------------	|-------------------	|
@@ -2379,6 +2421,8 @@ BASE_URL  http://host1813162.hostland.pro/api
 
 ## Delete Theater Social Network Community Group
 
+[<-- Back to Table Of Contents](#Table-Of-Contents)
+
 |attribute        |value         	      |
 |----------------	|-------------------	|
 | request method 	| DELETE |
@@ -2420,6 +2464,8 @@ BASE_URL  http://host1813162.hostland.pro/api
 }
 ```
 ## Add Hall
+
+[<-- Back to Table Of Contents](#Table-Of-Contents)
 
 |attribute        |value         	      |
 |----------------	|-------------------	|
@@ -2475,6 +2521,8 @@ BASE_URL  http://host1813162.hostland.pro/api
 
 ## Update Hall
 
+[<-- Back to Table Of Contents](#Table-Of-Contents)
+
 |attribute        |value         	      |
 |----------------	|-------------------	|
 | request method 	| PATCH |
@@ -2525,6 +2573,8 @@ BASE_URL  http://host1813162.hostland.pro/api
 
 ## Get Hall
 
+[<-- Back to Table Of Contents](#Table-Of-Contents)
+
 |attribute        |value         	      |
 |----------------	|-------------------	|
 | request method 	| GET |
@@ -2563,6 +2613,8 @@ BASE_URL  http://host1813162.hostland.pro/api
 ```
 
 ## Get Theater Halls
+
+[<-- Back to Table Of Contents](#Table-Of-Contents)
 
 |attribute        |value         	      |
 |----------------	|-------------------	|
@@ -2613,6 +2665,8 @@ BASE_URL  http://host1813162.hostland.pro/api
 ```
 
 ## Delete Hall
+
+[<-- Back to Table Of Contents](#Table-Of-Contents)
 
 |attribute        |value         	      |
 |----------------	|-------------------	|
