@@ -3679,6 +3679,8 @@ BASE_URL  http://host1813162.hostland.pro/api
 
 ## Add Producer
 
+[<-- Back to Table Of Contents](#Table-Of-Contents)
+
 |attribute        |value         	      |
 |----------------	|-------------------	|
 | request method 	| POST |
@@ -3731,6 +3733,8 @@ BASE_URL  http://host1813162.hostland.pro/api
 ```
 
 ## Update Producer
+
+[<-- Back to Table Of Contents](#Table-Of-Contents)
 
 |attribute        |value         	      |
 |----------------	|-------------------	|
@@ -3786,6 +3790,8 @@ BASE_URL  http://host1813162.hostland.pro/api
 
 ## Get Producer
 
+[<-- Back to Table Of Contents](#Table-Of-Contents)
+
 |attribute        |value         	      |
 |----------------	|-------------------	|
 | request method 	| GET |
@@ -3825,6 +3831,8 @@ BASE_URL  http://host1813162.hostland.pro/api
 
 ## Delete Producer
 
+[<-- Back to Table Of Contents](#Table-Of-Contents)
+
 |attribute        |value         	      |
 |----------------	|-------------------	|
 | request method 	| DELETE |
@@ -3863,6 +3871,8 @@ BASE_URL  http://host1813162.hostland.pro/api
 ```
 
 ## Add Producers to Spectacle
+
+[<-- Back to Table Of Contents](#Table-Of-Contents)
 
 |attribute        |value         	      |
 |----------------	|-------------------	|
@@ -3928,6 +3938,8 @@ BASE_URL  http://host1813162.hostland.pro/api
 
 ## Get Spectacle Producers
 
+[<-- Back to Table Of Contents](#Table-Of-Contents)
+
 |attribute        |value         	      |
 |----------------	|-------------------	|
 | request method 	| GET |
@@ -3987,6 +3999,8 @@ BASE_URL  http://host1813162.hostland.pro/api
 
 ## Delete Producers From Spectacle
 
+[<-- Back to Table Of Contents](#Table-Of-Contents)
+
 |attribute        |value         	      |
 |----------------	|-------------------	|
 | request method 	| PATCH |
@@ -4040,6 +4054,8 @@ BASE_URL  http://host1813162.hostland.pro/api
 
 ## Add Author
 
+[<-- Back to Table Of Contents](#Table-Of-Contents)
+
 |attribute        |value         	      |
 |----------------	|-------------------	|
 | request method 	| POST |
@@ -4092,6 +4108,8 @@ BASE_URL  http://host1813162.hostland.pro/api
 ```
 
 ## Update Author
+
+[<-- Back to Table Of Contents](#Table-Of-Contents)
 
 |attribute        |value         	      |
 |----------------	|-------------------	|
@@ -4147,6 +4165,8 @@ BASE_URL  http://host1813162.hostland.pro/api
 
 ## Get Author
 
+[<-- Back to Table Of Contents](#Table-Of-Contents)
+
 |attribute        |value         	      |
 |----------------	|-------------------	|
 | request method 	| GET |
@@ -4186,6 +4206,8 @@ BASE_URL  http://host1813162.hostland.pro/api
 
 ## Delete Author
 
+[<-- Back to Table Of Contents](#Table-Of-Contents)
+
 |attribute        |value         	      |
 |----------------	|-------------------	|
 | request method 	| DELETE |
@@ -4224,6 +4246,8 @@ BASE_URL  http://host1813162.hostland.pro/api
 ```
 
 ## Add Authors to Spectacle
+
+[<-- Back to Table Of Contents](#Table-Of-Contents)
 
 |attribute        |value         	      |
 |----------------	|-------------------	|
@@ -4289,6 +4313,8 @@ BASE_URL  http://host1813162.hostland.pro/api
 
 ## Get Spectacle Authors
 
+[<-- Back to Table Of Contents](#Table-Of-Contents)
+
 |attribute        |value         	      |
 |----------------	|-------------------	|
 | request method 	| GET |
@@ -4348,6 +4374,8 @@ BASE_URL  http://host1813162.hostland.pro/api
 
 ## Delete Authors From Spectacle
 
+[<-- Back to Table Of Contents](#Table-Of-Contents)
+
 |attribute        |value         	      |
 |----------------	|-------------------	|
 | request method 	| PATCH |
@@ -4401,6 +4429,8 @@ BASE_URL  http://host1813162.hostland.pro/api
 
 ## Add Artist
 
+[<-- Back to Table Of Contents](#Table-Of-Contents)
+
 |attribute        |value         	      |
 |----------------	|-------------------	|
 | request method 	| POST |
@@ -4453,6 +4483,8 @@ BASE_URL  http://host1813162.hostland.pro/api
 ```
 
 ## Update Artist
+
+[<-- Back to Table Of Contents](#Table-Of-Contents)
 
 |attribute        |value         	      |
 |----------------	|-------------------	|
@@ -4508,6 +4540,8 @@ BASE_URL  http://host1813162.hostland.pro/api
 
 ## Get Artist
 
+[<-- Back to Table Of Contents](#Table-Of-Contents)
+
 |attribute        |value         	      |
 |----------------	|-------------------	|
 | request method 	| GET |
@@ -4547,6 +4581,8 @@ BASE_URL  http://host1813162.hostland.pro/api
 
 ## Delete Artist
 
+[<-- Back to Table Of Contents](#Table-Of-Contents)
+
 |attribute        |value         	      |
 |----------------	|-------------------	|
 | request method 	| DELETE |
@@ -4585,6 +4621,8 @@ BASE_URL  http://host1813162.hostland.pro/api
 ```
 
 ## Add Artists to Spectacle
+
+[<-- Back to Table Of Contents](#Table-Of-Contents)
 
 |attribute        |value         	      |
 |----------------	|-------------------	|
@@ -4650,6 +4688,8 @@ BASE_URL  http://host1813162.hostland.pro/api
 
 ## Get Spectacle Artists
 
+[<-- Back to Table Of Contents](#Table-Of-Contents)
+
 |attribute        |value         	      |
 |----------------	|-------------------	|
 | request method 	| GET |
@@ -4708,6 +4748,8 @@ BASE_URL  http://host1813162.hostland.pro/api
 ```
 
 ## Delete Artists From Spectacle
+
+[<-- Back to Table Of Contents](#Table-Of-Contents)
 
 |attribute        |value         	      |
 |----------------	|-------------------	|
