@@ -6,7 +6,7 @@
 >3. исправлены опечатки во всех API
 
 ## Table Of Contents
-- [Registration](#Registration)
+1. [Registration](#Registration)
 
 BASE_URL  http://host1813162.hostland.pro/api
 
