@@ -1,4 +1,4 @@
-# API v2.1.0
+# API v2.2.0
 
 >*updates*:
 >1. К payload регистрации добавлены фамилия, имя и отчество
@@ -6,6 +6,11 @@
 >3. добавлено API для добавления мест в зале
 >4. добавлено API для получения мест в зале
 >5. добавлено API для удаления мест в зале
+>6. добавлено API для добавления билетов
+>7. добавлено API для получения билета
+>8. добавлено API для получения билетов
+>8. добавлено API для изменения билетов
+>8. добавлено API для удаления билетов
 
 BASE_URL  http://host1813162.hostland.pro/api
 
@@ -2491,5 +2496,306 @@ BASE_URL  http://host1813162.hostland.pro/api
         },
     ],
     "message": "В процессе удаления информации о местах в зале возникли ошибки."
+}
+```
+
+## Add Tickets
+
+|attribute        |value         	      |
+|----------------	|-------------------	|
+| request method 	| POST |
+| route          	| BASE_URL/tickets|
+| error types    	| EventNotFound, SeatNotFound, PermissionDenied |
+| required headers  | Authorization         |
+
+>*Note*: PermissionDenied - ошибка проверки токена доступа, который лежит в хэдере Authorization (для неавторизованных пользователей выполнение операции невозможно).
+
+>*Note*: В request data содержится список билетов, которые необходимо добавить. В примере приведено 3, в общем случае количество билетов в списке не ограничено (может быть в разы больше). Предусмотри ситацию с пустым списком (если в запросе не будет элементов в списке). local_id не сохраняется в базе!! см.комментарий к ответу на запрос. Атрибут is_bought не будет приходить в запросе, поскольку при добавлении билета его дефолтное значение is_bought = false.
+
+#### REQUEST DATA
+
+```json
+{
+    "tickets": [
+        {
+            "local_id": 0,
+            "price": 1500,
+            "event_id": 255,
+            "seat_id": 24
+        },
+        {
+            "local_id": 1,
+            "price": 1400,
+            "event_id": 255,
+            "seat_id": 23
+        },
+        {
+            "local_id": 2,
+            "price": 2322,
+            "event_id": 255,
+            "seat_id": 16
+        }
+    ]
+}
+```
+
+#### RESPONSE DATA [SUCCESS]
+
+>*Note*: В ответе тебе нужно вернуть id каждого добавленного в бд билета, при этом завернуть его вместе с local_id, которое тебе пришло в запросе для однозначной обратной идентификации.
+
+```json
+{
+    "has_errors": false,
+    "errors": [],
+    "tickets": {
+        {
+            "local_id": 0,
+            "id": 322
+        },
+        {
+            "local_id": 1,
+            "id": 323
+        },
+        {
+            "local_id": 2,
+            "id": 324
+        }
+    }
+    "message": "Билеты успешно добавлены."
+}
+```
+
+#### RESPONSE DATA [FAIL]
+
+```json
+{
+    "has_errors": true,
+    "errors": [
+        {
+            "type": "EventNotFound",
+            "message": "Событие с таким id не найдено."
+        },
+        {
+            "type": "SeatNotFound",
+            "message": "Место с id = {seat_id} не найдено."
+        },
+        {
+            "type": "PermissionDenied",
+            "message": "Отказано в доступе."
+        }
+    ],
+    "message": "В процессе добавления билетов возникли ошибки."
+}
+```
+
+## Get Event Tickets
+
+|attribute        |value         	      |
+|----------------	|-------------------	|
+| request method 	| GET |
+| route          	| BASE_URL/tickets?event_id={event_id}|
+| error types    	| EventNotFound |
+
+>*Note*: 1) Возвращаются все билеты атрибут event_id которых равен id события в запросе. В примере ответа от сервера приведено 3 результата. 2) Если записей о билетах на событие нет, tickets будет пустым списком.
+
+#### RESPONSE DATA [SUCCESS]
+
+```json
+{
+    "has_errors": false,
+    "errors": [],
+    "tickets": [
+        {
+            "ticket_id": 0,
+            "price": 1500,
+            "is_bought": false,
+            "seat_id": 24
+        },
+        {
+            "ticket_id": 1,
+            "price": 1400,
+            "is_bought": true,
+            "seat_id": 23
+        },
+        {
+            "ticket_id": 2,
+            "price": 2322,
+            "is_bought": false,
+            "seat_id": 16
+        }
+    ]
+}
+```
+
+#### RESPONSE DATA [FAIL]
+
+```json
+{
+    "has_errors": true,
+    "errors": [
+        {
+            "type": "EventNotFound",
+            "message": "Событие с таким id не найдено."
+        }
+    ],
+    "message": "В процессе получения информации о билетах возникли ошибки."
+}
+```
+
+## Get Event Ticket
+
+|attribute        |value         	      |
+|----------------	|-------------------	|
+| request method 	| GET |
+| route          	| BASE_URL/tickets?id={ticket_id}|
+| error types    	| TicketNotFound |
+
+
+#### RESPONSE DATA [SUCCESS]
+
+```json
+{
+    "has_errors": false,
+    "errors": [],
+    "ticket": {
+            "price": 1500,
+            "is_bought": false,
+            "seat_id": 24,
+            "event_id": 255
+        }
+}
+```
+
+#### RESPONSE DATA [FAIL]
+
+```json
+{
+    "has_errors": true,
+    "errors": [
+        {
+            "type": "TicketNotFound",
+            "message": "Билет с таким id не найден."
+        }
+    ],
+    "message": "В процессе получения информации о билете возникли ошибки."
+}
+```
+
+## Update Tickets
+
+|attribute        |value         	      |
+|----------------	|-------------------	|
+| request method 	| PATCH |
+| route          	| BASE_URL/tickets|
+| error types    	| TicketNotFound, PermissionDenied |
+| required headers  | Authorization         |
+
+>*Note*: PermissionDenied - ошибка проверки токена доступа, который лежит в хэдере Authorization (для неавторизованных пользователей выполнение операции невозможно).
+
+>*Note*: В request data содержится список билетов, информацию о которых необходимо обновить. В примере приведено 3, в общем случае количество билетов в списке не ограничено (может быть в разы больше). Предусмотри ситацию с пустым списком (если в запросе не будет элементов в списке).
+
+#### REQUEST DATA
+
+```json
+{
+    "tickets": [
+        {
+            "ticket_id": 0,
+            "price": 1500,
+            "is_bought": true
+        },
+        {
+            "ticket_id": 1,
+            "price": 1400,
+            "is_bought": true
+        },
+        {
+            "ticket_id": 2,
+            "price": 2322,
+            "is_bought": false
+        }
+    ]
+}
+```
+
+#### RESPONSE DATA [SUCCESS]
+
+```json
+{
+    "has_errors": false,
+    "errors": [],
+    "message": "Информация о билетах успешно обновлена."
+}
+```
+
+#### RESPONSE DATA [FAIL]
+
+```json
+{
+    "has_errors": true,
+    "errors": [
+        {
+            "type": "TicketNotFound",
+            "message": "Билет с таким id не найден."
+        },
+        {
+            "type": "PermissionDenied",
+            "message": "Отказано в доступе."
+        }
+    ],
+    "message": "В процессе обновления билетов возникли ошибки."
+}
+```
+
+## Delete Seats
+
+|attribute        |value         	      |
+|----------------	|-------------------	|
+| request method 	| PATCH |
+| route          	| BASE_URL/ticket?event_id={event_id}|
+| error types    	| EventNotFound, TicketNotFound PermissionDenied |
+| required headers  | Authorization         |
+
+>*Note*: PermissionDenied - ошибка проверки токена доступа, который лежит в хэдере Authorization (для неавторизованных пользователей выполнение операции невозможно).
+
+>*Note*: Метод запроса - PATCH, это не ошибка. Дело в том, что необходимо иметь возможность удалять сразу несколько записей из таблицы "Билет". В нагрузке запроса будет список id билетов, которые необходимо удалить. Это один из подходов к решению проблемы о множественном удалении. Количество билетов для удаления неограничено.
+
+#### REQUEST DATA
+
+```json
+{
+    "tickets_to_delete": [23, 25, 324, 1234, 23, 123]
+}
+```
+
+#### RESPONSE DATA [SUCCESS]
+
+```json
+{
+    "has_errors": false,
+    "errors": [],
+    "message": "Информация о билетах успешно удалена",
+}
+```
+#### RESPONSE DATA [FAIL]
+
+```json
+{
+    "has_errors": true,
+    "errors": [
+        {
+            "type": "EventNotFound",
+            "message": "Событие с таким id не найдено."
+        },
+        {
+            "type": "PermissionDenied",
+            "message": "Отказано в доступе."
+        },
+        {
+            "type": "TicketNotFound",
+            "message": "Билет с id = {ticket_id} не найден."
+        },
+    ],
+    "message": "В процессе удаления информации о билетах возникли ошибки."
 }
 ```
