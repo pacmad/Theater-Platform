@@ -5,6 +5,8 @@
 >2. скорректированы API связанные с сущностью "Spectacle" (в модели данных этой сущности были добавлены дополнительные атрибуты "Длительность" и "Год")
 >3. исправлены опечатки во всех API
 
+>*Note:* * в содержании отмечены API, которые должны быть реализованы в следующем пуле.
+
 ## Table Of Contents
 
 1. [Registration](#registration)
@@ -25,23 +27,23 @@
 16. [Get Spectacle Comments](#get-spectacle-comments)
 17. [Comment Verification](#comment-verification)
 18. [Delete Comment](#delete-comment)
-19. [Add Spectacle](#add-spectacle)
-20. [Update Spectacle](#update-spectacle)
-21. [Get Spectacle](#get-spectacle)
-22. [Get Spectacles](#get-spectacles)
-23. [Delete Spectacle](#delete-spectacle)
-24. [Add Event](#add-event)
-25. [Update Event](#update-event)
-26. [Get Event](#get-event)
-27. [Get Events](#get-events)
-28. [Delete Event](#delete-event)
-29. [Get Premieres](#get-premieres)
-30. [Get Main Page Premieres](#get-main-page-premieres)
-31. [Add Theater](#add-theater)
-32. [Update Theater](#update-theater)
-33. [Get Theater](#get-theater)
-34. [Get Theaters](#get-theaters)
-35. [Delete Theater](#delete-theater)
+19. [Add Spectacle](#add-spectacle) *
+20. [Update Spectacle](#update-spectacle) *
+21. [Get Spectacle](#get-spectacle) *
+22. [Get Spectacles](#get-spectacles) *
+23. [Delete Spectacle](#delete-spectacle) *
+24. [Add Event](#add-event) *
+25. [Update Event](#update-event) *
+26. [Get Event](#get-event) *
+27. [Get Events](#get-events) *
+28. [Delete Event](#delete-event) *
+29. [Get Premieres](#get-premieres) *
+30. [Get Main Page Premieres](#get-main-page-premieres) *
+31. [Add Theater](#add-theater) *
+32. [Update Theater](#update-theater) *
+33. [Get Theater](#get-theater) *
+34. [Get Theaters](#get-theaters) *
+35. [Delete Theater](#delete-theater) *
 36. [Get Theater Preview](#get-theater-preview)
 37. [Get Spectacle Trailer](#get-spectacle-trailer)
 38. [Add Social Network](#add-social-network)
@@ -61,11 +63,11 @@
 52. [Add Seats](#add-seats)
 53. [Get Hall Seats](#get-hall-seats)
 54. [Delete Seats](#delete-seats)
-55. [Add Tickets](#add-tickets)
-56. [Get Event Tickets](#get-event-tickets)
-57. [Get Event Ticket](#get-event-ticket)
-58. [Update Event Tickets](#update-event-tickets)
-59. [Delete Tickets](#delete-tickets)
+55. [Add Tickets](#add-tickets) *
+56. [Get Event Tickets](#get-event-tickets) *
+57. [Get Event Ticket](#get-event-ticket) *
+58. [Update Event Tickets](#update-event-tickets) *
+59. [Delete Tickets](#delete-tickets) *
 60. [Tickets Purchase](#tickets-purchase)
 61. [Add Actor](#add-actor)
 62. [Update Actor](#update-actor)
