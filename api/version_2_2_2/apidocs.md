@@ -35,10 +35,10 @@
 23. [Get Event](#get-event) *
 24. [Get Events](#get-events) *
 25. [Delete Event](#delete-event) *
-26. [Get Premieres](#get-premieres) *
+26. [Get Premieres](#get-premieres)
 27. [Get Main Page Premieres](#get-main-page-premieres) *
 28. [Add Theater](#add-theater) *
-29. [Update Theater](#update-theater) *
+29. [Update Theater](#update-theater)
 30. [Get Theater](#get-theater) *
 31. [Get Theaters](#get-theaters) *
 32. [Delete Theater](#delete-theater) *
@@ -61,11 +61,11 @@
 49. [Add Seats](#add-seats)
 50. [Get Hall Seats](#get-hall-seats)
 51. [Delete Seats](#delete-seats)
-52. [Add Tickets](#add-tickets) *
-53. [Get Event Tickets](#get-event-tickets) *
-54. [Get Event Ticket](#get-event-ticket) *
-55. [Update Event Tickets](#update-event-tickets) *
-56. [Delete Tickets](#delete-tickets) *
+52. [Add Tickets](#add-tickets)
+53. [Get Event Tickets](#get-event-tickets)
+54. [Get Event Ticket](#get-event-ticket)
+55. [Update Event Tickets](#update-event-tickets)
+56. [Delete Tickets](#delete-tickets)
 57. [Tickets Purchase](#tickets-purchase)
 58. [Add Actor](#add-actor)
 59. [Update Actor](#update-actor)
