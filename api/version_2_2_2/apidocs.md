@@ -165,6 +165,8 @@ BASE_URL  http://host1813162.hostland.pro/api
 ```
 #### RESPONSE DATA [SUCCESS]
 
+>*Note*: 1) Если у пользователя нет фото --> user_photo = null
+
 ```json
 {
     "has_errors": false,
@@ -175,6 +177,7 @@ BASE_URL  http://host1813162.hostland.pro/api
         "email": "example@mail.com",
         "name": "Ivan",
         "surname": "Ivanov",
+        "photo": "user_photo",
         "is_admin": false
     }
 }
