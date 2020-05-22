@@ -2,7 +2,9 @@
 
 >*updates*:
 >1. упразднены следущие API - Password Reset Request, Password Reset, Email Verification
->2. 
+>2. изменено API Registration (изменено содержание атрибута message)
+>3. изменено API Authorization (атрибут middle_name заменен на surname, добавлен атрибут photo)
+>4. в API Logout формализован SUCCESS RESPONE
 
 >*Note:* * в содержании отмечены API, которые должны быть реализованы в следующем пуле.
 
@@ -165,7 +167,7 @@ BASE_URL  http://host1813162.hostland.pro/api
 ```
 #### RESPONSE DATA [SUCCESS]
 
->*Note*: 1) Если у пользователя нет фото --> user_photo = null
+>*Note*: 1) Если у пользователя нет фото --> "photo": null
 
 ```json
 {
