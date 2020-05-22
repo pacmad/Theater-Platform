@@ -26,12 +26,12 @@
 14. [Comment Verification](#comment-verification)
 15. [Delete Comment](#delete-comment)
 16. [Add Spectacle](#add-spectacle) *
-17. [Update Spectacle](#update-spectacle) *
+17. [Update Spectacle](#update-spectacle)
 18. [Get Spectacle](#get-spectacle) *
 19. [Get Spectacles](#get-spectacles) *
 20. [Delete Spectacle](#delete-spectacle) *
 21. [Add Event](#add-event) *
-22. [Update Event](#update-event) *
+22. [Update Event](#update-event)
 23. [Get Event](#get-event) *
 24. [Get Events](#get-events) *
 25. [Delete Event](#delete-event) *
