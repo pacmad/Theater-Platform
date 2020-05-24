@@ -1,11 +1,5 @@
 # API v2.2.2
 
-| df<br>we<br>we<br>we<br>we |   |   |   |   |
-|----------------------------|---|---|---|---|
-|                            |   |   |   |   |
-|                            |   |   |   |   |
-|                            |   |   |   |   |
-
 >*updates*:
 >1. упразднены следущие API - Password Reset Request, Password Reset, Email Verification
 >2. изменено API Registration (изменено содержание атрибута message)
