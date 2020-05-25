@@ -1,6 +1,5 @@
 ## Выполненное тестирование
 
-### [Шаблон для отчета тестирования дальнейших модулей](https://schstp.github.io/Theater-Platform/tests/template/template)
 ### [Тестирование проторипов 1.0.1 + figma](https://schstp.github.io/Theater-Platform/sketches/tests/test_22_05_2020)
 ### [Тестипрование API версии 2.2.1 21.05.2020](https://schstp.github.io/Theater-Platform/api/test/test_21_05_2020(1))
 ### [Тестипрование Сценариев версии 1.1.1 21.05.2020](https://schstp.github.io/Theater-Platform/scenarios/tests/tests_21/test_21_05_2020)
