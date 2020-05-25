@@ -11,7 +11,7 @@
 
 * ## [API Documentation](https://schstp.github.io/Theater-Platform/api/table_of_contents)
 
-* ## [Test documentation](https://schstp.github.io/Theater-Platform//tests/tests_doc)
+* ## [Test Documentation](https://schstp.github.io/Theater-Platform//tests/tests_doc)
 
 * ## [Tests](https://schstp.github.io/Theater-Platform/tests/tests)
 
