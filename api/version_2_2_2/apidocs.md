@@ -197,10 +197,6 @@ BASE_URL  http://host1813162.hostland.pro/api
             "message": "Пользователь с таким адресом электронной почты не зарегистрирован"
         },       
         {
-            "type": "EmailError",
-            "message": "Чтобы авторизоваться необходимо подтвердить email адрес"
-        },
-        {
             "type": "PasswordError",
             "message": "Неверный пароль"
         }
