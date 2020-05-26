@@ -135,6 +135,7 @@ BASE_URL  http://host1813162.hostland.pro/api
 
 ```json
 {
+    "has_errors": true,
     "message": "Указанные данные введены неверно.",
     "errors": {
         "email": [
@@ -179,8 +180,6 @@ BASE_URL  http://host1813162.hostland.pro/api
         "email": "example@mail.com",
         "name": "Ivan",
         "surname": "Ivanov",
-        "photo": "user_photo",
-        "is_admin": false
     }
 }
 ```
@@ -238,7 +237,6 @@ BASE_URL  http://host1813162.hostland.pro/api
 {
     "name": "new_user_name",
     "surname": "new_user_surname",
-    "photo": "new_user_photo"
 }
 ```
 
@@ -258,6 +256,7 @@ BASE_URL  http://host1813162.hostland.pro/api
 
 ```json
 {
+    "has_errors": true,
     "message": "Указанные данные введены неверно.",
     "errors": {
         "user_id": [
@@ -293,7 +292,6 @@ BASE_URL  http://host1813162.hostland.pro/api
         "email": "example@mail.com",
         "name": "user_name",
         "surname": "user_surname",
-        "photo": "user_photo"
     }
 
 }
@@ -304,6 +302,7 @@ BASE_URL  http://host1813162.hostland.pro/api
 
 ```json
 {
+    "has_errors": true,
     "message": "Указанные данные введены неверно.",
     "errors": {
         "user_id": [
@@ -351,6 +350,7 @@ BASE_URL  http://host1813162.hostland.pro/api
 
 ```json
 {
+    "has_errors": true,
     "message": "Указанные данные введены неверно.",
     "errors": {
         "user_id": [
@@ -393,6 +393,7 @@ BASE_URL  http://host1813162.hostland.pro/api
 
 ```json
 {
+    "has_errors": true,
     "message": "Указанные данные введены неверно.",
     "errors": {
         "user_id": [
