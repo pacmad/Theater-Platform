@@ -1,5 +1,6 @@
 ## Выполненное тестирование
 
+### [Тестирование API Registration, Authorization, Logout](https://schstp.github.io/Theater-Platform/api/test/test_27_05_2020/test_27_05_2020.md)
 ### [Тестирование API Registration, Authorization, Logout](https://schstp.github.io/Theater-Platform/api/test/test_27_05_2020)
 ### [Тестирование проторипов 1.0.1 + figma](https://schstp.github.io/Theater-Platform/sketches/tests/test_22_05_2020)
 ### [Тестипрование API версии 2.2.1 21.05.2020](https://schstp.github.io/Theater-Platform/api/test/test_21_05_2020(1))
