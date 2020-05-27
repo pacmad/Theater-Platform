@@ -1,6 +1,7 @@
 # API Documentation
 ## Table Of Contents
 
+- ### [version 2.2.3](https://schstp.github.io/Theater-Platform/api/version_2_2_3/apidocs)
 - ### [version 2.2.2](https://schstp.github.io/Theater-Platform/api/version_2_2_2/apidocs)
 - ### [version 2.2.1](https://schstp.github.io/Theater-Platform/api/version_2_2_1/apidocs)
 - ### [version 2.2.0](https://schstp.github.io/Theater-Platform/api/version_2_2_0/apidocs)
