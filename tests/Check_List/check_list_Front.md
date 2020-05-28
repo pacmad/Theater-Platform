@@ -1,8 +1,8 @@
 # Чек лист для тестирования Фронт части
 ## Оглавление <a name="Table_of_contents">
 * [Введение](#Introduction)
-* [Страницы сайта для тестирования](#Pages)
-    * [Стартовая](#Main)
+* [Страницы сайта для тестирования](#Pages)  
+    * [Стартовая](#Main)  
         * [Меню навигации](#Navigation)
         * [Слайдер](#Slider)
         * [Блок "Театры"](#Block_Theaters)
@@ -31,13 +31,13 @@
 
 
 
-### Регистрация <a name="Registration">
-[<-- К оглавлению](#Table_of_contents)
-Меню навигации <a name="Navigation">  
-Слайдер <a name="Slider">  
-Блок "Театры" <a name="Block_Theaters">  
-Функция поиска события с фильтрацией <a name="Event_search_with_filtering">  
-Footer <a name="Footer">  
+### Регистрация <a name="Registration">  
+[<-- К оглавлению](#Table_of_contents)  
+#### Меню навигации <a name="Navigation">  
+#### Слайдер <a name="Slider">  
+#### Блок "Театры" <a name="Block_Theaters">  
+#### Функция поиска события с фильтрацией <a name="Event_search_with_filtering">  
+#### Footer <a name="Footer">  
       
      
 ### Авторизация <a name="Authorization">
