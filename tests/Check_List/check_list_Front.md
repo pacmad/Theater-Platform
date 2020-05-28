@@ -9,7 +9,7 @@
         * [Функция поиска события с фильтрацией](#Event_search_with_filtering)
         * [Footer](#Footer)
     * [Регистрация](#Registration)
-    * [Авторизация](#Introduction)
+    * [Авторизация](#Authorization)
     * [Личный кабинет](#Personal_area)
     * [Расписание](#Timetable)
     * [Театры](#Theaters)
