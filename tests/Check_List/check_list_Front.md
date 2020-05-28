@@ -3,6 +3,11 @@
 * [Введение](#Introduction)
 * [Страницы сайта для тестирования](#Pages)
     * [Стартовая](#Main)
+        * [Меню навигации](#Navigation)
+        * [Слайдер](#Slider)
+        * [Блок "Театры"](#Block_Theaters)
+        * [Функция поиска события с фильтрацией](#Event_search_with_filtering)
+        * [Footer](#Footer)
     * [Регистрация](#Registration)
     * [Авторизация](#Introduction)
     * [Личный кабинет](#Personal_area)
@@ -28,6 +33,13 @@
 
 ### Регистрация <a name="Registration">
 [<-- К оглавлению](#Table_of_contents)
+Меню навигации <a name="Navigation">
+Слайдер <a name="Slider">
+Блок "Театры" <a name="Block_Theaters">
+Функция поиска события с фильтрацией <a name="Event_search_with_filtering">
+Footer <a name="Footer">
+     
+     
 ### Авторизация <a name="Authorization">
 [<-- К оглавлению](#Table_of_contents)
 ### Личный кабинет <a name="Personal_area">
