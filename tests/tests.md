@@ -1,5 +1,6 @@
 ## Выполненное тестирование
 
+### [Тестирование форм авторизации и регистрации на Front части](https://schstp.github.io/Theater-Platform/tests/Site/test_29_05_2020_Aut_Reg)
 ### [Тестирование дизайна главной страницы](https://schstp.github.io/Theater-Platform/sketches/tests/test_27_05_2020_design)
 ### [Тестирование первичного конструктора для Театров](https://schstp.github.io/Theater-Platform/sketches/tests/test_27_05_2020_constructor)
 ### [Тестирование аналитики 1.2.3 (1)](https://schstp.github.io/Theater-Platform/scenarios/tests/test_27_05/test_27_05_2020_scenarios)
