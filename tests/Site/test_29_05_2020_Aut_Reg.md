@@ -5,14 +5,6 @@
 * [Страницы сайта для тестирования](#Pages)  
     * [Регистрация](#Registration)
     * [Авторизация](#Authorization)
-    * [Личный кабинет](#Personal_area)
-    * [Главная](#главная)
-    * [Расписание](#Timetable)
-    * [Театры](#Theaters)
-    * [Конкретный театр](#Concrete_theater)
-    * [Постановка](#Staging)
-    * [Выбор места](#Seat_selection)
-    * [Оплата](#Payment)
     
 ## Введение <a name="Introduction">
 Боьлшая часть связанная с валидацией находится на Фронт части проекта, для тестирования нужно использовать как позитивное, так и
@@ -213,19 +205,5 @@
 | 18          | Проверяем, что одинакразные данные в пароле и подтверждении пароля отрицательно подтверждаются валидацией  |     Y     |
 
 
-### Личный кабинет <a name="Personal_area">
-[<-- К оглавлению](#Table_of_contents)
-### Расписание <a name="Timetable">
-[<-- К оглавлению](#Table_of_contents)
-### Театры <a name="Theaters">
-[<-- К оглавлению](#Table_of_contents)
-### Конкретный театр <a name="Concrete_theater">
-[<-- К оглавлению](#Table_of_contents)
-### Постановка <a name="Staging">
-[<-- К оглавлению](#Table_of_contents)
-### Выбор места <a name="Seat_selection">
-[<-- К оглавлению](#Table_of_contents)
-### Оплата <a name="Payment">
-[<-- К оглавлению](#Table_of_contents)
 
 
