@@ -23,7 +23,7 @@
     <td>1) Что-то <br> 
         2) Что-то второе <br>
         3) Что-то третье <br>
-    <td> Successful/Fail
+    <td> Successful/Fail </td>
   </table>
 </body>
 </html>
