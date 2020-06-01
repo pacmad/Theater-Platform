@@ -92,11 +92,11 @@
 83. [Add Artists to Spectacle](#add-artists-to-spectacle)
 84. [Get Spectacle Artists](#get-spectacle-artists)
 85. [Delete Artists From Spectacle](#delete-artists-from-spectacle)
-86. [Upload Theater Logo] (#upload-theater-logo)
-87. [Upload Theater Preview] (#upload-theater-logo)
-88. [Upload Spectacle Poster] (#upload-spectacle-poster)
-89. [Upload Spectacle Preview] (#upload-spectacle-preview)
-90. [Upload Spectacle Slider Poster] (#upload-spectacle-sliderposter)
+86. [Upload Theater Logo](#upload-theater-logo)
+87. [Upload Theater Preview](#upload-theater-logo)
+88. [Upload Spectacle Poster](#upload-spectacle-poster)
+89. [Upload Spectacle Preview](#upload-spectacle-preview)
+90. [Upload Spectacle Slider Poster](#upload-spectacle-sliderposter)
 
 
 
