@@ -1,5 +1,6 @@
 ## Выполненное тестирование
 
+### [Тестирование API 02.06](https://schstp.github.io/Theater-Platform/api/test/test_02_06_2020)
 ### [Тестирование верстки готовых страниц Front части 01.06](https://schstp.github.io/Theater-Platform/tests/Site/test_01_06_2020/test_01_06_2020)
 ### [Тестирование форм авторизации и регистрации на Front части](https://schstp.github.io/Theater-Platform/tests/Site/test_29_05_2020_Aut_Reg)
 ### [Тестирование дизайна главной страницы](https://schstp.github.io/Theater-Platform/sketches/tests/test_27_05_2020_design)
