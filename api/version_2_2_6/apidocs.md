@@ -911,7 +911,7 @@ UPDATED
 |attribute        |value         	      |
 |----------------	|-------------------	|
 | request method 	| POST |
-| route          	| BASE_URL/spectacles|
+| route          	| BASE_URL/theaters/{theater_id}/spectacles|
 | error types    	| TheaterNotFound, PermissionDenied |
 | required headers  | Authorization         |
 
