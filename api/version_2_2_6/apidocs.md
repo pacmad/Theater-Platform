@@ -1,7 +1,7 @@
 (
 
 >*updates*:
->1. Добавлено новое API (91).
+>1. Добавлено новое API (92).
 >2. Убраны атрибуты 'has_errors' до get event.
 >3. Отредактированы API Halls.
 
@@ -95,7 +95,8 @@
 84. [Get Spectacle Artists](#get-spectacle-artists)
 85. [Delete Artists From Spectacle](#delete-artists-from-spectacle)
 86. [Upload Theater Logo](#upload-theater-logo)
-87. [Upload Theater Preview](#upload-theater-logo)
+86. [Upload Theater Photo](#upload-theater-photo)
+87. [Upload Theater Preview](#upload-theater-preview)
 88. [Upload Spectacle Poster](#upload-spectacle-poster)
 89. [Upload Spectacle Preview](#upload-spectacle-preview)
 90. [Upload Spectacle Slider Poster](#upload-spectacle-sliderposter)
@@ -4650,6 +4651,33 @@ UPDATED
 ```json
 {
     "theater_logo": "theater_logo_image.png"
+}
+```
+
+#### RESPONSE DATA [SUCCESS]
+
+```json
+{
+    "message": "Картинка успешно загружена на сервер по адресу:",
+    "url": "URL_PHOTO",
+}
+```
+
+## Upload Theater Logo
+
+[<-- Back to Table Of Contents](#table-of-contents)
+
+|attribute          |value         	        |
+|----------------	|-------------------	|
+| request method 	| POST              	|
+| route          	| BASE_URL/file/theater/photo    	|
+
+#### REQUEST DATA
+
+
+```json
+{
+    "theater_photo": "theater_photo_image.png"
 }
 ```
 
