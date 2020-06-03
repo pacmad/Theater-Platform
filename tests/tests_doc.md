@@ -1,5 +1,6 @@
 # Тестовая документация
 
+### [Тестовая информация для загрузки на сервер о театрах](https://schstp.github.io/Theater-Platform/tests/TheaterTestInfo)
 ### [Чек-лист тестирования Front части](https://schstp.github.io/Theater-Platform/tests/Check_List/check_list_Front)
 ### [Чек-лист тестирования API регистрации, авторизации, выхода из аккаунта](https://schstp.github.io/Theater-Platform/tests/Check_List/Check_List_API(Reg_Avt_Log))
 ### [Требования для тестирования дизайна](https://schstp.github.io/Theater-Platform/tests/Check_List/design_requirements)
