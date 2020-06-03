@@ -98,7 +98,7 @@
 86. [Upload Theater Photo](#upload-theater-photo)
 87. [Upload Theater Preview](#upload-theater-preview)
 88. [Upload Spectacle Poster](#upload-spectacle-poster)
-89. [Upload Spectacle Preview](#upload-spectacle-preview)
+89. [Upload Spectacle Trailer](#upload-spectacle-trailer)
 90. [Upload Spectacle Slider Poster](#upload-spectacle-sliderposter)
 90. [Upload Hall Scheme](#upload-hall-scheme)
 
@@ -4744,21 +4744,21 @@ UPDATED
 }
 ```
 
-## Upload Spectacle Preview
+## Upload Spectacle Trailer
 
 [<-- Back to Table Of Contents](#table-of-contents)
 
 |attribute          |value         	        |
 |----------------	|-------------------	|
 | request method 	| POST              	|
-| route          	| BASE_URL/file/spectacle/preview   	|
+| route          	| BASE_URL/file/spectacle/trailer   	|
 
 #### REQUEST DATA
 
 
 ```json
 {
-    "spectacle_preview": "spectacle_preview_image.png"
+    "spectacle_trailer": "spectacle_trailer_image.png"
 }
 ```
 
@@ -4771,7 +4771,7 @@ UPDATED
 }
 ```
 
-## Upload Spectacle Silder Poster
+## Upload Spectacle Slider Poster
 
 [<-- Back to Table Of Contents](#table-of-contents)
 
