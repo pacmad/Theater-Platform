@@ -1,4 +1,4 @@
-# API v2.2.9
+# API v2.2.8
 
 >*updates*:
 >1. Добавлен атрибут 'contacts' в модель theater.
