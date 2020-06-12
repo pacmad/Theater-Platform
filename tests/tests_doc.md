@@ -1,6 +1,6 @@
 # Тестовая документация
 
-### [Тест кейсы для тестирования API](https://schstp.github.io/Theater-Platform/tests/Test_case/test_case_API_v1.1.md)
+### [Тест кейсы для тестирования API](https://schstp.github.io/Theater-Platform/tests/Test_case/test_case_API_v1.1)
 ### [Тестовая информация для загрузки на сервер о театрах](https://schstp.github.io/Theater-Platform/tests/TheaterTestInfo)
 ### [Чек-лист тестирования Front части](https://schstp.github.io/Theater-Platform/tests/Check_List/check_list_Front)
 ### [Чек-лист тестирования API регистрации, авторизации, выхода из аккаунта](https://schstp.github.io/Theater-Platform/tests/Check_List/Check_List_API(Reg_Avt_Log))
