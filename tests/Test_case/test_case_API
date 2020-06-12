@@ -1,16 +1,29 @@
 # Тестирование API  27.05.2020
 # Ссылки на каждый блок<a name="Ссылки"></a>
+# Ссылки на каждый блок<a name="Ссылки"></a>
 1. [Registration](#Registration)  
 2. [Authorization](#Authorization)  
 3. [Logout](#Logout)  
 4. [Add Theater](#AddTheater)  
+[Update Theater](#UpdateTheater)  
 5. [Get Theaters](#GetTheaters)   
 6. [Get Theater](#GetTheater)  
 7. [Delete Theater](#DeleteTheater)  
 8. [Add Spectacle](#AddSpectacle)  
+[Update Spectacle](#UpdateSpectacle)  
 9. [Get Spectacles](#GetSpectacles)  
 10. [Get Spectacle](#GetSpectacle)  
-11. [Delete Spectacle](#DeleteSpectacle)
+11. [Delete Spectacle](#DeleteSpectacle)  
+[Add Hall](#AddHall)
+[Update Hall](#UpdateHall)
+[Get Hall](#GetHall)
+[Get Theater Halls](#GetTheaterHalls)
+[Delete Hall](#DeleteHall)  
+[Add Event](#AddEvent)  
+[Update Event](#UpdateEvent)  
+[Get Event](#GetEvent)  
+[Get Events](#GetEvents)  
+[Delete Event](#DeleteEvent)  
 12. [Upload Spectacle Poster](#UploadSpectaclePoster)  
 13. [Upload Theater Logo](#UploadTheaterLogo)  
 14. [Upload Spectacle Silder Poster](#UploadSpectacleSilderPoster)  
@@ -33,8 +46,7 @@ Headers:
 
 ## Тест 1
 Регистрация с валидными данными  
-Успешно. Но в конце файла стоит запятая (в документации), а сервер присылает ответ без запятой. Хоть ответ сервера не совпадает с
-документацией, но он является правильным по правилам формирования json. 
+  
 * Предусловия:
 Body: x-www-from-urlencoded
 ```
@@ -66,7 +78,7 @@ json
 
 ## Тест 2
 Невозможность регистрации если пароль не совпадает с паролем подтверждения    
-ПРОВАЛ. Регистрация всё равно проходит.
+  
 * Предусловия:
 Body: x-www-from-urlencoded
 ```
@@ -103,7 +115,7 @@ json
 
 ## Тест 3
 Невозможность регистрации с повторяющимся Email  
-ПРОВАЛ. Форма json файла неверна
+  
 * Предусловия:
 Body: x-www-from-urlencoded
 ```
@@ -152,7 +164,7 @@ Headers:
 
 ## Тест 1
 Авторизация с валидными данными  
-Успешно. Но порядок нарушен (возможно критично), сервер передаёт данные не описанные в документах. 
+   
 * Предусловия:
 Body: x-www-from-urlencoded
 ```
@@ -187,7 +199,7 @@ json
 
 ## Тест 2
 Авторизация с невалидными данными  
-Успешно.
+  
 * Предусловия:
 Body: x-www-from-urlencoded
 ```
@@ -229,7 +241,7 @@ Headers:
 
 ## Тест 1
 Выход из учётной записи  
-Успешно.  
+  
 * Предусловия:
 
 * Шаги:  
@@ -264,7 +276,7 @@ Headers:
 
 ## Тест 1
 Добавление театра  
-Успешно. Но если поменять токен, добавление театра всё равно происходит.
+  
 * Предусловия:
 ```
 {
@@ -299,6 +311,55 @@ json
 ```
 
 ```
+
+# Update Theater<a name="UpdateTheater"></a>
+[<-- Вернуться к списку](#Ссылки)
+### Предусловия группы тестов
+
+request method = PATCH  
+route = http://host1813162.hostland.pro/api/theaters/{theater_id}
+Headers:  
+```
+     Accept : application/json  
+     Authorization : Bearer ZcM8bJ1gubXy46lXYBeD33nNM7nZPlMEod-sREabNs9af0qZyuj_0SJAir0S-0Psqran2MKjcjMVD0WIPLMtPfooxbqXVjuBxnWx3SftqtbVUw_rTPEcb3oViAJV2I5cRzoSGQe_M8LZFytgPOHyW-OR6is7VosY4l5FwxfOGKaPJPkLXVnxXfq7iIGF_VrCF6fWZhs5bsf7UWHFeuIEAu0ktctsFFmDzrUx9-tLlEgxEXkP_sCXtesDKKxolr4slj9cPzo57E1Xt-zLc9HY4b3FT5m5RwGiUFzk9rwsBJFBljkv5dGv3mU3g0BZGU236TEtcESQPPBt8Q8KUqzMSV0pGSYdvWAEU6mymXYsPIQSsZozdRSMiINE1jOdhISwx9yF0V26XtSiEdFB_0-a-1Zk2LimmM34oyJji56zaBHuUJzjoj7ytzrJZB_mNRwCdrsl3M
+```
+
+## Тест 1
+Изменение театра  
+
+* Предусловия:
+```
+{
+    "name": "new_theater_name",
+    "description": "new_theater_description"
+    "address": "new_theater_address",
+    "logo": "new_theater_logo",
+    "photo": "new_theater_photo",
+    "preview": "new_theater_preview",
+    "cash_desk_phone_number": "new_theater_cash_desk_phone_number",
+    "phone_number_for_reference": "new_theater_phone_number_for_reference",
+    "contacts": "theater_contacts"
+}
+```
+
+* Шаги:  
+1) Отправить API запрос на сервер  
+
+* Ожидаемый результат:  
+json
+```
+{
+     
+     
+    "message": "Театр успешно обновлен."
+}
+```
+* Фактический результат:  
+json 
+```
+
+```
+
 # Get theaters<a name="GetTheaters"></a>
 [<-- Вернуться к списку](#Ссылки)
 ### Предусловия группы тестов
