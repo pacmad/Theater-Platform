@@ -5,15 +5,15 @@
 2. [Authorization](#Authorization)  
 3. [Logout](#Logout)  
 4. [Add Theater](#AddTheater)  
-[Update Theater](#UpdateTheater)  
-5. [Get Theaters](#GetTheaters)   
-6. [Get Theater](#GetTheater)  
-7. [Delete Theater](#DeleteTheater)  
-8. [Add Spectacle](#AddSpectacle)  
-[Update Spectacle](#UpdateSpectacle)  
-9. [Get Spectacles](#GetSpectacles)  
-10. [Get Spectacle](#GetSpectacle)  
-11. [Delete Spectacle](#DeleteSpectacle)  
+5. [Update Theater](#UpdateTheater)  
+6. [Get Theaters](#GetTheaters)   
+7. [Get Theater](#GetTheater)  
+8. [Delete Theater](#DeleteTheater)  
+9. [Add Spectacle](#AddSpectacle)  
+10. [Update Spectacle](#UpdateSpectacle)  
+11. [Get Spectacles](#GetSpectacles)  
+12. [Get Spectacle](#GetSpectacle)  
+13. [Delete Spectacle](#DeleteSpectacle)  
 [Add Hall](#AddHall)
 [Update Hall](#UpdateHall)
 [Get Hall](#GetHall)
@@ -24,12 +24,12 @@
 [Get Event](#GetEvent)  
 [Get Events](#GetEvents)  
 [Delete Event](#DeleteEvent)  
-12. [Upload Spectacle Poster](#UploadSpectaclePoster)  
-13. [Upload Theater Logo](#UploadTheaterLogo)  
-14. [Upload Spectacle Silder Poster](#UploadSpectacleSilderPoster)  
-15. [Upload Spectacle Preview](#UploadSpectaclePreview)  
-16. [Upload Theater Preview](#UploadTheaterPreview)  
-17. [Result](#Result)  
+24. [Upload Spectacle Poster](#UploadSpectaclePoster)  
+25. [Upload Theater Logo](#UploadTheaterLogo)  
+26. [Upload Spectacle Silder Poster](#UploadSpectacleSilderPoster)  
+27. [Upload Spectacle Preview](#UploadSpectaclePreview)  
+28. [Upload Theater Preview](#UploadTheaterPreview)  
+29. [Result](#Result)  
   
 
 # Registration <a name="Registration"></a>
@@ -349,8 +349,7 @@ Headers:
 json
 ```
 {
-     
-     
+
     "message": "Театр успешно обновлен."
 }
 ```
@@ -604,19 +603,188 @@ json
 ```
 
 ```
-# Get Spectacles<a name="GetSpectacles"></a>
-[<-- Вернуться к списку](#Ссылки)
 
+# Update Spectacle<a name="UpdateSpectacle"></a>  
+[<-- Вернуться к списку](#Ссылки)  
+### Предусловия группы тестов
+
+request method = PATCH  
+route = http://host1813162.hostland.pro/api/spectacles/{spectacle_id}  
+Headers:  
+```
+     Accept : application/json  
+     Authorization : Bearer ZcM8bJ1gubXy46lXYBeD33nNM7nZPlMEod-sREabNs9af0qZyuj_0SJAir0S-0Psqran2MKjcjMVD0WIPLMtPfooxbqXVjuBxnWx3SftqtbVUw_rTPEcb3oViAJV2I5cRzoSGQe_M8LZFytgPOHyW-OR6is7VosY4l5FwxfOGKaPJPkLXVnxXfq7iIGF_VrCF6fWZhs5bsf7UWHFeuIEAu0ktctsFFmDzrUx9-tLlEgxEXkP_sCXtesDKKxolr4slj9cPzo57E1Xt-zLc9HY4b3FT5m5RwGiUFzk9rwsBJFBljkv5dGv3mU3g0BZGU236TEtcESQPPBt8Q8KUqzMSV0pGSYdvWAEU6mymXYsPIQSsZozdRSMiINE1jOdhISwx9yF0V26XtSiEdFB_0-a-1Zk2LimmM34oyJji56zaBHuUJzjoj7ytzrJZB_mNRwCdrsl3M
+```
+
+## Тест 1
+Добавление спектакля  
+  
+* Предусловия:
+```
+{
+    "name": "new_spectacle_name",
+    "description": "new_spectacle_description",
+    "rate": 0,
+    "duration": 90,
+    "year": 2019,
+    "poster": "new_spectacle_poster",
+    "trailer": "new_spectacle_trailer",
+    "slider_poster": "new_spectacle_slider_poster"
+}
+```
+
+* Шаги:  
+1) Отправить API запрос на сервер  
+
+* Ожидаемый результат:  
+json
+```
+{
+
+    "message": "Спектакль успешно обновлен."
+}
+```
+* Фактический результат:  
+Ошибка 
+```
+
+```
+
+# Get Spectacles<a name="GetSpectacles"></a>
+[<-- Вернуться к списку](#Ссылки)  
+### Предусловия группы тестов
+
+request method = GET  
+route = http://host1813162.hostland.pro/api/spectacles?id={spectacle_id} 
+Headers:  
+```
+     Accept : application/json  
+     Authorization : Bearer ZcM8bJ1gubXy46lXYBeD33nNM7nZPlMEod-sREabNs9af0qZyuj_0SJAir0S-0Psqran2MKjcjMVD0WIPLMtPfooxbqXVjuBxnWx3SftqtbVUw_rTPEcb3oViAJV2I5cRzoSGQe_M8LZFytgPOHyW-OR6is7VosY4l5FwxfOGKaPJPkLXVnxXfq7iIGF_VrCF6fWZhs5bsf7UWHFeuIEAu0ktctsFFmDzrUx9-tLlEgxEXkP_sCXtesDKKxolr4slj9cPzo57E1Xt-zLc9HY4b3FT5m5RwGiUFzk9rwsBJFBljkv5dGv3mU3g0BZGU236TEtcESQPPBt8Q8KUqzMSV0pGSYdvWAEU6mymXYsPIQSsZozdRSMiINE1jOdhISwx9yF0V26XtSiEdFB_0-a-1Zk2LimmM34oyJji56zaBHuUJzjoj7ytzrJZB_mNRwCdrsl3M
+```
+
+## Тест 1
+Получение спектакля  
+  
+* Предусловия:
+```
+
+```
+
+* Шаги:  
+1) Отправить API запрос на сервер  
+
+* Ожидаемый результат:  
+json
+```
+{     
+    "spectacle": {
+        "name": "spectacle_name",
+        "description": "spectacle_description",
+        "rate": 4.7,
+        "duration": 90,
+        "year": 2019,
+        "poster": "spectacle_poster",
+        "slider_poster": "spectacle_slider_poster",
+        "theater_id": "theater_id"
+    }
+}
+```
+* Фактический результат:  
+
+```
+
+```
   
 
 # Get Spectacle<a name="GetSpectacle"></a>
 [<-- Вернуться к списку](#Ссылки)  
+### Предусловия группы тестов
 
+request method = GET  
+route = http://host1813162.hostland.pro/api/spectacles?theater_id={theater_id} 
+Headers:  
+```
+     Accept : application/json  
+     Authorization : Bearer ZcM8bJ1gubXy46lXYBeD33nNM7nZPlMEod-sREabNs9af0qZyuj_0SJAir0S-0Psqran2MKjcjMVD0WIPLMtPfooxbqXVjuBxnWx3SftqtbVUw_rTPEcb3oViAJV2I5cRzoSGQe_M8LZFytgPOHyW-OR6is7VosY4l5FwxfOGKaPJPkLXVnxXfq7iIGF_VrCF6fWZhs5bsf7UWHFeuIEAu0ktctsFFmDzrUx9-tLlEgxEXkP_sCXtesDKKxolr4slj9cPzo57E1Xt-zLc9HY4b3FT5m5RwGiUFzk9rwsBJFBljkv5dGv3mU3g0BZGU236TEtcESQPPBt8Q8KUqzMSV0pGSYdvWAEU6mymXYsPIQSsZozdRSMiINE1jOdhISwx9yF0V26XtSiEdFB_0-a-1Zk2LimmM34oyJji56zaBHuUJzjoj7ytzrJZB_mNRwCdrsl3M
+```
+
+## Тест 1
+Получение спектаклей  
+  
+* Предусловия:
+```
+
+```
+
+* Шаги:  
+1) Отправить API запрос на сервер  
+
+* Ожидаемый результат:  
+json
+```
+{
+     
+     
+    "spectacles": [
+        {
+            "id": 1,
+            "name": "spectacle_name_1",
+            "rate": 4.7,
+            "poster": "spectacle_poster_1"
+        },
+        {
+            "id": 2,
+            "name": "spectacle_name_2",
+            "rate": 4.1,
+            "poster": "spectacle_poster_2"
+        },
+    ]
+}
+```
+* Фактический результат:  
+Ошибка 
+```
+
+```
   
 
 # Delete Spectacle<a name="DeleteSpectacle"></a>
 [<-- Вернуться к списку](#Ссылки)  
+### Предусловия группы тестов
 
+request method = DELETE  
+route = http://host1813162.hostland.pro/api/spectacles/{spectacle_id}
+Headers:  
+```
+     Accept : application/json  
+     Authorization : Bearer ZcM8bJ1gubXy46lXYBeD33nNM7nZPlMEod-sREabNs9af0qZyuj_0SJAir0S-0Psqran2MKjcjMVD0WIPLMtPfooxbqXVjuBxnWx3SftqtbVUw_rTPEcb3oViAJV2I5cRzoSGQe_M8LZFytgPOHyW-OR6is7VosY4l5FwxfOGKaPJPkLXVnxXfq7iIGF_VrCF6fWZhs5bsf7UWHFeuIEAu0ktctsFFmDzrUx9-tLlEgxEXkP_sCXtesDKKxolr4slj9cPzo57E1Xt-zLc9HY4b3FT5m5RwGiUFzk9rwsBJFBljkv5dGv3mU3g0BZGU236TEtcESQPPBt8Q8KUqzMSV0pGSYdvWAEU6mymXYsPIQSsZozdRSMiINE1jOdhISwx9yF0V26XtSiEdFB_0-a-1Zk2LimmM34oyJji56zaBHuUJzjoj7ytzrJZB_mNRwCdrsl3M
+```
+
+## Тест 1
+Получение спектакля  
+  
+* Предусловия:
+```
+
+```
+
+* Шаги:  
+1) Отправить API запрос на сервер  
+
+* Ожидаемый результат:  
+json
+```
+{
+
+    "message": "Спектакль успешно удален",
+}
+
+```
+* Фактический результат:  
+Ошибка 
+```
+
+```
   
 
 # Upload Spectacle Poster<a name="UploadSpectaclePoster"></a>
