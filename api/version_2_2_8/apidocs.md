@@ -12,18 +12,18 @@
 1. [Registration](#registration)
 2. [Authorization](#authorization)
 3. [Logout](#logout)
-4. [Update User Profile](#update-user-profile)
-5. [Get User Profile](#get-user-profile)
+4. [Update User Profile](#update-user-profile) -
+5. [Get User Profile](#get-user-profile) -
 6. [Add User Bookmark](#add-user-bookmark)
 7. [Delete User Bookmark](#delete-user-bookmark)
 8. [Get User Bookmarks](#get-user-bookmarks)
 9. [Get User Purchase History](#get-user-purchase-history)
-10. [Get User Commetns](#get-user-commetns)
-11. [Add Comment](#add-comment)
-12. [Update Comment](#update-comment)
-13. [Get Spectacle Comments](#get-spectacle-comments)
-14. [Comment Verification](#comment-verification)
-15. [Delete Comment](#delete-comment)
+10. [Get User Commetns](#get-user-commetns) -
+11. [Add Comment](#add-comment) -
+12. [Update Comment](#update-comment) -
+13. [Get Spectacle Comments](#get-spectacle-comments) -
+14. [Comment Verification](#comment-verification) -
+15. [Delete Comment](#delete-comment) -
 16. [Add Spectacle](#add-spectacle) *
 17. [Update Spectacle](#update-spectacle)
 18. [Get Spectacle](#get-spectacle) *
@@ -34,15 +34,15 @@
 23. [Get Event](#get-event) *
 24. [Get Events](#get-events) *
 25. [Delete Event](#delete-event) *
-26. [Get Premieres](#get-premieres)
+26. [Get Premieres](#get-premieres) -
 27. [Get Main Page Premieres](#get-main-page-premieres) *
 28. [Add Theater](#add-theater) *
 29. [Update Theater](#update-theater)
 30. [Get Theater](#get-theater) *
 31. [Get Theaters](#get-theaters) *
 32. [Delete Theater](#delete-theater) *
-33. [Get Theater Preview](#get-theater-preview)
-34. [Get Spectacle Trailer](#get-spectacle-trailer)
+33. [Get Theater Preview](#get-theater-preview) -
+34. [Get Spectacle Trailer](#get-spectacle-trailer) -
 35. [Add Social Network](#add-social-network)
 36. [Update Social Network](#update-social-social)
 37. [Get Social Network](#get-social-social)
@@ -66,34 +66,34 @@
 55. [Update Event Tickets](#update-event-tickets)
 56. [Delete Tickets](#delete-tickets)
 57. [Tickets Purchase](#tickets-purchase)
-58. [Add Actor](#add-actor)
-59. [Update Actor](#update-actor)
-60. [Get Actor](#get-actor)
-61. [Delete Actor](#delete-actor)
-62. [Add Actors to Spectacle](#add-actors-to-spectacle)
-63. [Get Spectacle Actors](#get-spectacle-actors)
-64. [Delete Actors From Spectacle](#delete-actors-from-spectacle)
-65. [Add Producer](#add-producer)
-66. [Update Producer](#update-producer)
-67. [Get Producer](#get-producer)
-68. [Delete Producer](#delete-producer)
-69. [Add Producers to Spectacle](#add-producer-to-spectacle)
-70. [Get Spectacle Producers](#get-spectacle-producers)
-71. [Delete Producers From Spectacle](#delete-producers-from-spectacle)
-72. [Add Author](#add-author)
-73. [Update Author](#update-author)
-74. [Get Author](#get-author)
-75. [Delete Author](#delete-author)
-76. [Add Authors to Spectacle](#add-authors-to-spectacle)
-77. [Get Spectacle Authors](#get-spectacle-authors)
-78. [Delete Authors From Spectacle](#delete-authors-from-spectacle)
-79. [Add Artist](#add-artist)
-80. [Update Artist](#update-artist)
-81. [Get Artist](#get-artist)
-82. [Delete Artist](#delete-artist)
-83. [Add Artists to Spectacle](#add-artists-to-spectacle)
-84. [Get Spectacle Artists](#get-spectacle-artists)
-85. [Delete Artists From Spectacle](#delete-artists-from-spectacle)
+58. [Add Actor](#add-actor) -
+59. [Update Actor](#update-actor) -
+60. [Get Actor](#get-actor) -
+61. [Delete Actor](#delete-actor) -
+62. [Add Actors to Spectacle](#add-actors-to-spectacle) -
+63. [Get Spectacle Actors](#get-spectacle-actors) -
+64. [Delete Actors From Spectacle](#delete-actors-from-spectacle) -
+65. [Add Producer](#add-producer) -
+66. [Update Producer](#update-producer) -
+67. [Get Producer](#get-producer) -
+68. [Delete Producer](#delete-producer) -
+69. [Add Producers to Spectacle](#add-producer-to-spectacle) -
+70. [Get Spectacle Producers](#get-spectacle-producers) -
+71. [Delete Producers From Spectacle](#delete-producers-from-spectacle) -
+72. [Add Author](#add-author) -
+73. [Update Author](#update-author) -
+74. [Get Author](#get-author) -
+75. [Delete Author](#delete-author) -
+76. [Add Authors to Spectacle](#add-authors-to-spectacle) -
+77. [Get Spectacle Authors](#get-spectacle-authors) -
+78. [Delete Authors From Spectacle](#delete-authors-from-spectacle) -
+79. [Add Artist](#add-artist) -
+80. [Update Artist](#update-artist) -
+81. [Get Artist](#get-artist) -
+82. [Delete Artist](#delete-artist) -
+83. [Add Artists to Spectacle](#add-artists-to-spectacle) -
+84. [Get Spectacle Artists](#get-spectacle-artists) -
+85. [Delete Artists From Spectacle](#delete-artists-from-spectacle) -
 
 
 BASE_URL  http://host1813162.hostland.pro/api
