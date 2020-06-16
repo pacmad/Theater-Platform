@@ -5,7 +5,7 @@
 >2. Корректировки по API #27.
 >3. Корректировки по API #24
 
->*Note:* * в содержании отмечены API, которые должны быть реализованы в следующем пуле.
+>*Note:* ** в содержании отмечены API, которые должны быть реализованы в следующем пуле.
 
 ## Table Of Contents
 
@@ -14,10 +14,10 @@
 3. [Logout](#logout)
 4. [Update User Profile](#update-user-profile) -
 5. [Get User Profile](#get-user-profile) -
-6. [Add User Bookmark](#add-user-bookmark)
-7. [Delete User Bookmark](#delete-user-bookmark)
-8. [Get User Bookmarks](#get-user-bookmarks)
-9. [Get User Purchase History](#get-user-purchase-history)
+6. [Add User Bookmark](#add-user-bookmark) **
+7. [Delete User Bookmark](#delete-user-bookmark) **
+8. [Get User Bookmarks](#get-user-bookmarks) **
+9. [Get User Purchase History](#get-user-purchase-history) **
 10. [Get User Commetns](#get-user-commetns) -
 11. [Add Comment](#add-comment) -
 12. [Update Comment](#update-comment) -
@@ -43,15 +43,15 @@
 32. [Delete Theater](#delete-theater) *
 33. [Get Theater Preview](#get-theater-preview) -
 34. [Get Spectacle Trailer](#get-spectacle-trailer) -
-35. [Add Social Network](#add-social-network)
-36. [Update Social Network](#update-social-social)
-37. [Get Social Network](#get-social-social)
-38. [Delete Social Network](#delete-social-social)
-39. [Add Theater Social Network Community Group](#add-theater-social-network-community-group)
-40. [Update Theater Social Network Community Group](#update-theater-social-network-community-group)
-41. [Get Theater Social Network Community Group](#get-theater-social-network-community-group)
-42. [Get Theater Social Network Community Groups](#get-theater-social-network-community-groups)
-43. [Delete Theater Social Network Community Group](#delete-theater-social-network-community-group)
+35. [Add Social Network](#add-social-network) ***
+36. [Update Social Network](#update-social-social) ***
+37. [Get Social Network](#get-social-social) ***
+38. [Delete Social Network](#delete-social-social) ***
+39. [Add Theater Social Network Community Group](#add-theater-social-network-community-group) ***
+40. [Update Theater Social Network Community Group](#update-theater-social-network-community-group) ***
+41. [Get Theater Social Network Community Group](#get-theater-social-network-community-group) ***
+42. [Get Theater Social Network Community Groups](#get-theater-social-network-community-groups) ***
+43. [Delete Theater Social Network Community Group](#delete-theater-social-network-community-group) ***
 44. [Add Hall](#add-hall)
 45. [Update Hall](#update-hall)
 46. [Get Hall](#get-hall)
