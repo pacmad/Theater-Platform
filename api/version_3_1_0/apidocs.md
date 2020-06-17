@@ -905,7 +905,7 @@ UPDATED
 |attribute        |value         	      |
 |----------------	|-------------------	|
 | request method 	| GET |
-| route          	| BASE_URL/events?name={event_name}&from={date_range_start}&to={date_range_end}&genre={event_genre}&age_from={event_age_start}&age_to={event_age_end}&price_from={event_price_start}&price_to={event_price_end}&duration_from={event_duration_start}&duration_to={event_duration_end}|
+| route          	| BASE_URL/events?name={event_name}&date_from={date_range_start}&date_to={date_range_end}&genre={event_genre}&age_from={event_age_start}&age_to={event_age_end}&price_from={event_price_start}&price_to={event_price_end}&duration_from={event_duration_start}&duration_to={event_duration_end}&theater={event_theater_id}|
 | error types    	| TheaterNotFound, DateFormatError |
 
 #### RESPONSE DATA [SUCCESS]
