@@ -55,6 +55,13 @@
 44. [Update Event Tickets](#update-event-tickets)
 45. [Delete Tickets](#delete-tickets)
 46. [Tickets Purchase](#tickets-purchase)
+47. [Upload Theater Logo](#upload-theater-logo)
+48. [Upload Theater Preview](#upload-theater-logo)
+49. [Upload Spectacle Poster](#upload-spectacle-poster)
+50. [Upload Spectacle Preview](#upload-spectacle-preview)
+51. [Upload Spectacle Slider Poster](#upload-spectacle-sliderposter)
+52. [Upload Theater Photo](#upload-theater-photo)
+53. [Upload Hall Scheme](#upload-hall-scheme)
 
 BASE_URL  http://host1813162.hostland.pro/api
 
@@ -2626,5 +2633,198 @@ UPDATED
         }
     ],
     "message": "В процессе покупки билетов возникли ошибки."
+}
+```
+## Upload Theater Logo
+
+[<-- Back to Table Of Contents](#table-of-contents)
+
+|attribute          |value         	        |
+|----------------	|-------------------	|
+| request method 	| POST              	|
+| route          	| BASE_URL/file/theater/logo    	|
+| required headers  | Authorization         |
+
+#### REQUEST DATA
+
+
+```json
+{
+    "theater_logo": "theater_logo_image.png"
+}
+```
+
+#### RESPONSE DATA [SUCCESS]
+
+```json
+{
+    "message": "Картинка успешно загружена на сервер по адресу:",
+    "url": "URL_PHOTO",
+}
+```
+
+## Upload Theater Preview
+
+[<-- Back to Table Of Contents](#table-of-contents)
+
+|attribute          |value         	        |
+|----------------	|-------------------	|
+| request method 	| POST              	|
+| route          	| BASE_URL/file/theater/preview    	|
+| required headers  | Authorization         |
+
+#### REQUEST DATA
+
+
+```json
+{
+    "theater_preview": "theater_preview_image.png"
+}
+```
+
+#### RESPONSE DATA [SUCCESS]
+
+```json
+{
+    "message": "Картинка успешно загружена на сервер по адресу:",
+    "url": "URL_PHOTO",
+}
+```
+
+## Upload Spectacle Poster
+
+[<-- Back to Table Of Contents](#table-of-contents)
+
+|attribute          |value         	        |
+|----------------	|-------------------	|
+| request method 	| POST              	|
+| route          	| BASE_URL/file/spectacle/poster    	|
+| required headers  | Authorization         |
+
+#### REQUEST DATA
+
+
+```json
+{
+    "spectacle_poster": "spectacle_poster_image.png"
+}
+```
+
+#### RESPONSE DATA [SUCCESS]
+
+```json
+{
+    "message": "Картинка успешно загружена на сервер по адресу:",
+    "url": "URL_PHOTO",
+}
+```
+
+## Upload Spectacle Preview
+
+[<-- Back to Table Of Contents](#table-of-contents)
+
+|attribute          |value         	        |
+|----------------	|-------------------	|
+| request method 	| POST              	|
+| route          	| BASE_URL/file/spectacle/preview   	|
+| required headers  | Authorization         |
+
+#### REQUEST DATA
+
+
+```json
+{
+    "spectacle_preview": "spectacle_preview_image.png"
+}
+```
+
+#### RESPONSE DATA [SUCCESS]
+
+```json
+{
+    "message": "Картинка успешно загружена на сервер по адресу:",
+    "url": "URL_PHOTO",
+}
+```
+
+## Upload Spectacle Silder Poster
+
+[<-- Back to Table Of Contents](#table-of-contents)
+
+|attribute          |value         	        |
+|----------------	|-------------------	|
+| request method 	| POST              	|
+| route          	| BASE_URL/file/spectacle/slider-poster    	|
+| required headers  | Authorization         |
+
+#### REQUEST DATA
+
+
+```json
+{
+    "spectacle_sliderposter": "spectacle_sliderposter_image.png"
+}
+```
+
+#### RESPONSE DATA [SUCCESS]
+
+```json
+{
+    "message": "Картинка успешно загружена на сервер по адресу:",
+    "url": "URL_PHOTO",
+}
+```
+## Upload Theater Photo
+
+[<-- Back to Table Of Contents](#table-of-contents)
+
+|attribute          |value         	        |
+|----------------	|-------------------	|
+| request method 	| POST              	|
+| route          	| BASE_URL/file/theater/photo    	|
+| required headers  | Authorization         |
+
+#### REQUEST DATA
+
+
+```json
+{
+    "theater_photo": "theater_photo_image.png"
+}
+```
+
+#### RESPONSE DATA [SUCCESS]
+
+```json
+{
+    "message": "Картинка успешно загружена на сервер по адресу:",
+    "url": "URL_PHOTO",
+}
+```
+## Upload Hall Scheme
+
+[<-- Back to Table Of Contents](#table-of-contents)
+
+|attribute          |value         	        |
+|----------------	|-------------------	|
+| request method 	| POST              	|
+| route          	| BASE_URL/file/hall/scheme    	|
+| required headers  | Authorization         |
+
+#### REQUEST DATA
+
+
+```json
+{
+    "hall_scheme": "hall_scheme_image.png"
+}
+```
+
+#### RESPONSE DATA [SUCCESS]
+
+```json
+{
+    "message": "Картинка успешно загружена на сервер по адресу:",
+    "url": "URL_PHOTO",
 }
 ```
