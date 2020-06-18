@@ -1,5 +1,6 @@
 ## Выполненное тестирование
 
+### [Чек кейс API 3.1.0 18.06](https://schstp.github.io/Theater-Platform/api/test/check_16_06_2020_v3.1.0)
 ### [Чек кейс API 3.0.0 16.06](https://schstp.github.io/Theater-Platform/api/test/check_16_06_2020_v3.0.0)
 ### [Тестирование API 3.0.0 16.06](https://schstp.github.io/Theater-Platform/api/test/test_16.06.2020_v3.0.0)
 ### [Тестирование API 2.2.7 08.06](https://schstp.github.io/Theater-Platform/api/test/08_06_2020_v2.2.7)
