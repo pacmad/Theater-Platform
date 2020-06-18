@@ -1848,7 +1848,7 @@ UPDATED
 |attribute        |value         	      |
 |----------------	|-------------------	|
 | request method 	| POST |
-| route          	| BASE_URL/halls|
+| route          	| BASE_URL/hall?theater_id={theater_id}|
 | error types    	| TheaterNotFound, PermissionDenied |
 | required headers  | Authorization         |
 
@@ -1904,7 +1904,7 @@ UPDATED
 |attribute        |value         	      |
 |----------------	|-------------------	|
 | request method 	| PATCH |
-| route          	| BASE_URL/halls/{hall_id}|
+| route          	| BASE_URL/hall?id={hall_id}|
 | error types    	| HallNotFound, PermissionDenied |
 | required headers  | Authorization         |
 
@@ -1956,7 +1956,7 @@ UPDATED
 |attribute        |value         	      |
 |----------------	|-------------------	|
 | request method 	| GET |
-| route          	| BASE_URL/halls?id={hall_id}|
+| route          	| BASE_URL/hall?id={hall_id}|
 | error types    	| HallNotFound |
 
 #### RESPONSE DATA [SUCCESS]
@@ -2049,7 +2049,7 @@ UPDATED
 |attribute        |value         	      |
 |----------------	|-------------------	|
 | request method 	| DELETE |
-| route          	| BASE_URL/halls/{hall_id}|
+| route          	| BASE_URL/hall?id={hall_id}|
 | error types    	| HallNotFound, PermissionDenied |
 | required headers  | Authorization         |
 
