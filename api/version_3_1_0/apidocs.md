@@ -712,7 +712,7 @@ UPDATED
     "dated_at": "event_date",
     "description": "event_description"
     "is_premiere": true,
-    "is_choosen_for_main_page": false,
+    "is_chosen_for_main_page": false,
     "available_seats_number": 145,
     "age": "event_age",
     "duration": "event_duration",
@@ -784,7 +784,7 @@ UPDATED
     "dated_at": "new_event_date",
     "description": "new_event_description"
     "is_premiere": false,
-    "is_choosen_for_main_page": false,
+    "is_chosen_for_main_page": false,
     "available_seats_number": 234,
     "spectacle_id": 12,
     "hall_id": 1,
@@ -862,7 +862,7 @@ UPDATED
         "dated_at": "event_date",
         "description": "event_description"
         "is_premiere": true,
-        "is_choosen_for_main_page": false,
+        "is_chosen_for_main_page": false,
         "available_seats_number": 145,
         "spectacle_id": 25,
         "hall_id": 2,
