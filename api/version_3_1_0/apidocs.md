@@ -134,7 +134,6 @@ BASE_URL  http://host1813162.hostland.pro/api
 ```
 #### RESPONSE DATA [SUCCESS]
 
->*Note*: 1) Если у пользователя нет фото --> "photo": null
 
 ```json
 {
@@ -155,10 +154,7 @@ BASE_URL  http://host1813162.hostland.pro/api
 
 ```json
 {
-     
-    "message": "Не удаётся войти. Неверный логин или пароль.",
-    "token": "null",
-    "user": "null"
+    "message": "Не удаётся войти. Неверный логин или пароль."
 }
 ```
 
@@ -177,9 +173,7 @@ BASE_URL  http://host1813162.hostland.pro/api
 #### RESPONSE DATA [SUCCESS]
 
 ```json
-{
-     
-     
+{ 
     "message": "Вы успешно вышли из системы.",
 }
 ```
@@ -190,7 +184,7 @@ BASE_URL  http://host1813162.hostland.pro/api
 |attribute        |value         	      |
 |----------------	|-------------------	|
 | request method 	| POST |
-| route          	| BASE_URL/bookmark?user_id={user_id}|
+| route          	| BASE_URL/bookmark?user_id={user_id}&spectacle_id={spectacle_id}|
 | error types    	| UserNotFound, SpectacleNotFound, PermissionDenied |
 | required headers  | Authorization         |
 
@@ -201,15 +195,13 @@ BASE_URL  http://host1813162.hostland.pro/api
 ```json
 {
     "spectacle_id": "spectacle_id_to_bookmark",
-    "created_at": "timestamp"
+    "user_id": "user_id_to_bookmark"
 }
 ```
 #### RESPONSE DATA [SUCCESS]
 
 ```json
-{
-     
-     
+{  
     "message": "Спектакль добавлен в закладки",
 }
 ```
@@ -221,7 +213,7 @@ BASE_URL  http://host1813162.hostland.pro/api
 {
     "message": "Указанные данные введены неверно.",
     "errors": {
-        "user_id": [
+        "type": [
             "Пользователь с таким ID пользователя не найден."
         ],
         "spectacle_id": [
@@ -260,15 +252,14 @@ BASE_URL  http://host1813162.hostland.pro/api
 ```json
 {
     "message": "Указанные данные введены неверно.",
-    "errors": {
-        "user_id": [
-            "Пользователь с таким ID пользователя не найден."
-        ],
-        "bookmark_id": [
-            "Закладка пользователя с таким ID не найдена."
-        ],
-        "permission": [
-            "Отказано в доступе."
+    "errors": 
+        {
+            "type": "BookmarkNotFound",
+            "message": "Закладка пользователя с таким ID не найдена."
+        },
+        {
+            "type": "PermissionDenied"
+            "message": "Отказано в доступе."
         ]
     }
 }
