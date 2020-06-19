@@ -32,10 +32,10 @@
 21. [Get Theater](#get-theater) + 
 22. [Get Theaters](#get-theaters) +
 23. [Delete Theater](#delete-theater) +
-24. [Add Social Network](#add-social-network) ***
-25. [Update Social Network](#update-social-social) ***
-26. [Get Social Network](#get-social-social) ***
-27. [Delete Social Network](#delete-social-social) ***
+24. [Add Social Network](#add-social-network) + ***
+25. [Update Social Network](#update-social-social) + ***
+26. [Get Social Network](#get-social-social) + ***
+27. [Delete Social Network](#delete-social-social) + ***
 28. [Add Theater Social Network Community Group](#add-theater-social-network-community-group) ***
 29. [Update Theater Social Network Community Group](#update-theater-social-network-community-group) ***
 30. [Get Theater Social Network Community Group](#get-theater-social-network-community-group) ***
@@ -55,13 +55,13 @@
 44. [Update Event Tickets](#update-event-tickets)
 45. [Delete Tickets](#delete-tickets)
 46. [Tickets Purchase](#tickets-purchase)
-47. [Upload Theater Logo](#upload-theater-logo)
-48. [Upload Theater Preview](#upload-theater-logo)
-49. [Upload Spectacle Poster](#upload-spectacle-poster)
-50. [Upload Spectacle Preview](#upload-spectacle-preview)
-51. [Upload Spectacle Slider Poster](#upload-spectacle-sliderposter)
-52. [Upload Theater Photo](#upload-theater-photo)
-53. [Upload Hall Scheme](#upload-hall-scheme)
+47. [Upload Theater Logo](#upload-theater-logo) +
+48. [Upload Theater Preview](#upload-theater-logo) +
+49. [Upload Spectacle Poster](#upload-spectacle-poster) +
+50. [Upload Spectacle Preview](#upload-spectacle-preview) +
+51. [Upload Spectacle Slider Poster](#upload-spectacle-sliderposter) +
+52. [Upload Theater Photo](#upload-theater-photo) +
+53. [Upload Hall Scheme](#upload-hall-scheme) +
 
 BASE_URL  http://host1813162.hostland.pro/api
 
@@ -190,7 +190,7 @@ BASE_URL  http://host1813162.hostland.pro/api
 |attribute        |value         	      |
 |----------------	|-------------------	|
 | request method 	| POST |
-| route          	| BASE_URL/user/{user_id}/bookmarks|
+| route          	| BASE_URL/bookmark?user_id={user_id}|
 | error types    	| UserNotFound, SpectacleNotFound, PermissionDenied |
 | required headers  | Authorization         |
 
@@ -240,7 +240,7 @@ BASE_URL  http://host1813162.hostland.pro/api
 |attribute        |value         	      |
 |----------------	|-------------------	|
 | request method 	| DELETE |
-| route          	| BASE_URL/user/{user_id}/bookmarks/{spectacle_id}|
+| route          	| BASE_URL/bookmark?id={bookmark_id}|
 | error types    	| UserNotFound, BookmarkNotFound, PermissionDenied |
 | required headers  | Authorization         |
 
@@ -281,7 +281,7 @@ BASE_URL  http://host1813162.hostland.pro/api
 |attribute        |value         	      |
 |----------------	|-------------------	|
 | request method 	| GET |
-| route          	| BASE_URL/user/{user_id}/bookmarks|
+| route          	| BASE_URL/bookmarks?user_id={user_id}|
 | error types    	| UserNotFound, PermissionDenied |
 | required headers  | Authorization         |
 
@@ -1225,7 +1225,7 @@ UPDATED
 |attribute        |value         	      |
 |----------------	|-------------------	|
 | request method 	| PATCH |
-| route          	| BASE_URL/theater?={theater_id}|
+| route          	| BASE_URL/theater?id={theater_id}|
 | error types    	| TheaterNotFound, PermissionDenied |
 | required headers  | Authorization         |
 
