@@ -2,6 +2,9 @@
 
 ## Table Of Contents
 
+- ### [version 2.3.6](https://schstp.github.io/Theater-Platform/scenarios/version_2_3_6/scenarios)
+- ### [version 2.3.5](https://schstp.github.io/Theater-Platform/scenarios/version_2_3_5/scenarios)
+- ### [version 1.3.5](https://schstp.github.io/Theater-Platform/scenarios/version_1_3_5/scenarios)
 - ### [version 1.2.5](https://schstp.github.io/Theater-Platform/scenarios/version_1_2_5/scenarios)
 - ### [version 1.2.4](https://schstp.github.io/Theater-Platform/scenarios/version_1_2_4/scenarios)
 - ### [version 1.2.3](https://schstp.github.io/Theater-Platform/scenarios/version_1_2_3/scenarios)
