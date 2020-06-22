@@ -896,7 +896,7 @@ UPDATED
 |attribute        |value         	      |
 |----------------	|-------------------	|
 | request method 	| GET |
-| route          	| BASE_URL/events?name={event_name}&date_from={date_range_start}&date_to={date_range_end}&genre={event_genre}&age_from={event_age_start}&age_to={event_age_end}&price_from={event_price_start}&price_to={event_price_end}&duration_from={event_duration_start}&duration_to={event_duration_end}&theater={event_theater_id}|
+| route          	| BASE_URL/events?name={event_name}&date_from={date_range_start}&date_to={date_range_end}&genre={event_genre}&price_from={ticket_price_start}&price_to={ticket_price_end}&duration_from={spectacle_duration_start}&duration_to={spectacle_duration_end}&theater={spectacle_theater_name}|
 | error types    	| TheaterNotFound, DateFormatError |
 
 #### RESPONSE DATA [SUCCESS]
@@ -917,10 +917,6 @@ UPDATED
             "spectacle_id": "event.spectacle_id_1",
             "hall_id": "event.hall_id_1",
             "available_seats_number": "available_seats_number_1",
-            "genre": "event_genre_1",
-            "age": "event_age_1",
-            "price": "event_price_1",
-            "duration": "event_duration_1",
             "spectacle": {
                 "id": "spectacle_id_1",
                 "name": "spectacle_name_1",
