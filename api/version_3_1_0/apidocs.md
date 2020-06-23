@@ -896,12 +896,12 @@ UPDATED
 |attribute        |value         	      |
 |----------------	|-------------------	|
 | request method 	| GET |
-| route          	| BASE_URL/events?name={event_name}&date_from={date_range_start}&date_to={date_range_end}&genre={event_genre}&price_from={ticket_price_start}&price_to={ticket_price_end}&duration_from={spectacle_duration_start}&duration_to={spectacle_duration_end}&theater={spectacle_theater_name}|
+| route          	| BASE_URL/events?name={spectacle_name}&date_from={date_range_start}&date_to={date_range_end}&genre={event_genre}&price_from={ticket_price_start}&price_to={ticket_price_end}&duration_from={spectacle_duration_start}&duration_to={spectacle_duration_end}&theater={spectacle_theater_id}&genre={spectacle_genre}|
 | error types    	| TheaterNotFound, DateFormatError |
 
 #### RESPONSE DATA [SUCCESS]
 
->*Note*: 1) Возвращаются все события, чья дата показа (dated_at) лежит в интервале [date_range_start;date_range_end], название спектакля содержит подстроку spectacle_name, а id театра равен theater_id. В примере ответа от сервера приведено 2 результата. 2) Если таких событий нет, соответственно, events будет пустым списком.
+>*Note*: 1) Возвращаются все события, чья дата показа (dated_at) лежит в интервале [date_range_start;date_range_end], название спектакля содержит подстроку spectacle_name, а id театра равен theater_id. В примере ответа от сервера приведено 2 результата. 2) price_from - price_to - недействительные. находятся на доработке. 3) genre отвечает за колонку spectacle_genre и представляется в виде 5 значений - мелодрама, драма, мюзикл, комедия, трагедия. Данные записываются через запятую БЕЗ пробелов. Если поиск производится по одному значению, то формат вносимых данных будет таким: "genre": "мелодрама,_,_,_,_". При двух данных: "genre": "мелодрама,драма,_,_,_" 4) Если таких событий нет, соответственно, events будет пустым списком.
 
 ```json
 {
