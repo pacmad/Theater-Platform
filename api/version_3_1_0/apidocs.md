@@ -898,7 +898,7 @@ UPDATED
 |attribute        |value         	      |
 |----------------	|-------------------	|
 | request method 	| GET |
-| route          	| BASE_URL/events?name={spectacle_name}&date_from={date_range_start}&date_to={date_range_end}&genre={event_genre}&price_from={ticket_price_start}&price_to={ticket_price_end}&duration_from={spectacle_duration_start}&duration_to={spectacle_duration_end}&theater={spectacle_theater_id}&genre={spectacle_genre}|
+| route          	| BASE_URL/events?name={spectacle_name}&date_from={date_range_start}&date_to={date_range_end}&genre={event_genre}&price_from={ticket_price_start}&price_to={ticket_price_end}&duration_from={spectacle_duration_start}&duration_to={spectacle_duration_end}&genre={spectacle_genre}|
 | error types    	| TheaterNotFound, DateFormatError |
 
 1) Возвращаются все события, чья дата показа (dated_at) лежит в интервале [date_range_start;date_range_end], название спектакля содержит подстроку spectacle_name, а id театра равен theater_id. В примере ответа от сервера приведено 2 результата. 
