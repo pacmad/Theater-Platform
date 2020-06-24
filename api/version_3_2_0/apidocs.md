@@ -1,4 +1,4 @@
-# API v3.1.0
+# API v3.2.0
 
 >*updates*:
 >1. Удалены атрибуты в get events
