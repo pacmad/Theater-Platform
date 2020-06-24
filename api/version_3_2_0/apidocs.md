@@ -703,6 +703,7 @@ UPDATED
 | required headers  | Authorization         |
 
 1) Данные по атрибутам 'is_premiere', 'is_chosen_for_main_page' принимаются в формате boolean, где false = 0, а true = 1
+2) Формат для даты - 2020-12-30 24:59:59
 
 >*Note*: PermissionDenied - ошибка проверки токена доступа, который лежит в хэдере Authorization (для неавторизованных пользователей выполнение операции невозможно).
 
